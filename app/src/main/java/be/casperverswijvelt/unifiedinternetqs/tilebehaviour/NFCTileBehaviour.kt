@@ -2,17 +2,23 @@ package be.casperverswijvelt.unifiedinternetqs.tilebehaviour
 
 import android.content.Context
 import android.graphics.drawable.Icon
+import android.nfc.NfcAdapter
+import android.nfc.NfcManager
 import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import android.util.Log
 import be.casperverswijvelt.unifiedinternetqs.R
 import be.casperverswijvelt.unifiedinternetqs.TileSyncService
+import be.casperverswijvelt.unifiedinternetqs.data.ShellMethod
 import be.casperverswijvelt.unifiedinternetqs.tiles.NFCTileService
 import be.casperverswijvelt.unifiedinternetqs.util.AlertDialogData
 import be.casperverswijvelt.unifiedinternetqs.util.executeShellCommandAsync
 import be.casperverswijvelt.unifiedinternetqs.util.getNFCEnabled
 import kotlinx.coroutines.Runnable
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
+
 
 class NFCTileBehaviour(
     context: Context,
@@ -82,18 +88,30 @@ class NFCTileBehaviour(
     private fun toggleNFC() {
 
         val nfcEnabled = getNFCEnabled(context)
+        val shellMethod = runBlocking {
+            preferences.getShellMethod.first()
+        }
+        val adapter = NfcAdapter.getDefaultAdapter(context)
 
         if (nfcEnabled || TileSyncService.isTurningOnNFC) {
             TileSyncService.isTurningOnNFC = false
             TileSyncService.isTurningOffNFC = true
-            executeShellCommandAsync("svc nfc disable", context) {
-                updateTile()
+            if (shellMethod == ShellMethod.SHIZUKU) {
+                NfcAdapter::class.java.getMethod("disable").invoke(adapter)
+            } else {
+                executeShellCommandAsync("svc nfc disable", context) {
+                    updateTile()
+                }
             }
         } else {
             TileSyncService.isTurningOnNFC = true
             TileSyncService.isTurningOffNFC = false
-            executeShellCommandAsync("svc nfc enable", context) {
-                updateTile()
+            if (shellMethod == ShellMethod.SHIZUKU) {
+                NfcAdapter::class.java.getMethod("enable").invoke(adapter)
+            } else {
+                executeShellCommandAsync("svc nfc enable", context) {
+                    updateTile()
+                }
             }
         }
         updateTile()

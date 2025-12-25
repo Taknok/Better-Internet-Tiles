@@ -1,6 +1,7 @@
 package be.casperverswijvelt.unifiedinternetqs.util
 
 import android.content.pm.PackageManager
+import be.casperverswijvelt.unifiedinternetqs.BuildConfig
 import rikka.shizuku.Shizuku
 
 /**
@@ -52,7 +53,10 @@ object ShizukuUtil {
         } else {
             callback(false)
         }
+    }
 
+    fun enforceWriteSecureSettingsPermission() {
+        executeCommand("pm grant ${BuildConfig.APPLICATION_ID} android.permission.WRITE_SECURE_SETTINGS")
     }
 
     fun executeCommand(command: String): Process {

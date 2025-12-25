@@ -152,6 +152,7 @@ fun ShellMethodPage(
                                     ShizukuUtil.requestShizukuPermission {
                                         afterPermissionRequested(method)
                                     }
+                                    ShizukuUtil.enforceWriteSecureSettingsPermission()
                                 }
                                 else -> {}
                             }
