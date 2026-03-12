@@ -1,11 +1,7 @@
 name: Build and Sign Android App
 
 on:
-  push:
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+**'
-    branches:
-      - master
+  workflow_dispatch:
 
 jobs:
   build:
