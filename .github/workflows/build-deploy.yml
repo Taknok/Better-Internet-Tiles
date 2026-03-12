@@ -1,6 +1,11 @@
 name: Build and Sign Android App
 
 on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+**'
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
@@ -25,27 +30,36 @@ jobs:
       - name: Build Github Release
         run: ./gradlew assembleGithubRelease
 
-      - name: Sign Github APK
-        id: sign_apk
-        uses: r0adkll/sign-android-release@v1
-        with:
-          releaseDirectory: app/build/outputs/apk/github/release
-          signingKeyBase64: ${{ secrets.KEY_STORE }}
-          alias: ${{ secrets.KEY_STORE_ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
+      - name: Prepare Signing
+        run: |
+          echo "${{ secrets.KEY_STORE }}" | base64 --decode > release.jks
+
+      - name: Sign APK
+        run: |
+          APK_PATH=$(find app/build/outputs/apk/github/release -name "*.apk" | head -n 1)
+          # Get build-tools path
+          BUILD_TOOLS_PATH=$(ls -d $ANDROID_HOME/build-tools/* | tail -1)
+          
+          # Zipalign the APK
+          $BUILD_TOOLS_PATH/zipalign -v 4 "$APK_PATH" app-signed-aligned.apk
+          
+          # Sign the APK
+          $BUILD_TOOLS_PATH/apksigner sign --ks release.jks \
+            --ks-key-alias "${{ secrets.KEY_STORE_ALIAS }}" \
+            --ks-pass pass:"${{ secrets.KEY_STORE_PASSWORD }}" \
+            --key-pass pass:"${{ secrets.KEY_PASSWORD }}" \
+            --out better-internet-tiles-signed.apk app-signed-aligned.apk
 
       - name: Upload Signed APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: better-internet-tiles-apk
-          path: ${{ steps.sign_apk.outputs.signedReleaseFile }}
+          path: better-internet-tiles-signed.apk
 
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            ${{ steps.sign_apk.outputs.signedReleaseFile }}
+          files: better-internet-tiles-signed.apk
           prerelease: ${{ contains(github.ref, 'alpha') || contains(github.ref, 'beta') }}
           generate_release_notes: true
