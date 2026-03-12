@@ -40,7 +40,7 @@ android {
         github {
             dimension "distribution"
             versionNameSuffix "-github"
-            ext.useGoogleGcm = true
+            ext.useGoogleGcm = false
         }
         fdroid {
             dimension "distribution"
