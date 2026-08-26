@@ -35,7 +35,18 @@ object ShizukuUtil {
                 .daemon(false)
                 .processNameSuffix("privileged")
                 .debuggable(BuildConfig.DEBUG)
+                .version(BuildConfig.VERSION_CODE) // Use version code to force refresh on update
             Shizuku.bindUserService(args, userServiceConnection)
+        }
+    }
+
+    fun unbindUserService() {
+        val args = Shizuku.UserServiceArgs(ComponentName(BuildConfig.APPLICATION_ID, UserService::class.java.name))
+            .processNameSuffix("privileged")
+        try {
+            Shizuku.unbindUserService(args, userServiceConnection, true)
+        } catch (e: Exception) {
+            // Service might not be bound
         }
     }
 
