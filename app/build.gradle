@@ -1,6 +1,7 @@
 plugins {
     id "com.android.application"
     id "kotlin-android"
+    id "kotlin-parcelize"
     id "org.jetbrains.kotlin.plugin.compose" version "$kotlin_version"
 }
 
@@ -59,6 +60,7 @@ android {
 
     buildFeatures {
         compose = true
+        aidl = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.11"
@@ -95,7 +97,7 @@ dependencies {
     implementation "com.github.topjohnwu.libsu:core:5.0.3"
 
     // Shizuku
-    def shizuku_version = "12.1.0"
+    def shizuku_version = "13.1.5"
     implementation "dev.rikka.shizuku:api:$shizuku_version"
     implementation "dev.rikka.shizuku:provider:$shizuku_version"
 

@@ -328,26 +328,18 @@ fun executeShellCommand(command: String, context: Context): Shell.Result? {
 }
 
 private fun executeShizukuCommand(command: String): Shell.Result {
-    val process = ShizukuUtil.executeCommand(command)
+    val result = ShizukuUtil.executeCommand(command)
     return object : Shell.Result() {
         override fun getOut(): MutableList<String> {
-            return process
-                .inputStream.bufferedReader()
-                .use { it.readText() }
-                .split("\n".toRegex())
-                .toMutableList()
+            return result.stdout.toMutableList()
         }
 
         override fun getErr(): MutableList<String> {
-            return process
-                .errorStream.bufferedReader()
-                .use { it.readText() }
-                .split("\n".toRegex())
-                .toMutableList()
+            return result.stderr.toMutableList()
         }
 
         override fun getCode(): Int {
-            return process.exitValue()
+            return result.exitCode
         }
     }
 }

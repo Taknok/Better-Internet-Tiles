@@ -14,6 +14,7 @@ import be.casperverswijvelt.unifiedinternetqs.util.reportToAnalytics
 import com.topjohnwu.superuser.Shell
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
+import rikka.shizuku.Shizuku
 
 class TileApplication : Application() {
 
@@ -23,10 +24,35 @@ class TileApplication : Application() {
         const val TAG = "TileApplication"
     }
 
+    private val binderReceivedListener = Shizuku.OnBinderReceivedListener {
+        Log.d(TAG, "Shizuku binder received")
+        val preferences = BITPreferences(this)
+        runBlocking {
+            if (preferences.getShellMethod.first() == ShellMethod.SHIZUKU) {
+                if (!ShizukuUtil.hasShizukuPermission()) {
+                    ShizukuUtil.requestShizukuPermission { granted ->
+                        if (granted) {
+                            ShizukuUtil.bindUserService(this@TileApplication)
+                        }
+                    }
+                } else {
+                    ShizukuUtil.bindUserService(this@TileApplication)
+                }
+            }
+        }
+    }
+
+    private val binderDeadListener = Shizuku.OnBinderDeadListener {
+        Log.d(TAG, "Shizuku binder dead")
+    }
+
     override fun onCreate() {
         super.onCreate()
 
         Log.d(TAG, "Created Tile Application")
+
+        Shizuku.addBinderReceivedListenerSticky(binderReceivedListener)
+        Shizuku.addBinderDeadListener(binderDeadListener)
 
         ExecutorServiceSingleton.getInstance()
 
@@ -47,6 +73,13 @@ class TileApplication : Application() {
                 }
 
                 ShellMethod.SHIZUKU -> {
+                    if (ShizukuUtil.shizukuAvailable && !ShizukuUtil.hasShizukuPermission()) {
+                        ShizukuUtil.requestShizukuPermission { granted ->
+                            if (granted) {
+                                ShizukuUtil.bindUserService(this@TileApplication)
+                            }
+                        }
+                    }
                     reportToAnalytics(this@TileApplication)
                 }
 
