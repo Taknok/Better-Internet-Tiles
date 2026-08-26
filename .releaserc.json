@@ -13,7 +13,10 @@
       "@semantic-release/github",
       {
         "assets": [
-          {"path": "better-internet-tiles-signed.apk", "label": "BetterInternetTiles-${nextRelease.version}.apk"},
+          {
+            "path": "better-internet-tiles-signed.apk",
+            "label": "BetterInternetTiles-${nextRelease.version}.apk"
+          }
         ]
       }
     ]
