@@ -14,9 +14,9 @@ import be.casperverswijvelt.unifiedinternetqs.TileSyncService
 import be.casperverswijvelt.unifiedinternetqs.data.ShellMethod
 import be.casperverswijvelt.unifiedinternetqs.tiles.NFCTileService
 import be.casperverswijvelt.unifiedinternetqs.util.AlertDialogData
-import be.casperverswijvelt.unifiedinternetqs.util.ShizukuUtil
 import be.casperverswijvelt.unifiedinternetqs.util.executeShellCommandAsync
 import be.casperverswijvelt.unifiedinternetqs.util.getNFCEnabled
+import be.casperverswijvelt.unifiedinternetqs.util.hasWriteSecureSettingsPermission
 import kotlinx.coroutines.Runnable
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
@@ -90,21 +90,14 @@ class NFCTileBehaviour(
     private fun toggleNFC() {
 
         val nfcEnabled = getNFCEnabled(context)
-        val shellMethod = runBlocking {
-            preferences.getShellMethod.first()
-        }
         val adapter = NfcAdapter.getDefaultAdapter(context)
         
-        if (shellMethod == ShellMethod.SHIZUKU && !ShizukuUtil.hasWriteSecureSettingsPermission(context)) {
-            Toast.makeText(context, R.string.write_secure_settings_required, Toast.LENGTH_LONG).show()
-            updateTile()
-            return
-        }
+        val hasPermission = hasWriteSecureSettingsPermission(context)
 
         if (nfcEnabled || TileSyncService.isTurningOnNFC) {
             TileSyncService.isTurningOnNFC = false
             TileSyncService.isTurningOffNFC = true
-            if (shellMethod == ShellMethod.SHIZUKU) {
+            if (hasPermission) {
                 NfcAdapter::class.java.getMethod("disable").invoke(adapter)
             } else {
                 executeShellCommandAsync("svc nfc disable", context) {
@@ -114,7 +107,7 @@ class NFCTileBehaviour(
         } else {
             TileSyncService.isTurningOnNFC = true
             TileSyncService.isTurningOffNFC = false
-            if (shellMethod == ShellMethod.SHIZUKU) {
+            if (hasPermission) {
                 NfcAdapter::class.java.getMethod("enable").invoke(adapter)
             } else {
                 executeShellCommandAsync("svc nfc enable", context) {

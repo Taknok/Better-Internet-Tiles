@@ -28,7 +28,9 @@ import be.casperverswijvelt.unifiedinternetqs.ui.components.LargeTopBarPage
 import be.casperverswijvelt.unifiedinternetqs.ui.components.NavRoute
 import be.casperverswijvelt.unifiedinternetqs.ui.components.PreferenceEntry
 import be.casperverswijvelt.unifiedinternetqs.ui.components.TogglePreferenceEntry
-import be.casperverswijvelt.unifiedinternetqs.util.ShizukuUtil
+import be.casperverswijvelt.unifiedinternetqs.util.enforceWriteSecureSettingsPermission
+import be.casperverswijvelt.unifiedinternetqs.util.hasWriteSecureSettingsPermission
+import be.casperverswijvelt.unifiedinternetqs.util.revokeWriteSecureSettingsPermission
 import kotlinx.coroutines.launch
 
 @Composable
@@ -58,7 +60,7 @@ fun BaseSettings(
     val coroutineScope = rememberCoroutineScope()
     
     var hasWriteSecureSettings by remember {
-        mutableStateOf(ShizukuUtil.hasWriteSecureSettingsPermission(context))
+        mutableStateOf(hasWriteSecureSettingsPermission(context))
     }
 
     LargeTopBarPage(
@@ -118,12 +120,12 @@ fun BaseSettings(
         ) { enabled ->
             coroutineScope.launch {
                 if (enabled) {
-                    ShizukuUtil.enforceWriteSecureSettingsPermission()
+                    enforceWriteSecureSettingsPermission(context)
                 } else {
-                    ShizukuUtil.revokeWriteSecureSettingsPermission()
+                    revokeWriteSecureSettingsPermission(context)
                 }
                 // Re-check permission status
-                hasWriteSecureSettings = ShizukuUtil.hasWriteSecureSettingsPermission(context)
+                hasWriteSecureSettings = hasWriteSecureSettingsPermission(context)
                 
                 if (enabled && hasWriteSecureSettings) {
                     Toast.makeText(context, R.string.permission_granted, Toast.LENGTH_SHORT).show()

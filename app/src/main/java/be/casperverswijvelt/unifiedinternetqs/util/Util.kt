@@ -375,6 +375,18 @@ fun hasShellAccess(context: Context): Boolean {
     }
 }
 
+fun hasWriteSecureSettingsPermission(context: Context): Boolean {
+    return context.checkSelfPermission(Manifest.permission.WRITE_SECURE_SETTINGS) == PackageManager.PERMISSION_GRANTED
+}
+
+fun enforceWriteSecureSettingsPermission(context: Context) {
+    executeShellCommand("pm grant ${BuildConfig.APPLICATION_ID} android.permission.WRITE_SECURE_SETTINGS", context)
+}
+
+fun revokeWriteSecureSettingsPermission(context: Context) {
+    executeShellCommand("pm revoke ${BuildConfig.APPLICATION_ID} android.permission.WRITE_SECURE_SETTINGS", context)
+}
+
 // Analytics
 
 class Analytics {

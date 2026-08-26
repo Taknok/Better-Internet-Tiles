@@ -65,6 +65,7 @@ import be.casperverswijvelt.unifiedinternetqs.ui.components.AlertDialog
 import be.casperverswijvelt.unifiedinternetqs.ui.components.OnLifecycleEvent
 import be.casperverswijvelt.unifiedinternetqs.util.AlertDialogData
 import be.casperverswijvelt.unifiedinternetqs.util.ShizukuUtil
+import be.casperverswijvelt.unifiedinternetqs.util.enforceWriteSecureSettingsPermission
 import com.topjohnwu.superuser.Shell
 import kotlinx.coroutines.launch
 
@@ -152,7 +153,7 @@ fun ShellMethodPage(
                                     ShizukuUtil.requestShizukuPermission {
                                         afterPermissionRequested(method)
                                     }
-                                    ShizukuUtil.enforceWriteSecureSettingsPermission()
+                                    enforceWriteSecureSettingsPermission(context)
                                 }
                                 else -> {}
                             }
