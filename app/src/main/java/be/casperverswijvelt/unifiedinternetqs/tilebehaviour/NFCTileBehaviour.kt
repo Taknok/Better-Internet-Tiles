@@ -8,11 +8,13 @@ import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import android.util.Log
+import android.widget.Toast
 import be.casperverswijvelt.unifiedinternetqs.R
 import be.casperverswijvelt.unifiedinternetqs.TileSyncService
 import be.casperverswijvelt.unifiedinternetqs.data.ShellMethod
 import be.casperverswijvelt.unifiedinternetqs.tiles.NFCTileService
 import be.casperverswijvelt.unifiedinternetqs.util.AlertDialogData
+import be.casperverswijvelt.unifiedinternetqs.util.ShizukuUtil
 import be.casperverswijvelt.unifiedinternetqs.util.executeShellCommandAsync
 import be.casperverswijvelt.unifiedinternetqs.util.getNFCEnabled
 import kotlinx.coroutines.Runnable
@@ -92,6 +94,12 @@ class NFCTileBehaviour(
             preferences.getShellMethod.first()
         }
         val adapter = NfcAdapter.getDefaultAdapter(context)
+        
+        if (shellMethod == ShellMethod.SHIZUKU && !ShizukuUtil.hasWriteSecureSettingsPermission(context)) {
+            Toast.makeText(context, R.string.write_secure_settings_required, Toast.LENGTH_LONG).show()
+            updateTile()
+            return
+        }
 
         if (nfcEnabled || TileSyncService.isTurningOnNFC) {
             TileSyncService.isTurningOnNFC = false

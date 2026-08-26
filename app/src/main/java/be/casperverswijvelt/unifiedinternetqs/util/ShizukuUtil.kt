@@ -86,6 +86,14 @@ object ShizukuUtil {
         executeCommand("pm grant ${BuildConfig.APPLICATION_ID} android.permission.WRITE_SECURE_SETTINGS")
     }
 
+    fun revokeWriteSecureSettingsPermission() {
+        executeCommand("pm revoke ${BuildConfig.APPLICATION_ID} android.permission.WRITE_SECURE_SETTINGS")
+    }
+
+    fun hasWriteSecureSettingsPermission(context: Context): Boolean {
+        return context.checkSelfPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) == PackageManager.PERMISSION_GRANTED
+    }
+
     fun executeCommand(command: String): CommandResult {
         return try {
             userService?.executeCommand(command) ?: CommandResult(-1, emptyList(), listOf("UserService not connected"))

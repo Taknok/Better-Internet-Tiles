@@ -80,4 +80,9 @@
     <string name="hide_wifi_name_description">Setting applies to both Wi-Fi and Internet tiles</string>
     <string name="behaviour">Behaviour</string>
     <string name="look">Look</string>
+    <string name="write_secure_settings_title">Write Secure Settings</string>
+    <string name="write_secure_settings_summary">Allow the app to toggle system settings like NFC. Required for Shizuku method.</string>
+    <string name="permission_granted">Permission granted</string>
+    <string name="permission_revoked">Permission revoked</string>
+    <string name="write_secure_settings_required">Write Secure Settings permission is required for this tile to work.</string>
 </resources>

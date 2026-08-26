@@ -1,17 +1,23 @@
 package be.casperverswijvelt.unifiedinternetqs.ui.pages
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
+import android.widget.Toast
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Lock
+import androidx.compose.material.icons.outlined.Shield
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
@@ -22,6 +28,7 @@ import be.casperverswijvelt.unifiedinternetqs.ui.components.LargeTopBarPage
 import be.casperverswijvelt.unifiedinternetqs.ui.components.NavRoute
 import be.casperverswijvelt.unifiedinternetqs.ui.components.PreferenceEntry
 import be.casperverswijvelt.unifiedinternetqs.ui.components.TogglePreferenceEntry
+import be.casperverswijvelt.unifiedinternetqs.util.ShizukuUtil
 import kotlinx.coroutines.launch
 
 @Composable
@@ -49,6 +56,11 @@ fun BaseSettings(
     val context = LocalContext.current
     val dataStore = BITPreferences(context)
     val coroutineScope = rememberCoroutineScope()
+    
+    var hasWriteSecureSettings by remember {
+        mutableStateOf(ShizukuUtil.hasWriteSecureSettingsPermission(context))
+    }
+
     LargeTopBarPage(
         title = stringResource(R.string.settings)
     ) {
@@ -94,6 +106,31 @@ fun BaseSettings(
             subTitle = stringResource(shellMethod.nameResource)
         ) {
             onShellMethodClicked()
+        }
+
+        TogglePreferenceEntry(
+            icon = {
+                Icon(Icons.Outlined.Shield, "shield")
+            },
+            title = stringResource(R.string.write_secure_settings_title),
+            subTitle = stringResource(R.string.write_secure_settings_summary),
+            checked = hasWriteSecureSettings
+        ) { enabled ->
+            coroutineScope.launch {
+                if (enabled) {
+                    ShizukuUtil.enforceWriteSecureSettingsPermission()
+                } else {
+                    ShizukuUtil.revokeWriteSecureSettingsPermission()
+                }
+                // Re-check permission status
+                hasWriteSecureSettings = ShizukuUtil.hasWriteSecureSettingsPermission(context)
+                
+                if (enabled && hasWriteSecureSettings) {
+                    Toast.makeText(context, R.string.permission_granted, Toast.LENGTH_SHORT).show()
+                } else if (!enabled && !hasWriteSecureSettings) {
+                    Toast.makeText(context, R.string.permission_revoked, Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 }
