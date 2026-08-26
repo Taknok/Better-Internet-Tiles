@@ -1,0 +1,21 @@
+{
+  "branches": ["master", "main"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "./gradlew assembleGithubRelease assembleFdroidRelease -PversionName=${nextRelease.version} && bash scripts/sign-apks.sh"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {"path": "better-internet-tiles-signed.apk", "label": "BetterInternetTiles-${nextRelease.version}.apk"},
+        ]
+      }
+    ]
+  ]
+}
