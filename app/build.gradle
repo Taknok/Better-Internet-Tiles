@@ -5,10 +5,6 @@ plugins {
     id "org.jetbrains.kotlin.plugin.compose" version "$kotlin_version"
 }
 
-ext {
-    useGoogleGcm = true
-}
-
 android {
 
     defaultConfig {
@@ -33,20 +29,13 @@ android {
     }
     flavorDimensions = ["distribution"]
     productFlavors {
-        playstore {
-            dimension "distribution"
-            versionNameSuffix "-playstore"
-            ext.useGoogleGcm = true
-        }
         github {
             dimension "distribution"
             versionNameSuffix "-github"
-            ext.useGoogleGcm = false
         }
         fdroid {
             dimension "distribution"
             versionNameSuffix "-fdroid"
-            ext.useGoogleGcm = false
         }
     }
     compileOptions {
@@ -100,24 +89,10 @@ dependencies {
     def shizuku_version = "13.1.5"
     implementation "dev.rikka.shizuku:api:$shizuku_version"
     implementation "dev.rikka.shizuku:provider:$shizuku_version"
-
-    // Firebase Analytics
-    githubImplementation "com.google.firebase:firebase-crashlytics-ktx:19.4.3"
-    playstoreImplementation "com.google.firebase:firebase-crashlytics-ktx:19.4.3"
 }
 
 configurations {
     configureEach {
         exclude group: "androidx.lifecycle", module: "lifecycle-viewmodel-ktx"
-    }
-}
-
-android.productFlavors.each { flavor ->
-    {
-        if (getGradle().getStartParameter().getTaskRequests().toString().toLowerCase().contains(flavor.name) && flavor.ext.useGoogleGcm) {
-            println("Building flavor with Google GCM [${flavor.name}] - applying plugin")
-            apply plugin: "com.google.gms.google-services"
-            apply plugin: "com.google.firebase.crashlytics"
-        }
     }
 }
