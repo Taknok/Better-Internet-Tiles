@@ -304,31 +304,52 @@ fun executeShellCommand(command: String, context: Context): Shell.Result? {
          preferences.getShellMethod.first()
     }
 
-    when (shellMethod) {
+    Log.d(TAG, "Executing command: $command using method: $shellMethod")
+
+    val result = when (shellMethod) {
         ShellMethod.ROOT -> {
             if (Shell.isAppGrantedRoot() == true) {
-                return Shell.cmd(command).exec()
+                Shell.cmd(command).exec()
+            } else {
+                Log.w(TAG, "Root requested but not granted")
+                null
             }
         }
         ShellMethod.SHIZUKU -> {
             if (ShizukuUtil.hasShizukuPermission()) {
-                return executeShizukuCommand(command)
+                executeShizukuCommand(command)
+            } else {
+                Log.w(TAG, "Shizuku requested but permission not granted")
+                null
             }
         }
         ShellMethod.AUTO -> {
             if (Shell.isAppGrantedRoot() == true) {
-                return Shell.cmd(command).exec()
+                Log.d(TAG, "Auto: using Root")
+                Shell.cmd(command).exec()
             } else if (ShizukuUtil.hasShizukuPermission()) {
-                return executeShizukuCommand(command)
+                Log.d(TAG, "Auto: using Shizuku")
+                executeShizukuCommand(command)
+            } else {
+                Log.w(TAG, "Auto: No shell access available")
+                null
             }
         }
     }
 
-    return null
+    if (result != null) {
+        Log.d(TAG, "Command result: code=${result.code}, out=${result.out}, err=${result.err}")
+    } else {
+        Log.e(TAG, "Command execution failed (result is null)")
+    }
+
+    return result
 }
 
 private fun executeShizukuCommand(command: String): Shell.Result {
+    Log.d(TAG, "executeShizukuCommand: $command")
     val result = ShizukuUtil.executeCommand(command)
+    Log.d(TAG, "executeShizukuCommand result: code=${result.exitCode}")
     return object : Shell.Result() {
         override fun getOut(): MutableList<String> {
             return result.stdout.toMutableList()

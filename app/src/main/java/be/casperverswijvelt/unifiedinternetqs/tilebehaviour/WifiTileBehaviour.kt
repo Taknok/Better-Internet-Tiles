@@ -106,20 +106,25 @@ class WifiTileBehaviour(
     private fun toggleWifi() {
 
         val wifiEnabled = getWifiEnabled(context)
+        log("toggleWifi: current state=$wifiEnabled")
 
         if (wifiEnabled || TileSyncService.isTurningOnWifi) {
+            log("Disabling Wifi")
             TileSyncService.isTurningOnWifi = false
             TileSyncService.isTurningOffWifi = true
             executeShellCommandAsync("svc wifi disable", context) {
+                log("Disable Wifi result: success=${it?.isSuccess}, code=${it?.code}")
                 if (it?.isSuccess != true) {
                     TileSyncService.isTurningOffWifi = false
                 }
                 updateTile()
             }
         } else {
+            log("Enabling Wifi")
             TileSyncService.isTurningOnWifi = true
             TileSyncService.isTurningOffWifi = false
             executeShellCommandAsync("svc wifi enable", context) {
+                log("Enable Wifi result: success=${it?.isSuccess}, code=${it?.code}")
                 if (it?.isSuccess != true) {
                     TileSyncService.isTurningOnWifi = false
                 }

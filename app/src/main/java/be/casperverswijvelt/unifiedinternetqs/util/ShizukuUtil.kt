@@ -4,6 +4,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.ServiceConnection
 import android.content.pm.PackageManager
+import android.util.Log
 import android.os.IBinder
 import be.casperverswijvelt.unifiedinternetqs.BuildConfig
 import be.casperverswijvelt.tiles.shizuku.CommandResult
@@ -94,9 +95,18 @@ object ShizukuUtil {
     }
 
     fun executeCommand(command: String): CommandResult {
+        Log.d("ShizukuUtil", "Executing command via UserService: $command")
         return try {
-            userService?.executeCommand(command) ?: CommandResult(-1, emptyList(), listOf("UserService not connected"))
+            val res = userService?.executeCommand(command) 
+            if (res == null) {
+                Log.e("ShizukuUtil", "UserService is not connected or returned null")
+                CommandResult(-1, emptyList(), listOf("UserService not connected"))
+            } else {
+                Log.d("ShizukuUtil", "UserService result: ${res.exitCode}")
+                res
+            }
         } catch (e: Exception) {
+            Log.e("ShizukuUtil", "Error calling UserService: ${e.message}", e)
             CommandResult(-1, emptyList(), listOf(e.message ?: "Unknown error"))
         }
     }

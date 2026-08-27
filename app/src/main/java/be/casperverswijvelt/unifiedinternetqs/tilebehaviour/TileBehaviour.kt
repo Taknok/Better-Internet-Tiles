@@ -55,7 +55,9 @@ abstract class TileBehaviour(
     abstract fun onClick()
 
     protected fun checkShellAccess (): Boolean {
-        if (!hasShellAccess(context)) {
+        val hasAccess = hasShellAccess(context)
+        android.util.Log.d("TileBehaviour", "checkShellAccess for $tileName: $hasAccess")
+        if (!hasAccess) {
 
             // Either root or Shizuku access is needed to enable/disable a tile.
             //  There is currently no other way to do this, so this functionality will not work
