@@ -132,7 +132,7 @@ enum class ShellMethod(
     val isGranted: () -> Boolean = { false },
     val alertDialog: AlertDialogData? = null
 ) {
-    ROOT(
+     ROOT(
         method = "root",
         nameResource = R.string.root,
         descriptionResource = R.string.root_description,

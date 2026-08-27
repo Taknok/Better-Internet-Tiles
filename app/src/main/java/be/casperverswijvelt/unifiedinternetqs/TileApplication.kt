@@ -8,7 +8,6 @@ import be.casperverswijvelt.unifiedinternetqs.data.BITPreferences
 import be.casperverswijvelt.unifiedinternetqs.data.ShellMethod
 import be.casperverswijvelt.unifiedinternetqs.util.ExecutorServiceSingleton
 import be.casperverswijvelt.unifiedinternetqs.util.ShizukuUtil
-import be.casperverswijvelt.unifiedinternetqs.util.reportToAnalytics
 import com.topjohnwu.superuser.Shell
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
@@ -61,7 +60,6 @@ class TileApplication : Application() {
             when (preferences.getShellMethod.first()) {
                 ShellMethod.ROOT -> {
                     Shell.getShell {
-                        reportToAnalytics(this@TileApplication)
                     }
                 }
 
@@ -73,7 +71,6 @@ class TileApplication : Application() {
                             }
                         }
                     }
-                    reportToAnalytics(this@TileApplication)
                 }
 
                 ShellMethod.AUTO -> {
@@ -89,8 +86,6 @@ class TileApplication : Application() {
                                 preferences.setShellMethod(ShellMethod.SHIZUKU)
                             }
                         }
-
-                        reportToAnalytics(this@TileApplication)
                     }
                 }
             }
