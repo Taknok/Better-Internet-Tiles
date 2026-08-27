@@ -27,17 +27,7 @@ android {
             ext.enableCrashlytics = false
         }
     }
-    flavorDimensions = ["distribution"]
-    productFlavors {
-        github {
-            dimension "distribution"
-            versionNameSuffix "-github"
-        }
-        fdroid {
-            dimension "distribution"
-            versionNameSuffix "-fdroid"
-        }
-    }
+    
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11

@@ -1,16 +1,16 @@
 #!/bin/bash
-set -euo pipefail
+set -e
 
 # Decrypt keystore
 echo "$KEY_STORE" | base64 --decode > release.jks
 
 # Find APK
-APK_PATH=$(find app/build/outputs/apk/github/release -type f -name "*.apk" | head -n 1)
+APK_PATH=$(find app/build/outputs/apk/release -type f -name "*.apk" | head -n 1)
 
 if [ -z "$APK_PATH" ]; then
-  echo "ERROR: No GitHub release APK found."
-  echo "Contents of app/build/outputs/apk/github/release:"
-  find app/build/outputs/apk/github/release -maxdepth 2 -type f -print || true
+  echo "ERROR: No release APK found."
+  echo "Contents of app/build/outputs/apk/release:"
+  find app/build/outputs/apk/release -maxdepth 2 -type f -print || true
   exit 1
 fi
 
@@ -37,6 +37,7 @@ BUILD_TOOLS_PATH=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
 "$BUILD_TOOLS_PATH/apksigner" verify --verbose better-internet-tiles-signed.apk
 
 # Cleanup
-rm -f release.jks app-signed-aligned.apk
+rm -f release.jks
+rm *-aligned.apk
 
 echo "Signed APK created: better-internet-tiles-signed.apk"

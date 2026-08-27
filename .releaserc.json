@@ -6,7 +6,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "./gradlew assembleGithubRelease assembleFdroidRelease -PversionName=${nextRelease.version} && bash scripts/sign-apks.sh"
+        "prepareCmd": "./gradlew assembleRelease -PversionName=${nextRelease.version} && bash scripts/sign-apks.sh"
       }
     ],
     [
