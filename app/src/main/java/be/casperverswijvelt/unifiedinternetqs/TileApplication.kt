@@ -8,8 +8,6 @@ import be.casperverswijvelt.unifiedinternetqs.data.BITPreferences
 import be.casperverswijvelt.unifiedinternetqs.data.ShellMethod
 import be.casperverswijvelt.unifiedinternetqs.util.ExecutorServiceSingleton
 import be.casperverswijvelt.unifiedinternetqs.util.ShizukuUtil
-import be.casperverswijvelt.unifiedinternetqs.util.getInstallId
-import be.casperverswijvelt.unifiedinternetqs.util.initializeFirebase
 import be.casperverswijvelt.unifiedinternetqs.util.reportToAnalytics
 import com.topjohnwu.superuser.Shell
 import kotlinx.coroutines.flow.first
@@ -55,11 +53,6 @@ class TileApplication : Application() {
         Shizuku.addBinderDeadListener(binderDeadListener)
 
         ExecutorServiceSingleton.getInstance()
-
-        initializeFirebase(
-            this,
-            getInstallId(this)
-        )
 
         createNotificationChannel()
 
