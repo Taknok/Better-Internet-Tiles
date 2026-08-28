@@ -6,7 +6,7 @@ echo "$KEY_STORE" | base64 --decode > release.jks
 
 # Find APK in the whole outputs/apk directory
 # We look for any APK that isn't already signed or aligned by us
-APK_PATH=$(find app/build/outputs/apk -type f -name "*.apk" | grep -v "signed" | grep -v "aligned" | head -n 1)
+APK_PATH=$(find app/build/outputs/apk -type f -name "*-unsigned.apk" | head -n 1)
 
 if [ -z "$APK_PATH" ]; then
   echo "ERROR: No APK found in app/build/outputs/apk."
