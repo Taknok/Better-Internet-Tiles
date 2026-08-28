@@ -4,13 +4,14 @@ set -e
 # Decrypt keystore
 echo "$KEY_STORE" | base64 --decode > release.jks
 
-# Find APK
-APK_PATH=$(find app/build/outputs/apk/release -type f -name "*.apk" | head -n 1)
+# Find APK in the whole outputs/apk directory
+# We look for any APK that isn't already signed or aligned by us
+APK_PATH=$(find app/build/outputs/apk -type f -name "*.apk" | grep -v "signed" | grep -v "aligned" | head -n 1)
 
 if [ -z "$APK_PATH" ]; then
-  echo "ERROR: No release APK found."
-  echo "Contents of app/build/outputs/apk/release:"
-  find app/build/outputs/apk/release -maxdepth 2 -type f -print || true
+  echo "ERROR: No APK found in app/build/outputs/apk."
+  echo "Contents of app/build/outputs/apk:"
+  find app/build/outputs/apk -maxdepth 3 -type f -print || true
   exit 1
 fi
 
@@ -25,6 +26,8 @@ BUILD_TOOLS_PATH=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
   app-signed-aligned.apk
 
 # Sign
+# We use the same production keystore for both release and prerelease (debug branch)
+# as per common practice for GitHub releases to allow easy updates.
 "$BUILD_TOOLS_PATH/apksigner" sign \
   --ks release.jks \
   --ks-key-alias "$KEY_STORE_ALIAS" \
