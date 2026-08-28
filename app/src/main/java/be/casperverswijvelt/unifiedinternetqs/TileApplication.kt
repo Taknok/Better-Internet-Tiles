@@ -9,8 +9,9 @@ import be.casperverswijvelt.unifiedinternetqs.data.ShellMethod
 import be.casperverswijvelt.unifiedinternetqs.util.ExecutorServiceSingleton
 import be.casperverswijvelt.unifiedinternetqs.util.ShizukuUtil
 import com.topjohnwu.superuser.Shell
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.launch
 import rikka.shizuku.Shizuku
 
 class TileApplication : Application() {
@@ -21,10 +22,12 @@ class TileApplication : Application() {
         const val TAG = "TileApplication"
     }
 
+    private val applicationScope = MainScope()
+
     private val binderReceivedListener = Shizuku.OnBinderReceivedListener {
         Log.d(TAG, "Shizuku binder received")
         val preferences = BITPreferences(this)
-        runBlocking {
+        applicationScope.launch {
             if (preferences.getShellMethod.first() == ShellMethod.SHIZUKU) {
                 if (!ShizukuUtil.hasShizukuPermission()) {
                     ShizukuUtil.requestShizukuPermission { granted ->
@@ -56,7 +59,7 @@ class TileApplication : Application() {
         createNotificationChannel()
 
         val preferences = BITPreferences(this)
-        runBlocking {
+        applicationScope.launch {
             when (preferences.getShellMethod.first()) {
                 ShellMethod.ROOT -> {
                     Shell.getShell {
@@ -78,11 +81,11 @@ class TileApplication : Application() {
                     Shell.getShell {
 
                         if (Shell.isAppGrantedRoot() == true) {
-                            runBlocking {
+                            applicationScope.launch {
                                 preferences.setShellMethod(ShellMethod.ROOT)
                             }
                         } else if (ShizukuUtil.hasShizukuPermission()) {
-                            runBlocking {
+                            applicationScope.launch {
                                 preferences.setShellMethod(ShellMethod.SHIZUKU)
                             }
                         }

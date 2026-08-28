@@ -3,6 +3,10 @@
 <img alt="GitHub" src="https://img.shields.io/github/license/casperverswijvelt/better-internet-tiles"> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/casperverswijvelt/better-internet-tiles"> <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/casperverswijvelt/better-internet-tiles"> <a href="https://hosted.weblate.org/engage/better-internet-tiles/"><img src="https://hosted.weblate.org/widgets/better-internet-tiles/-/translations/svg-badge.svg" alt="Translation status" />
 </a>
 
+> [!IMPORTANT]
+> **📢 Keep Android Open** — Starting September 2026, Google plans to block apps from unregistered developers on all certified Android devices, threatening sideloading and independent app distribution.
+> Learn more at [keepandroidopen.org](https://keepandroidopen.org/)
+
 <a href="https://apps.obtainium.imranr.dev/redirect.html?r=obtainium://add/https://github.com/Taknok/Better-Internet-Tiles"><img src="https://github.com/ImranR98/Obtainium/blob/main/assets/graphics/badge_obtainium.png" alt="Get it on Obtainium" height="80" /></a>
 
 ## About
