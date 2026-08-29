@@ -43,9 +43,6 @@ captures/
 *.jks
 *.keystore
 
-# Google Services (e.g. APIs or Firebase)
-app/google-services.json
-
 # OS-specific files
 .DS_Store
 .DS_Store?

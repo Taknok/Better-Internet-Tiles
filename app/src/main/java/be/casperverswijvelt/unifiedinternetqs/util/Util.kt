@@ -301,7 +301,7 @@ fun executeShellCommand(command: String, context: Context): Shell.Result? {
         }
         ShellMethod.SHIZUKU -> {
             if (ShizukuUtil.hasShizukuPermission()) {
-                executeShizukuCommand(command)
+                executeShizukuCommand(command, context)
             } else {
                 Log.w(TAG, "Shizuku requested but permission not granted")
                 null
@@ -313,7 +313,7 @@ fun executeShellCommand(command: String, context: Context): Shell.Result? {
                 Shell.cmd(command).exec()
             } else if (ShizukuUtil.hasShizukuPermission()) {
                 Log.d(TAG, "Auto: using Shizuku")
-                executeShizukuCommand(command)
+                executeShizukuCommand(command, context)
             } else {
                 Log.w(TAG, "Auto: No shell access available")
                 null
@@ -330,9 +330,9 @@ fun executeShellCommand(command: String, context: Context): Shell.Result? {
     return result
 }
 
-private fun executeShizukuCommand(command: String): Shell.Result {
+private fun executeShizukuCommand(command: String, context: Context): Shell.Result {
     Log.d(TAG, "executeShizukuCommand: $command")
-    val result = ShizukuUtil.executeCommand(command)
+    val result = ShizukuUtil.executeCommand(command, context)
     Log.d(TAG, "executeShizukuCommand result: code=${result.exitCode}")
     return object : Shell.Result() {
         override fun getOut(): MutableList<String> {

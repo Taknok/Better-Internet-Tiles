@@ -17,27 +17,40 @@ import rikka.shizuku.Shizuku
  */
 object ShizukuUtil {
     private var userService: IUserService? = null
+    private var isBinding = false
 
     private val userServiceConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, binder: IBinder?) {
+            isBinding = false
             if (binder != null && binder.isBinderAlive) {
                 userService = IUserService.Stub.asInterface(binder)
+                Log.d("ShizukuUtil", "UserService connected")
             }
         }
 
         override fun onServiceDisconnected(name: ComponentName?) {
+            isBinding = false
             userService = null
+            Log.w("ShizukuUtil", "UserService disconnected")
         }
     }
 
     fun bindUserService(context: Context) {
+        if (isBinding) return
         if (shizukuAvailable && hasShizukuPermission()) {
+            isBinding = true
+            Log.d("ShizukuUtil", "Binding UserService...")
             val args = Shizuku.UserServiceArgs(ComponentName(context, UserService::class.java))
-                .daemon(false)
+                .daemon(true)
                 .processNameSuffix("privileged")
                 .debuggable(BuildConfig.DEBUG)
                 .version(BuildConfig.VERSION_CODE) // Use version code to force refresh on update
-            Shizuku.bindUserService(args, userServiceConnection)
+            try {
+                Shizuku.bindUserService(args, userServiceConnection)
+            } catch (e: Exception) {
+                isBinding = false
+                Log.e("ShizukuUtil", "Error binding UserService: ${e.message}")
+            }
         }
     }
 
@@ -46,6 +59,8 @@ object ShizukuUtil {
             .processNameSuffix("privileged")
         try {
             Shizuku.unbindUserService(args, userServiceConnection, true)
+            userService = null
+            isBinding = false
         } catch (e: Exception) {
             // Service might not be bound
         }
@@ -94,13 +109,37 @@ object ShizukuUtil {
         }
     }
 
-    fun executeCommand(command: String): CommandResult {
+    fun executeCommand(command: String, context: Context): CommandResult {
         Log.d("ShizukuUtil", "Executing command via UserService: $command")
+        
+        var currentService = userService
+        if (currentService == null || !currentService.asBinder().isBinderAlive) {
+            Log.w("ShizukuUtil", "UserService not ready, binding...")
+            bindUserService(context)
+            
+            // Wait up to 3 seconds for binding (called on background thread)
+            var attempts = 30
+            while (userService == null && attempts > 0) {
+                try {
+                    Thread.sleep(100)
+                } catch (e: InterruptedException) {
+                    break
+                }
+                attempts--
+            }
+            currentService = userService
+        }
+
+        if (currentService == null) {
+            Log.e("ShizukuUtil", "UserService is still not connected or returned null")
+            return CommandResult(-1, emptyList(), listOf("UserService not connected"))
+        }
+
         return try {
-            val res = userService?.executeCommand(command) 
+            val res = currentService.executeCommand(command) 
             if (res == null) {
-                Log.e("ShizukuUtil", "UserService is not connected or returned null")
-                CommandResult(-1, emptyList(), listOf("UserService not connected"))
+                Log.e("ShizukuUtil", "UserService returned null result")
+                CommandResult(-1, emptyList(), listOf("UserService returned null"))
             } else {
                 Log.d("ShizukuUtil", "UserService result: ${res.exitCode}")
                 res

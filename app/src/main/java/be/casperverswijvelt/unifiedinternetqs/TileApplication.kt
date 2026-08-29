@@ -67,11 +67,15 @@ class TileApplication : Application() {
                 }
 
                 ShellMethod.SHIZUKU -> {
-                    if (ShizukuUtil.shizukuAvailable && !ShizukuUtil.hasShizukuPermission()) {
-                        ShizukuUtil.requestShizukuPermission { granted ->
-                            if (granted) {
-                                ShizukuUtil.bindUserService(this@TileApplication)
+                    if (ShizukuUtil.shizukuAvailable) {
+                        if (!ShizukuUtil.hasShizukuPermission()) {
+                            ShizukuUtil.requestShizukuPermission { granted ->
+                                if (granted) {
+                                    ShizukuUtil.bindUserService(this@TileApplication)
+                                }
                             }
+                        } else {
+                            ShizukuUtil.bindUserService(this@TileApplication)
                         }
                     }
                 }
