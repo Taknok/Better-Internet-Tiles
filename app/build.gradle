@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId "be.casperverswijvelt.unifiedinternetqs"
-        targetSdkVersion 35
-        compileSdk 35
+        targetSdkVersion 37
+        compileSdk 37
         minSdkVersion 31
         versionCode 3010200
         versionName project.hasProperty("versionName") ? project.property("versionName") : "3.1.2"
