@@ -21,7 +21,7 @@ import be.casperverswijvelt.unifiedinternetqs.BuildConfig
 import be.casperverswijvelt.unifiedinternetqs.R
 import be.casperverswijvelt.unifiedinternetqs.ui.components.PreferenceEntry
 import be.casperverswijvelt.unifiedinternetqs.ui.components.LargeTopBarPage
-import com.jakewharton.processphoenix.ProcessPhoenix
+import be.casperverswijvelt.unifiedinternetqs.util.restartApp
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @ExperimentalMaterial3Api
@@ -79,7 +79,7 @@ fun InfoPage() {
             title = stringResource(R.string.restart_app_title),
             subTitle = stringResource(R.string.restart_app_summary)
         ) {
-            ProcessPhoenix.triggerRebirth(context)
+            restartApp(context)
         }
 
         PreferenceEntry(

@@ -391,3 +391,15 @@ fun enforceWriteSecureSettingsPermission(context: Context) {
 fun revokeWriteSecureSettingsPermission(context: Context) {
     executeShellCommand("pm revoke ${BuildConfig.APPLICATION_ID} android.permission.WRITE_SECURE_SETTINGS", context)
 }
+
+/**
+ * Restarts the application by launching the default activity and killing the current process.
+ */
+fun restartApp(context: Context) {
+    val packageManager = context.packageManager
+    val intent = packageManager.getLaunchIntentForPackage(context.packageName)
+    val componentName = intent?.component
+    val mainIntent = Intent.makeRestartActivityTask(componentName)
+    context.startActivity(mainIntent)
+    Runtime.getRuntime().exit(0)
+}
