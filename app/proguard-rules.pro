@@ -22,3 +22,14 @@
 
 # Fix for https://github.com/CasperVerswijvelt/Better-Internet-Tiles/issues/62
 -dontobfuscate
+
+# Keep Shizuku UserService as it is instantiated via reflection by Shizuku
+-keep class be.casperverswijvelt.tiles.shizuku.UserService {
+    public <init>(...);
+    *;
+}
+
+# Keep AIDL and data classes used for IPC
+-keep class be.casperverswijvelt.tiles.shizuku.IUserService { *; }
+-keep class be.casperverswijvelt.tiles.shizuku.IUserService$Stub { *; }
+-keep class be.casperverswijvelt.tiles.shizuku.CommandResult { *; }
