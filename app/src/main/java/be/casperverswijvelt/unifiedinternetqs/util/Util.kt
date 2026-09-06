@@ -23,11 +23,12 @@ import be.casperverswijvelt.unifiedinternetqs.data.BITPreferences
 import be.casperverswijvelt.unifiedinternetqs.data.ShellMethod
 import be.casperverswijvelt.unifiedinternetqs.ui.MainActivity
 import com.topjohnwu.superuser.Shell
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
 import java.lang.reflect.Method
 
 const val TAG = "Util"
+private val utilityScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
 // Connectivity
 
@@ -282,26 +283,26 @@ fun AlertDialogData.toDialog(context: Context): Dialog {
     return dialog.create()
 }
 
-fun executeShellCommand(command: String, context: Context): Shell.Result? {
+suspend fun executeShellCommand(command: String, context: Context): Shell.Result? {
     val preferences = BITPreferences(context)
-    val shellMethod = runBlocking {
-         preferences.getShellMethod.first()
-    }
+    val shellMethod = preferences.getShellMethod.first()
 
     Log.d(TAG, "Executing command: $command using method: $shellMethod")
 
     val result = when (shellMethod) {
         ShellMethod.ROOT -> {
-            if (Shell.isAppGrantedRoot() == true) {
-                Shell.cmd(command).exec()
-            } else {
-                Log.w(TAG, "Root requested but not granted")
-                null
+            withContext(Dispatchers.IO) {
+                if (Shell.isAppGrantedRoot() == true) {
+                    Shell.cmd(command).exec()
+                } else {
+                    Log.w(TAG, "Root requested but not granted")
+                    null
+                }
             }
         }
         ShellMethod.SHIZUKU -> {
             if (ShizukuUtil.hasShizukuPermission()) {
-                executeShizukuCommand(command)
+                executeShizukuCommand(command, context)
             } else {
                 Log.w(TAG, "Shizuku requested but permission not granted")
                 null
@@ -310,10 +311,12 @@ fun executeShellCommand(command: String, context: Context): Shell.Result? {
         ShellMethod.AUTO -> {
             if (Shell.isAppGrantedRoot() == true) {
                 Log.d(TAG, "Auto: using Root")
-                Shell.cmd(command).exec()
+                withContext(Dispatchers.IO) {
+                    Shell.cmd(command).exec()
+                }
             } else if (ShizukuUtil.hasShizukuPermission()) {
                 Log.d(TAG, "Auto: using Shizuku")
-                executeShizukuCommand(command)
+                executeShizukuCommand(command, context)
             } else {
                 Log.w(TAG, "Auto: No shell access available")
                 null
@@ -330,9 +333,9 @@ fun executeShellCommand(command: String, context: Context): Shell.Result? {
     return result
 }
 
-private fun executeShizukuCommand(command: String): Shell.Result {
+private suspend fun executeShizukuCommand(command: String, context: Context): Shell.Result {
     Log.d(TAG, "executeShizukuCommand: $command")
-    val result = ShizukuUtil.executeCommand(command)
+    val result = ShizukuUtil.executeCommand(command, context)
     Log.d(TAG, "executeShizukuCommand result: code=${result.exitCode}")
     return object : Shell.Result() {
         override fun getOut(): MutableList<String> {
@@ -354,9 +357,11 @@ fun executeShellCommandAsync(
     context: Context,
     callback: ((Shell.Result?) -> Unit)? = {}
 ) {
-    ExecutorServiceSingleton.getInstance().execute {
+    utilityScope.launch {
         val result = executeShellCommand(command, context)
-        callback?.let { it(result) }
+        withContext(Dispatchers.Main) {
+            callback?.let { it(result) }
+        }
     }
 }
 
@@ -384,10 +389,22 @@ fun hasWriteSecureSettingsPermission(context: Context): Boolean {
     return context.checkSelfPermission(Manifest.permission.WRITE_SECURE_SETTINGS) == PackageManager.PERMISSION_GRANTED
 }
 
-fun enforceWriteSecureSettingsPermission(context: Context) {
+suspend fun enforceWriteSecureSettingsPermission(context: Context) {
     executeShellCommand("pm grant ${BuildConfig.APPLICATION_ID} android.permission.WRITE_SECURE_SETTINGS", context)
 }
 
-fun revokeWriteSecureSettingsPermission(context: Context) {
+suspend fun revokeWriteSecureSettingsPermission(context: Context) {
     executeShellCommand("pm revoke ${BuildConfig.APPLICATION_ID} android.permission.WRITE_SECURE_SETTINGS", context)
+}
+
+/**
+ * Restarts the application by launching the default activity and killing the current process.
+ */
+fun restartApp(context: Context) {
+    val packageManager = context.packageManager
+    val intent = packageManager.getLaunchIntentForPackage(context.packageName)
+    val componentName = intent?.component
+    val mainIntent = Intent.makeRestartActivityTask(componentName)
+    context.startActivity(mainIntent)
+    Runtime.getRuntime().exit(0)
 }

@@ -7,10 +7,10 @@ import android.util.Log
 import be.casperverswijvelt.unifiedinternetqs.data.BITPreferences
 import be.casperverswijvelt.unifiedinternetqs.data.ShellMethod
 import be.casperverswijvelt.unifiedinternetqs.util.ExecutorServiceSingleton
-import be.casperverswijvelt.unifiedinternetqs.util.ShizukuUtil
 import com.topjohnwu.superuser.Shell
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.launch
 import rikka.shizuku.Shizuku
 
 class TileApplication : Application() {
@@ -21,22 +21,10 @@ class TileApplication : Application() {
         const val TAG = "TileApplication"
     }
 
+    private val applicationScope = MainScope()
+
     private val binderReceivedListener = Shizuku.OnBinderReceivedListener {
         Log.d(TAG, "Shizuku binder received")
-        val preferences = BITPreferences(this)
-        runBlocking {
-            if (preferences.getShellMethod.first() == ShellMethod.SHIZUKU) {
-                if (!ShizukuUtil.hasShizukuPermission()) {
-                    ShizukuUtil.requestShizukuPermission { granted ->
-                        if (granted) {
-                            ShizukuUtil.bindUserService(this@TileApplication)
-                        }
-                    }
-                } else {
-                    ShizukuUtil.bindUserService(this@TileApplication)
-                }
-            }
-        }
     }
 
     private val binderDeadListener = Shizuku.OnBinderDeadListener {
@@ -56,38 +44,13 @@ class TileApplication : Application() {
         createNotificationChannel()
 
         val preferences = BITPreferences(this)
-        runBlocking {
+        applicationScope.launch {
             when (preferences.getShellMethod.first()) {
                 ShellMethod.ROOT -> {
                     Shell.getShell {
                     }
                 }
-
-                ShellMethod.SHIZUKU -> {
-                    if (ShizukuUtil.shizukuAvailable && !ShizukuUtil.hasShizukuPermission()) {
-                        ShizukuUtil.requestShizukuPermission { granted ->
-                            if (granted) {
-                                ShizukuUtil.bindUserService(this@TileApplication)
-                            }
-                        }
-                    }
-                }
-
-                ShellMethod.AUTO -> {
-                    // Mode AUTO is when user has not explicitly set a
-                    Shell.getShell {
-
-                        if (Shell.isAppGrantedRoot() == true) {
-                            runBlocking {
-                                preferences.setShellMethod(ShellMethod.ROOT)
-                            }
-                        } else if (ShizukuUtil.hasShizukuPermission()) {
-                            runBlocking {
-                                preferences.setShellMethod(ShellMethod.SHIZUKU)
-                            }
-                        }
-                    }
-                }
+                else -> {}
             }
         }
     }

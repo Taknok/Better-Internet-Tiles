@@ -17,7 +17,6 @@ import be.casperverswijvelt.unifiedinternetqs.util.ShizukuUtil
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.runBlocking
 import com.topjohnwu.superuser.Shell
 
 class BITPreferences(private val context: Context) {
@@ -45,10 +44,8 @@ class BITPreferences(private val context: Context) {
         private val KEY_HIDE_WIFI_SSID = booleanPreferencesKey("hide_ssid")
     }
 
-    fun loadPreferences() {
-        runBlocking {
-            context.dataStore.data.first()
-        }
+    suspend fun loadPreferences() {
+        context.dataStore.data.first()
     }
 
     // Require unlock

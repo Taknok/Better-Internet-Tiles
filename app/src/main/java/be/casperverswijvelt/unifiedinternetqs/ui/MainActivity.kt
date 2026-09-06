@@ -39,6 +39,7 @@ import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import be.casperverswijvelt.unifiedinternetqs.R
+import be.casperverswijvelt.unifiedinternetqs.BuildConfig
 import be.casperverswijvelt.unifiedinternetqs.TileApplication
 import be.casperverswijvelt.unifiedinternetqs.TileSyncService
 import be.casperverswijvelt.unifiedinternetqs.data.BITPreferences
@@ -58,6 +59,7 @@ import be.casperverswijvelt.unifiedinternetqs.ui.pages.InfoPage
 import be.casperverswijvelt.unifiedinternetqs.ui.pages.SettingsPage
 import be.casperverswijvelt.unifiedinternetqs.ui.pages.ShellMethodPage
 import be.casperverswijvelt.unifiedinternetqs.util.AlertDialogData
+import org.woheller69.freeDroidWarn.FreeDroidWarn
 
 class MainActivity : ComponentActivity() {
 
@@ -75,6 +77,8 @@ class MainActivity : ComponentActivity() {
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
         WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        FreeDroidWarn.showWarningOnUpgrade(this, BuildConfig.VERSION_CODE)
 
         setContent {
             val darkTheme = isSystemInDarkTheme()

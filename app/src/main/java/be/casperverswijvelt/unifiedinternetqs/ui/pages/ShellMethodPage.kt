@@ -153,7 +153,9 @@ fun ShellMethodPage(
                                     ShizukuUtil.requestShizukuPermission {
                                         afterPermissionRequested(method)
                                     }
-                                    enforceWriteSecureSettingsPermission(context)
+                                    coroutineScope.launch {
+                                        enforceWriteSecureSettingsPermission(context)
+                                    }
                                 }
                                 else -> {}
                             }
