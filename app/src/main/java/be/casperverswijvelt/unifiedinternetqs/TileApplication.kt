@@ -11,7 +11,7 @@ import com.topjohnwu.superuser.Shell
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import rikka.shizuku.Shizuku
+import com.hamondev.shevery.api.SheveryPrivilege
 
 class TileApplication : Application() {
 
@@ -23,21 +23,17 @@ class TileApplication : Application() {
 
     private val applicationScope = MainScope()
 
-    private val binderReceivedListener = Shizuku.OnBinderReceivedListener {
-        Log.d(TAG, "Shizuku binder received")
-    }
-
-    private val binderDeadListener = Shizuku.OnBinderDeadListener {
-        Log.d(TAG, "Shizuku binder dead")
-    }
-
     override fun onCreate() {
         super.onCreate()
 
         Log.d(TAG, "Created Tile Application")
 
-        Shizuku.addBinderReceivedListenerSticky(binderReceivedListener)
-        Shizuku.addBinderDeadListener(binderDeadListener)
+        try {
+            SheveryPrivilege.connectFast(this)
+            Log.d(TAG, "Shevery fast connect initiated")
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to connect to Shevery: ${e.message}", e)
+        }
 
         ExecutorServiceSingleton.getInstance()
 

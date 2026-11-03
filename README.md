@@ -1,6 +1,6 @@
 # Better Internet Tiles
 
-<img alt="GitHub" src="https://img.shields.io/github/license/casperverswijvelt/better-internet-tiles"> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/casperverswijvelt/better-internet-tiles"> <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/casperverswijvelt/better-internet-tiles"> <a href="https://hosted.weblate.org/engage/better-internet-tiles/"><img src="https://hosted.weblate.org/widgets/better-internet-tiles/-/translations/svg-badge.svg" alt="Translation status" />
+<img alt="GitHub" src="https://img.shields.io/github/license/Taknok/better-internet-tiles"> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Taknok/better-internet-tiles"> <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Taknok/better-internet-tiles"> <a href="https://hosted.weblate.org/engage/better-internet-tiles/">
 </a>
 
 > [!IMPORTANT]

@@ -14,6 +14,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://raw.githubusercontent.com/HmnDev-Tech/Shevery-API/maven") }
     }
 }
 include(":app")
