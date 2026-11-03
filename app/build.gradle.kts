@@ -74,10 +74,9 @@ dependencies {
     // SU
     implementation("com.github.topjohnwu.libsu:core:5.0.3")
 
-    // Shizuku
-    val shizuku_version = "13.1.5"
-    implementation("dev.rikka.shizuku:api:$shizuku_version")
-    implementation("dev.rikka.shizuku:provider:$shizuku_version")
+    // Shevery API
+    implementation("com.hamondev.shevery.api:api:14.6.2")
+    implementation("com.hamondev.shevery.api:provider:14.6.2")
 
     // FreeDroidWarn
     implementation("com.github.woheller69:FreeDroidWarn:V1.+")
