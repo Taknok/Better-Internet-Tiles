@@ -37,12 +37,12 @@
     <string name="bluetooth_connect">اتصال بلوتوث</string>
     <string name="bluetooth_connect_description">إذن \'اتصال بلوتوث\' مطلوب لقراءة اسم الجهاز المتصل عبر البلوتوث.</string>
     <plurals name="used_for_tiles">
-        <item quantity="zero">مستخدم لبلاطة %1$s</item>
-        <item quantity="one">مستخدم لبلاطات %1$s</item>
-        <item quantity="two"></item>
-        <item quantity="few"></item>
-        <item quantity="many"></item>
-        <item quantity="other"></item>
+        <item quantity="zero">مستخدم لـ %1$s بلاطات</item>
+        <item quantity="one">مستخدم لبلاطة %1$s</item>
+        <item quantity="two">مستخدم لبلاطتين %1$s</item>
+        <item quantity="few">مستخدم لـ %1$s بلاطات</item>
+        <item quantity="many">مستخدم لـ %1$s بلاطة</item>
+        <item quantity="other">مستخدم لـ %1$s بلاطة</item>
     </plurals>
     <string name="allow_root_access_description">يرجى السماح بالوصول للروت لتطبيق \'بلاطات الإنترنت الأفضل\' في تطبيق إدارة الروت الخاص بك (مثل Magisk Manager)</string>
     <string name="allow_shizuku_access">السماح بالوصول لـ Shizuku</string>
