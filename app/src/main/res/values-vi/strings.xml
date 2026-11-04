@@ -24,10 +24,10 @@
     <string name="xda_title">XDA Developers thread</string>
     <string name="settings">Cài đặt</string>
     <string name="about">Về ứng dụng này</string>
-    <string name="shell_access_not_set_up">Cần quyền root hoặc Shizuku để thay đổi ô này</string>
+    <string name="shell_access_not_set_up">Cần quyền root hoặc Shevery để thay đổi ô này</string>
     <string name="shell_access_required">Yêu cầu truy cập shell</string>
     <string name="hide_service_title">Ẩn</string>
-    <string name="hide_service_description">Thông báo này là để đảm bảo các ô hoạt động chính xác với Shizuku.</string>
+    <string name="hide_service_description">Thông báo này là để đảm bảo các ô hoạt động chính xác với Shevery.</string>
     <string name="toast_foreground_service_error">Không thể bắt đầu foreground service. Hãy liên hệ với nhà phát triển.</string>
     <string name="tile_added_error">Không thể thêm ô</string>
     <string name="tile_added">Đã thêm ô</string>
@@ -49,12 +49,12 @@
     <string name="bluetooth_connect_description">Cần có quyền \'Kết nối bluetooth\' để đọc tên thiết bị đã được kết nối bluetooth.</string>
     <string name="allow_root_access">Cho phép truy cập root</string>
     <string name="allow_root_access_description">Hãy cho phép quyền truy cập root cho ứng dụng \'Better Internet Tiles\' trong ứng dụng quản lý quyền root của bạn (VD: Magisk Manager)</string>
-    <string name="allow_shizuku_access">Cho phép truy cập Shizuku</string>
+    <string name="allow_shizuku_access">Cho phép truy cập Shevery</string>
     <string name="sim_not_available">SIM không khả dụng</string>
     <string name="battery_level">Pin</string>
     <string name="connecting">Đang kết nối…</string>
-    <string name="allow_shizuku_access_description">Hãy đảm bảo rằng \'Better Internet Tiles\' được cấp quyền truy cập vào Shizuku và tiến trình Shizuku đang chạy</string>
-    <string name="shizuku_description">Shizuku cho phép các ứng dụng bình thường sử dụng API hệ thống với các dặc quyền nâng cao bằng cách sử dụng ADB trên những thiết bị chưa được root</string>
+    <string name="allow_shizuku_access_description">Hãy đảm bảo rằng \'Better Internet Tiles\' được cấp quyền truy cập vào Shevery và tiến trình Shevery đang chạy</string>
+    <string name="shizuku_description">Shevery cho phép các ứng dụng bình thường sử dụng API hệ thống với các dặc quyền nâng cao bằng cách sử dụng ADB trên những thiết bị chưa được root</string>
     <string name="root_description">Cách đơn giản nhất để truy xuất shell-level khi thiết bị của bạn đã được root</string>
     <string name="github_title">GitHub repository</string>
 </resources>

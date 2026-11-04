@@ -5,8 +5,8 @@
     <string name="tile_already_added">Dlaždice již byla přidána</string>
     <string name="turning_on">Zapínání…</string>
     <string name="settings">Nastavení</string>
-    <string name="shell_access_not_set_up">Na použití této dlaždice je potřeba root nebo Shizuku</string>
-    <string name="hide_service_description">Tato notifikace zajišťuje správné fungování dlaždic se Shizuku. Klidně ji schovejte.</string>
+    <string name="shell_access_not_set_up">Na použití této dlaždice je potřeba root nebo Shevery</string>
+    <string name="hide_service_description">Tato notifikace zajišťuje správné fungování dlaždic se Shevery. Klidně ji schovejte.</string>
     <string name="toast_foreground_service_error">Nepodařilo se zapnout službu na popředí. Kontaktujte vývojáře.</string>
     <string name="tile_added">Dlaždice přidána</string>
     <string name="internet">Internet</string>
@@ -14,7 +14,7 @@
     <string name="no_service">Žádná služba</string>
     <string name="airplane_mode">Režim letadlo</string>
     <string name="help_translate">Pomoz s překladem aplikace!</string>
-    <string name="shizuku_description">Shizuku umožňuje normálním aplikacím přímo používat systémová API se zvýšenými oprávněními pomocí ADB na nerootovaných zařízeních</string>
+    <string name="shizuku_description">Shevery umožňuje normálním aplikacím přímo používat systémová API se zvýšenými oprávněními pomocí ADB na nerootovaných zařízeních</string>
     <string name="root_description">Nejjednodušší způsob, jak získat přístup na úrovni shellu, je mít na telefonu root</string>
     <string name="auto">Automaticky</string>
     <string name="ok">Ok</string>
@@ -30,7 +30,7 @@
     <string name="not_connected">Odpojeno</string>
     <string name="missing_permissions_description">Některé věci nemusí fungovat podle očekávání. Rozbalte pro více informací.</string>
     <string name="shell_access">Přístup k shellu</string>
-    <string name="shell_access_description">Pro povolení nebo zakázání některých systémových funkcí je potřeba přístup k shellu. K tomu můžete použít buď root, nebo Shizuku.</string>
+    <string name="shell_access_description">Pro povolení nebo zakázání některých systémových funkcí je potřeba přístup k shellu. K tomu můžete použít buď root, nebo Shevery.</string>
     <string name="read_phone_state">Čtení stavu telefonu</string>
     <string name="read_phone_state_description">Oprávnění \'čtení stavu telefonu\' je vyžadováno pro načtení informací o mobilním datovém připojení.</string>
     <string name="bluetooth_connect">Připojení přes Bluetooth</string>
@@ -38,13 +38,14 @@
     <plurals name="used_for_tiles">
         <item quantity="one">Použito u %1$s dlaždice</item>
         <item quantity="few">Použito u %1$s dlaždic</item>
+        <item quantity="many">Použito u %1$s dlaždic</item>
         <item quantity="other">Použito u %1$s dlaždic</item>
     </plurals>
     <string name="allow_root_access">Povolit root přístup</string>
     <string name="allow_root_access_description">Povolte přístup k rootu pro aplikaci \'Better Internet Tiles\' ve vaší aplikaci pro správu rootu (např. Magisk Manager)</string>
-    <string name="allow_shizuku_access">Povolit Shizuku přístup</string>
-    <string name="allow_shizuku_access_description">Ujistěte se, že aplikaci \'Better Internet Tiles\' byla udělena přístupová práva k aplikaci Shizuku a že proces Shizuku běží</string>
-    <string name="auto_start_shizuku_description">Věděli jste, že můžete automaticky spustit Shizuku při startu zařízení, bez potřeby rootu? Podívejte se na $$toto reddit vlákno$$ pro více informací, jak to nastavit.</string>
+    <string name="allow_shizuku_access">Povolit Shevery přístup</string>
+    <string name="allow_shizuku_access_description">Ujistěte se, že aplikaci \'Better Internet Tiles\' byla udělena přístupová práva k aplikaci Shevery a že proces Shevery běží</string>
+    <string name="auto_start_shizuku_description">Věděli jste, že můžete automaticky spustit Shevery při startu zařízení, bez potřeby rootu? Podívejte se na $$toto reddit vlákno$$ pro více informací, jak to nastavit.</string>
     <string name="sim_not_available">SIM není dostupná</string>
     <string name="battery_level">baterie</string>
     <string name="connecting">Připojování…</string>

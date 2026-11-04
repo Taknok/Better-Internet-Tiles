@@ -8,7 +8,7 @@
     <string name="hide_service_title">Skjul meg.</string>
     <string name="restart_app_summary">Er noe rart\? Prøv en omstart av programmet.</string>
     <string name="shell_access_required">Skall-tilgang påkrevd</string>
-    <string name="hide_service_description">Denne merknaden forsikrer at flisene fungerer rett med Shizuku. Du kan skjule den hvis du vil.</string>
+    <string name="hide_service_description">Denne merknaden forsikrer at flisene fungerer rett med Shevery. Du kan skjule den hvis du vil.</string>
     <string name="toast_foreground_service_error">Kunne ikke starte forgrunnstjenesten. Kontakt utvikleren.</string>
     <string name="mobile_data">Mobildata</string>
     <string name="tile_added_error">Kunne ikke legge til flis</string>

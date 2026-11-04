@@ -9,7 +9,7 @@
     <string name="require_unlock_title">ロック解除を要求</string>
     <string name="about">アプリについて</string>
     <string name="shell_access_required">Shell アクセスが必要</string>
-    <string name="hide_service_description">Shizuku を使用してタイルを正常に動作させるための通知です。非表示にしても問題ありません。</string>
+    <string name="hide_service_description">Shevery を使用してタイルを正常に動作させるための通知です。非表示にしても問題ありません。</string>
     <string name="internet">インターネット</string>
     <string name="network_not_available">ネットワーク接続がありません</string>
     <string name="no_service">圏外</string>
@@ -34,7 +34,7 @@
     <string name="ok">OK</string>
     <string name="shell_access">Shell アクセス</string>
     <string name="tile_already_added">タイルはすでに追加されています</string>
-    <string name="shell_access_not_set_up">このタイルを切り替えるには root か Shizuku へのアクセスが必要です</string>
+    <string name="shell_access_not_set_up">このタイルを切り替えるには root か Shevery へのアクセスが必要です</string>
     <string name="missing_permissions">権限が不足しています</string>
     <string name="tile_added">タイルが追加されました</string>
     <string name="home">ホーム</string>
@@ -43,14 +43,14 @@
     <string name="shell_method">Shell メソッド</string>
     <string name="donate">寄付</string>
     <string name="hide_service_title">非表示にする！</string>
-    <string name="allow_shizuku_access">Shizuku アクセスを許可</string>
+    <string name="allow_shizuku_access">Shevery アクセスを許可</string>
     <string name="available_tiles">利用可能なタイル</string>
     <string name="require_unlock_summary">ロック画面でのタイルのアクションを防止します</string>
     <string name="sim_not_available">SIMが挿入されていません</string>
     <string name="use_default">デフォルトを使用</string>
     <string name="donate_summary">寄付を通じてサポートしてください</string>
-    <string name="auto_start_shizuku_description">デバイスの起動時に root 権限なしで Shizuku を実行できることをご存知ですか？設定方法の詳細ついては、$$reddit のスレッド$$ をご覧ください。</string>
-    <string name="allow_shizuku_access_description">「Better Internet Tiles」を Shizuku アプリでアクセスを許可しています。Shizuku のプロセスが実行中か確認してください</string>
+    <string name="auto_start_shizuku_description">デバイスの起動時に root 権限なしで Shevery を実行できることをご存知ですか？設定方法の詳細ついては、$$reddit のスレッド$$ をご覧ください。</string>
+    <string name="allow_shizuku_access_description">「Better Internet Tiles」を Shevery アプリでアクセスを許可しています。Shevery のプロセスが実行中か確認してください</string>
     <string name="visible">表示</string>
     <string name="look">ルック</string>
     <string name="connected">接続済み</string>
@@ -69,8 +69,8 @@
     <string name="bluetooth_connect_description">接続されている Bluetooth デバイス名を読み取るために「Bluetooth の接続」の権限が必要です。</string>
     <string name="good_to_go_description">必要な権限はすべて付与されています。以下の利用可能なタイルをご確認ください！</string>
     <string name="missing_permissions_description">一部は期待通りの動作をしない可能性があります。詳細は展開で確認できます。</string>
-    <string name="shell_access_description">特定のシステム機能を有効化、無効化するにはシェルアクセスが必要です。これを行うには root 権限または Shizuku を使用します。</string>
+    <string name="shell_access_description">特定のシステム機能を有効化、無効化するにはシェルアクセスが必要です。これを行うには root 権限または Shevery を使用します。</string>
     <string name="root_description">デバイスが root 化されている場合、シェルレベルでのアクセスを最も簡単に行う方法です</string>
     <string name="allow_root_access_description">root 管理アプリ (Magisk など) で「Better Internet Tiles」の root アクセスを許可してください</string>
-    <string name="shizuku_description">Shizuku は root 化されていないデバイス上で ADB を使用することで、通常のアプリを昇格した権限でシステム API を直接的に使用する方法です</string>
+    <string name="shizuku_description">Shevery は root 化されていないデバイス上で ADB を使用することで、通常のアプリを昇格した権限でシステム API を直接的に使用する方法です</string>
 </resources>
