@@ -7,7 +7,7 @@
 > **📢 Keep Android Open** — Starting September 2026, Google plans to block apps from unregistered developers on all certified Android devices, threatening sideloading and independent app distribution.
 > Learn more at [keepandroidopen.org](https://keepandroidopen.org/)
 
-<a href="https://apps.obtainium.imranr.dev/redirect.html?r=obtainium://add/https://github.com/Taknok/Better-Internet-Tiles"><img src="https://github.com/ImranR98/Obtainium/blob/main/assets/graphics/badge_obtainium.png" alt="Get it on Obtainium" height="80" /></a>
+<a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/Taknok/Better-Internet-Tiles"><img src="https://github.com/ImranR98/Obtainium/blob/main/assets/graphics/badge_obtainium.png" alt="Get it on Obtainium" height="80" /></a>
 
 ## About
 
