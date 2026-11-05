@@ -68,20 +68,20 @@ android {
 dependencies {
     val kotlin_version: String by rootProject.extra
 
-    implementation("androidx.core:core-ktx:1.19.0")
+    implementation("androidx.core:core-ktx:1.19.1")
     implementation("com.google.android.material:material:1.14.0")
     implementation("androidx.preference:preference-ktx:1.2.1")
 
     // Compose UI
     implementation("androidx.activity:activity-compose:1.13.0")
-    implementation("androidx.compose.animation:animation:1.12.0")
-    implementation("androidx.compose.ui:ui-tooling:1.12.0")
+    implementation("androidx.compose.animation:animation:1.12.1")
+    implementation("androidx.compose.ui:ui-tooling:1.12.1")
     implementation("androidx.compose.material3:material3:1.4.0")
     implementation("androidx.navigation:navigation-compose:2.10.0")
     implementation("androidx.compose.material:material-icons-extended:1.7.8")
 
     // Preferences DataStore
-    implementation("androidx.datastore:datastore-preferences:1.2.1")
+    implementation("androidx.datastore:datastore-preferences:1.3.0")
 
     // SU
     implementation("com.github.topjohnwu.libsu:core:5.0.3")
@@ -91,6 +91,7 @@ dependencies {
     implementation("com.hamondev.shevery.api:provider:14.6.2")
 
     // FreeDroidWarn
+    //noinspection GradleDynamicVersion
     implementation("com.github.woheller69:FreeDroidWarn:V1.+")
 }
 
