@@ -84,7 +84,7 @@ class AirplaneModeTileBehaviour(
             TileSyncService.isTurningOnAirplaneMode = false
             TileSyncService.isTurningOffAirplaneMode = true
             executeShellCommandAsync(
-                "cmd connectivity airplane-mode disable",
+                arrayOf("cmd", "connectivity", "airplane-mode", "disable"),
                 context
             ) {
                 updateTile()
@@ -93,7 +93,7 @@ class AirplaneModeTileBehaviour(
             TileSyncService.isTurningOnAirplaneMode = true
             TileSyncService.isTurningOffAirplaneMode = false
             executeShellCommandAsync(
-                "cmd connectivity airplane-mode enable",
+                arrayOf("cmd", "connectivity", "airplane-mode", "enable"),
                 context
             ) {
                 updateTile()

@@ -157,10 +157,10 @@ class InternetTileBehaviour(
 
         when {
             wifiEnabled -> {
-                executeShellCommandAsync("svc wifi disable", context)
+                executeShellCommandAsync(arrayOf("svc", "wifi", "disable"), context)
 
                 TileSyncService.isTurningOnData = true
-                executeShellCommandAsync("svc data enable", context) {
+                executeShellCommandAsync(arrayOf("svc", "data", "enable"), context) {
                     if (it?.isSuccess != true) {
                         TileSyncService.isTurningOnData = false
                     }
@@ -168,10 +168,10 @@ class InternetTileBehaviour(
                 }
             }
             dataEnabled -> {
-                executeShellCommandAsync("svc data disable", context)
+                executeShellCommandAsync(arrayOf("svc", "data", "disable"), context)
 
                 TileSyncService.isTurningOnWifi = true
-                executeShellCommandAsync("svc wifi enable", context) {
+                executeShellCommandAsync(arrayOf("svc", "wifi", "enable"), context) {
                     if (it?.isSuccess != true) {
                         TileSyncService.isTurningOnWifi = false
                     }
@@ -180,7 +180,7 @@ class InternetTileBehaviour(
             }
             else -> {
                 TileSyncService.isTurningOnWifi = true
-                executeShellCommandAsync("svc wifi enable", context) {
+                executeShellCommandAsync(arrayOf("svc", "wifi", "enable"), context) {
                     if (it?.isSuccess != true) {
                         TileSyncService.isTurningOnWifi = false
                     }

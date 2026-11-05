@@ -100,7 +100,7 @@ class NFCTileBehaviour(
             if (hasPermission) {
                 NfcAdapter::class.java.getMethod("disable").invoke(adapter)
             } else {
-                executeShellCommandAsync("svc nfc disable", context) {
+                executeShellCommandAsync(arrayOf("svc", "nfc", "disable"), context) {
                     updateTile()
                 }
             }
@@ -110,7 +110,7 @@ class NFCTileBehaviour(
             if (hasPermission) {
                 NfcAdapter::class.java.getMethod("enable").invoke(adapter)
             } else {
-                executeShellCommandAsync("svc nfc enable", context) {
+                executeShellCommandAsync(arrayOf("svc", "nfc", "enable"), context) {
                     updateTile()
                 }
             }

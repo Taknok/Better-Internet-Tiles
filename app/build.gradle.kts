@@ -87,8 +87,8 @@ dependencies {
     implementation("com.github.topjohnwu.libsu:core:5.0.3")
 
     // Shevery API
-    implementation("com.hamondev.shevery.api:api:14.6.2")
-    implementation("com.hamondev.shevery.api:provider:14.6.2")
+    implementation("com.hamondev.shevery.api:api:14.6.3")
+    implementation("com.hamondev.shevery.api:provider:14.6.3")
 
     // FreeDroidWarn
     implementation("com.github.woheller69:FreeDroidWarn:V1.+")

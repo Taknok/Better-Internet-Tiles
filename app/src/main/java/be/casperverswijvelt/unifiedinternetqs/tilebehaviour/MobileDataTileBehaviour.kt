@@ -108,13 +108,13 @@ class MobileDataTileBehaviour(
         if (dataEnabled || TileSyncService.isTurningOnData) {
             TileSyncService.isTurningOnData = false
             TileSyncService.isTurningOffData = true
-            executeShellCommandAsync("svc data disable", context) {
+            executeShellCommandAsync(arrayOf("svc", "data", "disable"), context) {
                 updateTile()
             }
         } else {
             TileSyncService.isTurningOnData = true
             TileSyncService.isTurningOffData = false
-            executeShellCommandAsync("svc data enable", context) {
+            executeShellCommandAsync(arrayOf("svc", "data", "enable"), context) {
                 updateTile()
             }
         }

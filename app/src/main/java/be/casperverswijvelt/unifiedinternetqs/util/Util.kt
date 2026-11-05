@@ -87,7 +87,7 @@ fun getConnectedWifiSSID(
 
     if (hasShellAccess(context)) {
         executeShellCommandAsync(
-            "dumpsys netstats | grep -E 'iface=wlan.*(networkId|wifiNetworkKey)'",
+            arrayOf("dumpsys", "netstats", "|", "grep", "-E", "'iface=wlan.*(networkId|wifiNetworkKey)'"),
             context = context
         ) {
             val pattern = "(?<=(networkId|wifiNetworkKey)=\").*?(?=\")".toRegex()
@@ -283,17 +283,18 @@ fun AlertDialogData.toDialog(context: Context): Dialog {
     return dialog.create()
 }
 
-suspend fun executeShellCommand(command: String, context: Context): Shell.Result? {
+suspend fun executeShellCommand(command: Array<String>, context: Context): Shell.Result? {
     val preferences = BITPreferences(context)
     val shellMethod = preferences.getShellMethod.first()
 
-    Log.d(TAG, "Executing command: $command using method: $shellMethod")
+    Log.d(TAG, "Executing command: ${command.contentToString()} using method: $shellMethod")
 
     val result = when (shellMethod) {
         ShellMethod.ROOT -> {
             withContext(Dispatchers.IO) {
                 if (Shell.isAppGrantedRoot() == true) {
-                    Shell.cmd(command).exec()
+                    val cmd = command.joinToString(separator = " ")
+                    Shell.cmd(cmd).exec()
                 } else {
                     Log.w(TAG, "Root requested but not granted")
                     null
@@ -312,10 +313,11 @@ suspend fun executeShellCommand(command: String, context: Context): Shell.Result
             if (Shell.isAppGrantedRoot() == true) {
                 Log.d(TAG, "Auto: using Root")
                 withContext(Dispatchers.IO) {
-                    Shell.cmd(command).exec()
+                    val cmd = command.joinToString(separator = " ")
+                    Shell.cmd(cmd).exec()
                 }
             } else if (ShizukuUtil.hasShizukuPermission()) {
-                Log.d(TAG, "Auto: using Shizuku")
+                Log.d(TAG, "Auto: using Shevery")
                 executeShizukuCommand(command, context)
             } else {
                 Log.w(TAG, "Auto: No shell access available")
@@ -333,8 +335,8 @@ suspend fun executeShellCommand(command: String, context: Context): Shell.Result
     return result
 }
 
-private suspend fun executeShizukuCommand(command: String, context: Context): Shell.Result {
-    Log.d(TAG, "executeShizukuCommand: $command")
+private suspend fun executeShizukuCommand(command: Array<String>, context: Context): Shell.Result {
+    Log.d(TAG, "executeShizukuCommand: ${command.contentToString()}")
     val result = ShizukuUtil.executeCommand(command, context)
     Log.d(TAG, "executeShizukuCommand result: code=${result.exitCode}")
     return object : Shell.Result() {
@@ -353,7 +355,7 @@ private suspend fun executeShizukuCommand(command: String, context: Context): Sh
 }
 
 fun executeShellCommandAsync(
-    command: String,
+    command: Array<String>,
     context: Context,
     callback: ((Shell.Result?) -> Unit)? = {}
 ) {
@@ -390,11 +392,11 @@ fun hasWriteSecureSettingsPermission(context: Context): Boolean {
 }
 
 suspend fun enforceWriteSecureSettingsPermission(context: Context) {
-    executeShellCommand("pm grant ${BuildConfig.APPLICATION_ID} android.permission.WRITE_SECURE_SETTINGS", context)
+    executeShellCommand(arrayOf("pm", "grant", BuildConfig.APPLICATION_ID, "android.permission.WRITE_SECURE_SETTINGS"), context)
 }
 
 suspend fun revokeWriteSecureSettingsPermission(context: Context) {
-    executeShellCommand("pm revoke ${BuildConfig.APPLICATION_ID} android.permission.WRITE_SECURE_SETTINGS", context)
+    executeShellCommand(arrayOf("pm", "revoke", BuildConfig.APPLICATION_ID, "android.permission.WRITE_SECURE_SETTINGS"), context)
 }
 
 /**

@@ -6,6 +6,7 @@ import android.util.Log
 import be.casperverswijvelt.tiles.shizuku.CommandResult
 import com.hamondev.shevery.api.SheveryApiConstants
 import com.hamondev.shevery.api.SheveryPrivilege
+import com.hamondev.shevery.api.SheveryPrivilege.OnPermissionResultListener
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -24,7 +25,7 @@ object ShizukuUtil {
 
     val shizukuAvailable: Boolean
         get() = try {
-            SheveryPrivilege.isGranted() || true
+            SheveryPrivilege.isGranted()
         } catch (e: Exception) {
             false
         }
@@ -53,18 +54,24 @@ object ShizukuUtil {
         }
     }
 
-    suspend fun executeCommand(command: String, context: Context): CommandResult {
+    suspend fun executeCommand(command: Array<String>, context: Context): CommandResult {
         Log.d("ShizukuUtil", "executeCommand via Shevery: $command")
         init(context)
         return withContext(Dispatchers.IO) {
             try {
+                if (!SheveryPrivilege.isGranted()) {
+                    return@withContext CommandResult(-1, emptyList(), listOf("No permission"))
+                }
                 if (!SheveryPrivilege.hasCapability(SheveryApiConstants.CAP_SHELL_EXEC)) {
                     return@withContext CommandResult(-1, emptyList(), listOf("Shevery CAP_SHELL_EXEC capability not available"))
                 }
-                val res = SheveryPrivilege.execFast(arrayOf("sh", "-c", command))
+                Log.d("SheveryUtil", "command: ${command.contentToString()}")
+                val res = SheveryPrivilege.execFast(command)
+                val timedOut = res.timedOut
                 val exitCode = res.exitCode
                 val outputText = res.outputText ?: ""
                 val stdout = outputText.lines()
+                Log.d("ShizukuUtil", "out: $timedOut - $exitCode - $outputText")
                 CommandResult(exitCode, stdout, emptyList())
             } catch (e: Exception) {
                 Log.e("ShizukuUtil", "Shevery remote call failed: ${e.message}", e)
