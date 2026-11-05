@@ -9,6 +9,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -162,10 +163,11 @@ fun LargeTopBarPage(
 @Composable
 fun buttonBackgroundColor(): State<Color> {
     val darkTheme = isSystemInDarkTheme()
-    return object : State<Color> {
-        override val value: Color
-            get() = Color(if (darkTheme) 0x18ffffff else 0x18000000)
-
+    return remember(darkTheme) {
+        object : State<Color> {
+            override val value: Color
+                get() = Color(if (darkTheme) 0x18ffffff else 0x18000000)
+        }
     }
 }
 

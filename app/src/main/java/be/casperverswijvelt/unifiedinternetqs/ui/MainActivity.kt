@@ -235,13 +235,15 @@ fun BottomNavigationBar(
         val currentRoute = navBackStackEntry?.destination?.route
 
         items.forEach { item ->
-            val selected by derivedStateOf {
-                currentRoute
-                    ?.split("/")
-                    ?.getOrNull(0) ==
-                item.route
-                    .split("/")
-                    .getOrNull(0)
+            val selected by remember(currentRoute, item.route) {
+                derivedStateOf {
+                    currentRoute
+                        ?.split("/")
+                        ?.getOrNull(0) ==
+                    item.route
+                        .split("/")
+                        .getOrNull(0)
+                }
             }
             val title = stringResource(item.titleId)
             NavigationBarItem(

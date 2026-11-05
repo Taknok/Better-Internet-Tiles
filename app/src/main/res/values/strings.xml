@@ -41,7 +41,7 @@
     <string name="root" translatable="false">Root</string>
     <string name="root_description">The simplest way to retrieve shell-level access when your phone is rooted</string>
     <string name="auto">Auto</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="use_default">Use default</string>

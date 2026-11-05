@@ -33,7 +33,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -111,12 +112,13 @@ fun TileOverview (
     tileBehaviours: List<TileBehaviour>,
     navController: NavController
 ) {
-    val localConfig = LocalConfiguration.current
-
+    val windowInfo = LocalWindowInfo.current
+    val density = LocalDensity.current
+    val screenWidthDp = with(density) { windowInfo.containerSize.width.toDp().value }
 
     VerticalGrid(
         modifier = modifier,
-        columns = floor(localConfig.screenWidthDp / 200f).toInt(),
+        columns = floor(screenWidthDp / 200f).toInt().coerceAtLeast(1),
         horizontalSpacing = 8.dp,
         verticalSpacing = 20.dp,
         content = tileBehaviours.map {

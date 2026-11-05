@@ -16,6 +16,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.net.Network
 import android.nfc.NfcAdapter
+import android.os.Build
 import android.os.IBinder
 import android.service.quicksettings.TileService
 import android.telephony.ServiceState
@@ -190,7 +191,11 @@ class TileSyncService: Service() {
         )
         mNotificationManager.createNotificationChannel(channel)
         Notification.Builder(this, TileApplication.CHANNEL_ID)
-        startForeground(1, notification)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            startForeground(1, notification, android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
+        } else {
+            startForeground(1, notification)
+        }
         return START_NOT_STICKY
     }
 
