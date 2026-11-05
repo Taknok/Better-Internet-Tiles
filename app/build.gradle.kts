@@ -77,7 +77,7 @@ dependencies {
     implementation("androidx.compose.animation:animation:1.12.1")
     implementation("androidx.compose.ui:ui-tooling:1.12.1")
     implementation("androidx.compose.material3:material3:1.4.0")
-    implementation("androidx.navigation:navigation-compose:2.10.0")
+    implementation("androidx.navigation:navigation-compose:2.10.2")
     implementation("androidx.compose.material:material-icons-extended:1.7.8")
 
     // Preferences DataStore
