@@ -112,8 +112,8 @@ class WifiTileBehaviour(
             log("Disabling Wifi")
             TileSyncService.isTurningOnWifi = false
             TileSyncService.isTurningOffWifi = true
-            executeShellCommandAsync("svc wifi disable", context) {
-                log("Disable Wifi result: success=${it?.isSuccess}, code=${it?.code}")
+            executeShellCommandAsync("cmd wifi set-wifi-enabled disabled", context) {
+                log("Disable Wifi result: success=${it?.isSuccess}, code=${it?.code}, out=${it?.out}, err=${it?.err}")
                 if (it?.isSuccess != true) {
                     TileSyncService.isTurningOffWifi = false
                 }
@@ -123,8 +123,8 @@ class WifiTileBehaviour(
             log("Enabling Wifi")
             TileSyncService.isTurningOnWifi = true
             TileSyncService.isTurningOffWifi = false
-            executeShellCommandAsync("svc wifi enable", context) {
-                log("Enable Wifi result: success=${it?.isSuccess}, code=${it?.code}")
+            executeShellCommandAsync("cmd wifi set-wifi-enabled enabled", context) {
+                log("Enable Wifi result: success=${it?.isSuccess}, code=${it?.code}, out=${it?.out}, err=${it?.err}")
                 if (it?.isSuccess != true) {
                     TileSyncService.isTurningOnWifi = false
                 }
