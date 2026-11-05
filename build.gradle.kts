@@ -5,14 +5,14 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:9.4.1")
+        classpath("com.android.tools.build:gradle:9.5.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
         classpath("org.jetbrains.kotlin:compose-compiler-gradle-plugin:$kotlin_version")
     }
 }
 
 plugins {
-    id("com.android.application") version "9.4.1" apply false
+    id("com.android.application") version "9.5.0" apply false
 }
 
 tasks.register<Delete>("clean") {
