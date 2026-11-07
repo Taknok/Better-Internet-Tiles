@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="wifi">Wi-Fi</string>
-    <string name="shell_access_description">Accesul shell este necesar pentru a activa/dezactiva anumite funcții de sistem. Poți folosi fie root, fie Shizuku pentru a-l activa.</string>
+    <string name="shell_access_description">Accesul shell este necesar pentru a activa/dezactiva anumite funcții de sistem. Poți folosi fie root, fie Shevery pentru a-l activa.</string>
     <string name="restart_app_summary">Încearcă repornirea aplicației dacă ceva nu funcționează corespunzător.</string>
-    <string name="hide_service_description">Această notificare asigură funcționarea dalelor cu Shizuku. O poți ascunde oricând.</string>
+    <string name="hide_service_description">Această notificare asigură funcționarea dalelor cu Shevery. O poți ascunde oricând.</string>
     <string name="home">Acasă</string>
     <string name="mobile_data">Date mobile</string>
     <string name="ok">Ok</string>
@@ -21,7 +21,7 @@
     <string name="xda_title">Discuție XDA Developers</string>
     <string name="settings">Setări</string>
     <string name="about">Despre</string>
-    <string name="shell_access_not_set_up">Este necesară root-area sau aplicația Shizuku pentru a activa dala</string>
+    <string name="shell_access_not_set_up">Este necesară root-area sau aplicația Shevery pentru a activa dala</string>
     <string name="shell_access_required">Este necesar accesul la shell</string>
     <string name="hide_service_title">Ascunde-mă!</string>
     <string name="toast_foreground_service_error">Nu s-a putut activa serviciul principal. Contactează dezvoltatorul.</string>
@@ -36,7 +36,7 @@
     <string name="available_tiles">Dale disponibile</string>
     <string name="shell_method">Metodă shell</string>
     <string name="version">versiunea</string>
-    <string name="shizuku_description">Shizuku permite aplicațiilor să folosească API-urile de sistem cu permisiuni elevate, folosind ADB pe dispozitivele fără root</string>
+    <string name="shizuku_description">Shevery permite aplicațiilor să folosească API-urile de sistem cu permisiuni elevate, folosind ADB pe dispozitivele fără root</string>
     <string name="auto">Automat</string>
     <string name="yes">Da</string>
     <string name="no">Nu</string>
@@ -57,9 +57,9 @@
         <item quantity="other">Folosit pentru %1$s de dale</item>
     </plurals>
     <string name="allow_root_access">Permite acces root</string>
-    <string name="allow_shizuku_access">Permite acces Shizuku</string>
-    <string name="allow_shizuku_access_description">Asigură-te, te rog, că aplicația \'Better Internet Tiles\' are acces permis în aplicația Shizuku, și că procesul acesteia este în funcțiune</string>
-    <string name="auto_start_shizuku_description">Știai că poți activa automat Shizuku atunci când pornești telefonul, fără root? Vezi $$acest thread pe Reddit$$ pentru informații suplimentare.</string>
+    <string name="allow_shizuku_access">Permite acces Shevery</string>
+    <string name="allow_shizuku_access_description">Asigură-te, te rog, că aplicația \'Better Internet Tiles\' are acces permis în aplicația Shevery, și că procesul acesteia este în funcțiune</string>
+    <string name="auto_start_shizuku_description">Știai că poți activa automat Shevery atunci când pornești telefonul, fără root? Vezi $$acest thread pe Reddit$$ pentru informații suplimentare.</string>
     <string name="sim_not_available">Cartelă SIM indisponibilă</string>
     <string name="battery_level">baterie</string>
     <string name="connecting">Se conectează…</string>

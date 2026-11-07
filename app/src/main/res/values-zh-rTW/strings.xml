@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="allow_shizuku_access_description">請確認 Shizuku 服務正在執行且已授予 Better Internet Tiles 存取權限</string>
-    <string name="auto_start_shizuku_description">您知道無須 Root 即可於每次開機時自動啟用 Shizuku 嗎？\n前往 $$Reddit 討論區$$ 了解如何使用及更多資訊。</string>
+    <string name="allow_shizuku_access_description">請確認 Shevery 服務正在執行且已授予 Better Internet Tiles 存取權限</string>
+    <string name="auto_start_shizuku_description">您知道無須 Root 即可於每次開機時自動啟用 Shevery 嗎？\n前往 $$Reddit 討論區$$ 了解如何使用及更多資訊。</string>
     <string name="sim_not_available">SIM 卡無法使用</string>
     <string name="connecting">連線中…</string>
     <string name="connected">已連線</string>
     <string name="hide_wifi_name">隱藏 Wi-Fi 名稱</string>
-    <string name="allow_shizuku_access">允許存取 Shizuku</string>
+    <string name="allow_shizuku_access">允許存取 Shevery</string>
     <string name="bluetooth_connect">藍牙連線</string>
     <string name="bluetooth_connect_description">需要「藍牙連線」權限以讀取連線的藍牙裝置名稱。</string>
     <string name="hidden">隱藏</string>
-    <string name="hide_service_description">這則通知用於確認您的方塊已和 Shizuku 連線並正常運作。\n請隨意將其隱藏。</string>
+    <string name="hide_service_description">這則通知用於確認您的方塊已和 Shevery 連線並正常運作。\n請隨意將其隱藏。</string>
     <string name="tile_already_added">已存在的方塊</string>
     <string name="app_info">應用程式資訊</string>
     <string name="no_service">沒有服務</string>
@@ -25,7 +25,7 @@
     <string name="xda_title">XDA 開發者論壇</string>
     <string name="settings">設定</string>
     <string name="about">關於</string>
-    <string name="shell_access_not_set_up">需要 Shizuku 或 Root 權限才能切換方塊</string>
+    <string name="shell_access_not_set_up">需要 Shevery 或 Root 權限才能切換方塊</string>
     <string name="shell_access_required">需要存取殼層</string>
     <string name="hide_service_title">將我藏起來！</string>
     <string name="toast_foreground_service_error">無法啟動前景服務，請聯絡開發人員。</string>
@@ -35,7 +35,7 @@
     <string name="network_not_available">網路無法使用</string>
     <string name="airplane_mode">飛航模式</string>
     <string name="version">版本</string>
-    <string name="shizuku_description">Shizuku 允許一般應用程式透過 ADB 提高權限並於非 Root 裝置使用系統 API</string>
+    <string name="shizuku_description">Shevery 允許一般應用程式透過 ADB 提高權限並於非 Root 裝置使用系統 API</string>
     <string name="shell_method">殼層形式</string>
     <string name="yes">是</string>
     <string name="use_default">預設</string>
@@ -67,7 +67,7 @@
     <string name="ok">確定</string>
     <string name="no">否</string>
     <string name="shell_access">存取殼層</string>
-    <string name="shell_access_description">需要存取殼層以啟用 / 停用特定系統功能。\n您可透過 Root 或 Shizuku 執行。</string>
+    <string name="shell_access_description">需要存取殼層以啟用 / 停用特定系統功能。\n您可透過 Root 或 Shevery 執行。</string>
     <plurals name="used_for_tiles">
         <item quantity="other">用於 %1$s 方塊</item>
     </plurals>

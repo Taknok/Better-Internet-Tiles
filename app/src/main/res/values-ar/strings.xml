@@ -7,7 +7,7 @@
     <string name="battery_level">البطارية</string>
     <string name="settings">الإعدادات</string>
     <string name="about">حول</string>
-    <string name="shell_access_not_set_up">إما أن يكون الروت أو Shizuku مطلوبًا لتبديل هذه البلاطة</string>
+    <string name="shell_access_not_set_up">إما أن يكون الروت أو Shevery مطلوبًا لتبديل هذه البلاطة</string>
     <string name="shell_access_required">الوصول إلى Shell مطلوب</string>
     <string name="hide_service_title">اخفني!</string>
     <string name="tile_added">تمت إضافة البلاطة</string>
@@ -23,7 +23,7 @@
     <string name="home">الرئيسية</string>
     <string name="app_info">معلومات التطبيق</string>
     <string name="version">الإصدار</string>
-    <string name="shizuku_description">يسمح Shizuku للتطبيقات العادية باستخدام واجهات برمجة التطبيقات للنظام مباشرة مع صلاحيات مرتفعة باستخدام ADB على الأجهزة غير المروتة</string>
+    <string name="shizuku_description">يسمح Shevery للتطبيقات العادية باستخدام واجهات برمجة التطبيقات للنظام مباشرة مع صلاحيات مرتفعة باستخدام ADB على الأجهزة غير المروتة</string>
     <string name="root_description">أسهل طريقة لاسترجاع الوصول على مستوى Shell عندما يكون هاتفك مروتًا</string>
     <string name="auto">تلقائي</string>
     <string name="ok">حسناً</string>
@@ -45,8 +45,8 @@
         <item quantity="other">مستخدم لـ %1$s بلاطة</item>
     </plurals>
     <string name="allow_root_access_description">يرجى السماح بالوصول للروت لتطبيق \'بلاطات الإنترنت الأفضل\' في تطبيق إدارة الروت الخاص بك (مثل Magisk Manager)</string>
-    <string name="allow_shizuku_access">السماح بالوصول لـ Shizuku</string>
-    <string name="allow_shizuku_access_description">يرجى التأكد من أن \'بلاطات الإنترنت الأفضل\' قد تم منحها الوصول إلى تطبيق Shizuku وأن عملية Shizuku تعمل</string>
+    <string name="allow_shizuku_access">السماح بالوصول لـ Shevery</string>
+    <string name="allow_shizuku_access_description">يرجى التأكد من أن \'بلاطات الإنترنت الأفضل\' قد تم منحها الوصول إلى تطبيق Shevery وأن عملية Shevery تعمل</string>
     <string name="connecting">جارٍ الاتصال…</string>
     <string name="hide_wifi_name_description">الإعداد ينطبق على كل من بلاطات الـWiFi والإنترنت</string>
     <string name="look">المظهر</string>
@@ -68,14 +68,14 @@
     <string name="feedback_title">ملاحظات/الإبلاغ عن خطأ</string>
     <string name="github_title">مستودع GitHub</string>
     <string name="xda_title">موضوع مطوري XDA</string>
-    <string name="hide_service_description">تضمن هذه الإشعار عمل البلاطات بشكل صحيح مع Shizuku. لا تتردد في إخفائها.</string>
+    <string name="hide_service_description">تضمن هذه الإشعار عمل البلاطات بشكل صحيح مع Shevery. لا تتردد في إخفائها.</string>
     <string name="toast_foreground_service_error">تعذر بدء خدمة الواجهة الأمامية. يرجى الاتصال بالمطور.</string>
     <string name="tile_added_error">تعذر إضافة البلاطة</string>
     <string name="missing_permissions">أذونات مفقودة</string>
     <string name="missing_permissions_description">قد لا تعمل بعض الأشياء كما هو متوقع. قم بالتوسيع لمزيد من المعلومات.</string>
     <string name="shell_access">الوصول إلى Shell</string>
-    <string name="shell_access_description">يحتاج الوصول إلى Shell إلى تمكين/تعطيل ميزات النظام معينة. يمكنك استخدام إما الروت أو Shizuku للقيام بذلك.</string>
+    <string name="shell_access_description">يحتاج الوصول إلى Shell إلى تمكين/تعطيل ميزات النظام معينة. يمكنك استخدام إما الروت أو Shevery للقيام بذلك.</string>
     <string name="read_phone_state">قراءة حالة الهاتف</string>
-    <string name="auto_start_shizuku_description">هل تعلم أنه يمكنك بدء تشغيل Shizuku تلقائيًا عند تشغيل جهازك، دون الحاجة إلى الروت؟ تحقق من $$هذا الموضوع على Reddit$$ لمزيد من المعلومات حول كيفية إعداد ذلك.</string>
+    <string name="auto_start_shizuku_description">هل تعلم أنه يمكنك بدء تشغيل Shevery تلقائيًا عند تشغيل جهازك، دون الحاجة إلى الروت؟ تحقق من $$هذا الموضوع على Reddit$$ لمزيد من المعلومات حول كيفية إعداد ذلك.</string>
     <string name="sim_not_available">شريحة SIM غير متاحة</string>
 </resources>

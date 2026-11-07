@@ -24,8 +24,8 @@ object ShizukuUtil {
 
     val shizukuAvailable: Boolean
         get() = try {
-            SheveryPrivilege.isGranted() || true
-        } catch (e: Exception) {
+            true
+        } catch (_: Exception) {
             false
         }
 
@@ -54,20 +54,21 @@ object ShizukuUtil {
     }
 
     suspend fun executeCommand(command: String, context: Context): CommandResult {
-        Log.d("ShizukuUtil", "executeCommand via Shevery: $command")
+        Log.d("ShizukuUtil", "executeCommand via Shevery newProcess: $command")
         init(context)
         return withContext(Dispatchers.IO) {
             try {
                 if (!SheveryPrivilege.hasCapability(SheveryApiConstants.CAP_SHELL_EXEC)) {
                     return@withContext CommandResult(-1, emptyList(), listOf("Shevery CAP_SHELL_EXEC capability not available"))
                 }
-                val res = SheveryPrivilege.execFast(arrayOf("sh", "-c", command))
-                val exitCode = res.exitCode
-                val outputText = res.outputText ?: ""
-                val stdout = outputText.lines()
-                CommandResult(exitCode, stdout, emptyList())
+                val process = SheveryPrivilege.newProcess(arrayOf("sh", "-c", command), null, null)
+                val exitCode = process.waitFor()
+                val stdout = process.inputStream.bufferedReader().readText().lines()
+                val stderr = process.errorStream.bufferedReader().readText().lines()
+                Log.d("ShizukuUtil", "Shevery newProcess result: code=$exitCode, out=$stdout, err=$stderr")
+                CommandResult(exitCode, stdout, stderr)
             } catch (e: Exception) {
-                Log.e("ShizukuUtil", "Shevery remote call failed: ${e.message}", e)
+                Log.e("ShizukuUtil", "Shevery remote process failed: ${e.message}", e)
                 CommandResult(-1, emptyList(), listOf("Remote error: ${e.message}"))
             }
         }

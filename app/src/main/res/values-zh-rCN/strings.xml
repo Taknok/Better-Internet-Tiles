@@ -15,7 +15,7 @@
     <string name="shell_access_required">需要访问Shell</string>
     <string name="hide_service_title">隐藏我！</string>
     <string name="toast_foreground_service_error">无法启动前台服务。请联系开发者。</string>
-    <string name="hide_service_description">这个通知能确保磁贴与Shizuku的正常工作。可以随意隐藏它。</string>
+    <string name="hide_service_description">这个通知能确保磁贴与Shevery的正常工作。可以随意隐藏它。</string>
     <string name="tile_added_error">无法添加磁贴</string>
     <string name="network_not_available">没有可用的网络</string>
     <string name="no_service">无服务</string>

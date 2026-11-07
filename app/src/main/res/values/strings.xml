@@ -16,10 +16,10 @@
     <string name="xda_title">XDA Developers thread</string>
     <string name="settings">Settings</string>
     <string name="about">About</string>
-    <string name="shell_access_not_set_up">Either root or Shizuku is needed to toggle this tile</string>
+    <string name="shell_access_not_set_up">Either root or Shevery is needed to toggle this tile</string>
     <string name="shell_access_required">Shell access required</string>
     <string name="hide_service_title">Hide me!</string>
-    <string name="hide_service_description">This notification ensures the tiles work correctly with Shizuku. Feel free to hide it.</string>
+    <string name="hide_service_description">This notification ensures the tiles work correctly with Shevery. Feel free to hide it.</string>
     <string name="toast_foreground_service_error">"Could not start foreground service. Please contact the developer."</string>
     <string name="tile_added_error">Could not add the tile</string>
     <string name="tile_added">Tile added</string>
@@ -36,12 +36,12 @@
     <string name="home">Home</string>
     <string name="app_info">App Info</string>
     <string name="version">version</string>
-    <string name="shizuku" translatable="false">Shizuku</string>
-    <string name="shizuku_description">Shizuku allows normal apps to use system APIs directly with elevated privileges using ADB on non-rooted devices</string>
+    <string name="shizuku" translatable="false">Shevery</string>
+    <string name="shizuku_description">Shevery allows normal apps to use system APIs directly with elevated privileges using ADB on non-rooted devices</string>
     <string name="root" translatable="false">Root</string>
     <string name="root_description">The simplest way to retrieve shell-level access when your phone is rooted</string>
     <string name="auto">Auto</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="use_default">Use default</string>
@@ -55,7 +55,7 @@
     <string name="missing_permissions">Missing permissions</string>
     <string name="missing_permissions_description">Some things might not work as expected. Expand for more info.</string>
     <string name="shell_access">Shell access</string>
-    <string name="shell_access_description">Shell access is needed to enable/disable certain system features. You can use either root or Shizuku to do this.</string>
+    <string name="shell_access_description">Shell access is needed to enable/disable certain system features. You can use either root or Shevery to do this.</string>
     <string name="read_phone_state">Read phone state</string>
     <string name="read_phone_state_description">The \'read phone state\' permission is required to read the mobile data connection info.</string>
     <string name="bluetooth_connect">Bluetooth connect</string>
@@ -66,9 +66,9 @@
     </plurals>
     <string name="allow_root_access">Allow root access</string>
     <string name="allow_root_access_description">Please allow root access for the \'Better Internet Tiles\' application in your root management application (e.g. Magisk Manager)</string>
-    <string name="allow_shizuku_access">Allow Shizuku access</string>
-    <string name="allow_shizuku_access_description">Please make sure that the \'Better Internet Tiles\' is granted access to the Shizuku application and that the Shizuku process is running</string>
-    <string name="auto_start_shizuku_description">Did you know you can automatically start Shizuku when your device boots up, no root required? Check out $$this reddit thread$$ for more information on how to set this up.</string>
+    <string name="allow_shizuku_access">Allow Shevery access</string>
+    <string name="allow_shizuku_access_description">Please make sure that the \'Better Internet Tiles\' is granted access to the Shevery application and that the Shevery process is running</string>
+    <string name="auto_start_shizuku_description">Did you know you can automatically start Shevery when your device boots up, no root required? Check out $$this reddit thread$$ for more information on how to set this up.</string>
     <string name="sim_not_available">SIM not available</string>
     <string name="battery_level">battery</string>
     <string name="connecting">Connecting…</string>
@@ -81,7 +81,7 @@
     <string name="behaviour">Behaviour</string>
     <string name="look">Look</string>
     <string name="write_secure_settings_title">Write Secure Settings</string>
-    <string name="write_secure_settings_summary">Allow the app to toggle system settings like NFC. Required for Shizuku method.</string>
+    <string name="write_secure_settings_summary">Allow the app to toggle system settings like NFC. Required for Shevery method.</string>
     <string name="permission_granted">Permission granted</string>
     <string name="permission_revoked">Permission revoked</string>
     <string name="write_secure_settings_required">Write Secure Settings permission is required for this tile to work.</string>

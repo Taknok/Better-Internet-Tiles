@@ -17,14 +17,14 @@
     <string name="about">Over</string>
     <string name="shell_access_required">Shell toegang vereist</string>
     <string name="hide_service_title">Verberg mij!</string>
-    <string name="hide_service_description">Deze melding zorgt dat de tiles correct werken wanneer Shizuku wordt gebruikt. Voel je vrij om deze te verbergen.</string>
+    <string name="hide_service_description">Deze melding zorgt dat de tiles correct werken wanneer Shevery wordt gebruikt. Voel je vrij om deze te verbergen.</string>
     <string name="tile_added_error">Kon tile niet toevoegen</string>
     <string name="toast_foreground_service_error">Kon voorgrond service niet starten. Contacteer aub de ontwikkelaar.</string>
     <string name="internet">Internet</string>
     <string name="network_not_available">Netwerk niet beschikbaar</string>
     <string name="no_service">Geen service</string>
     <string name="on">Aan</string>
-    <string name="shell_access_not_set_up">Je hebt ofwel root of Shizuku nodig om deze tegel te gebruiken</string>
+    <string name="shell_access_not_set_up">Je hebt ofwel root of Shevery nodig om deze tegel te gebruiken</string>
     <string name="airplane_mode">Vliegtuigmodus</string>
     <string name="help_translate">Help met het vertalen van deze app!</string>
     <string name="language">Taal</string>

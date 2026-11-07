@@ -16,7 +16,7 @@
     <string name="settings">Ayarlar</string>
     <string name="xda_title">XDA Developers başlığı</string>
     <string name="toast_foreground_service_error">Ön plan hizmeti başlatılamadı. Lütfen geliştirici ile iletişime geçin.</string>
-    <string name="hide_service_description">Bu bildirim, kutucukların Shizuku ile düzgün çalışmasını sağlar. Gizlemekten çekinmeyin.</string>
+    <string name="hide_service_description">Bu bildirim, kutucukların Shevery ile düzgün çalışmasını sağlar. Gizlemekten çekinmeyin.</string>
     <string name="hide_service_title">Beni gizle!</string>
     <string name="shell_access_required">Kabuk erişimi gerekli</string>
     <string name="no_service">Servis yok</string>
@@ -26,11 +26,11 @@
     <string name="airplane_mode">Uçak modu</string>
     <string name="help_translate">Bu uygulamayı çevirmeye yardım edin!</string>
     <string name="language">Dil</string>
-    <string name="shell_access_not_set_up">Bu kutucuğu gizlemek için Shizuku veya kök izni gerekli</string>
+    <string name="shell_access_not_set_up">Bu kutucuğu gizlemek için Shevery veya kök izni gerekli</string>
     <string name="require_unlock_summary">Kilit ekranındayken kutucuk eylemlerini engelle</string>
     <string name="donate_summary">Desteğini bize bağış yaparak gösterebilirsin</string>
     <string name="bluetooth_connect_description">Bağlı bluetooth cihazının adını okuyabilmek için \'Bluetooth bağlantısı\' izni gereklidir.</string>
-    <string name="allow_shizuku_access_description">Lütfen \'Better Internet Tiles\' uygulamasının Shizuku uygulamasına erişim iznine sahip olduğundan ve Shizuku işleminin çalıştığından emin olun</string>
+    <string name="allow_shizuku_access_description">Lütfen \'Better Internet Tiles\' uygulamasının Shevery uygulamasına erişim iznine sahip olduğundan ve Shevery işleminin çalıştığından emin olun</string>
     <string name="shell_method">Kabuk metodu</string>
     <string name="no">Hayır</string>
     <string name="yes">Evet</string>
@@ -39,12 +39,12 @@
     <string name="version">Versiyon</string>
     <string name="ok">Tamam</string>
     <string name="donate">Bağış yap</string>
-    <string name="allow_shizuku_access">Shizuku erişimine izin ver</string>
+    <string name="allow_shizuku_access">Shevery erişimine izin ver</string>
     <string name="allow_root_access">Kök erişimine izin ver</string>
     <string name="allow_root_access_description">Lütfen kök yönetim uygulamanızda (örn. Magisk Manager) \'Better Internet Tiles\' uygulaması için kök erişimine izin verin</string>
     <string name="read_phone_state_description">Mobil veri bağlantı bilgilerini okuyabilmek için \'telefon durumunu oku\' izni gerekiyor.</string>
-    <string name="shizuku_description">Shizuku, normal uygulamaların ADB kullanarak yükseltilmiş ayrıcalıklarla doğrudan sistem API\'lerini kullanmasına izin verir</string>
-    <string name="auto_start_shizuku_description">Cihazınız açıldığında otomatik olarak Shizuku\'yu başlatabileceğinizi biliyor muydunuz? Kök izni gerekmiyor. Bunu nasıl kuracağınız hakkında daha fazla bilgi için $$buradaki reddit başlığına$$ göz atın.</string>
+    <string name="shizuku_description">Shevery, normal uygulamaların ADB kullanarak yükseltilmiş ayrıcalıklarla doğrudan sistem API\'lerini kullanmasına izin verir</string>
+    <string name="auto_start_shizuku_description">Cihazınız açıldığında otomatik olarak Shevery\'yu başlatabileceğinizi biliyor muydunuz? Kök izni gerekmiyor. Bunu nasıl kuracağınız hakkında daha fazla bilgi için $$buradaki reddit başlığına$$ göz atın.</string>
     <string name="sim_not_available">SIM bulunulamadı</string>
     <string name="battery_level">Pil</string>
     <string name="connecting">Bağlanıyor…</string>
@@ -68,7 +68,7 @@
     <string name="good_to_go">Hadi başlayalım!</string>
     <string name="good_to_go_description">Gerekli olan izinler verildi, alttaki kutulara bir göz at!</string>
     <string name="root_description">Telefonunuz rootluyken kabuk düzeyinde erişim elde etmenin en basit yolu</string>
-    <string name="shell_access_description">Belirli sistem özelliklerini etkinleştirmek veya devre dışı bırakmak için kabuk erişimi gerekir. Bunu yapmak için kök izni veya Shizuku\'yu kullanabilirsiniz.</string>
+    <string name="shell_access_description">Belirli sistem özelliklerini etkinleştirmek veya devre dışı bırakmak için kabuk erişimi gerekir. Bunu yapmak için kök izni veya Shevery\'yu kullanabilirsiniz.</string>
     <string name="missing_permissions">İzinler eksik</string>
     <string name="missing_permissions_description">Bazı şeyler beklendiği çalışmayabilir. Daha fazla bilgi için genişletin.</string>
     <string name="shell_access">Kabuk erişimi</string>
