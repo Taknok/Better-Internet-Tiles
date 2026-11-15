@@ -87,8 +87,8 @@ dependencies {
     implementation("com.github.topjohnwu.libsu:core:5.0.3")
 
     // Shevery API
-    implementation("com.hamondev.shevery.api:api:14.6.3")
-    implementation("com.hamondev.shevery.api:provider:14.6.3")
+    implementation("com.hamondev.shevery.api:api:14.6.4")
+    implementation("com.hamondev.shevery.api:provider:14.6.4")
 
     // FreeDroidWarn
     //noinspection GradleDynamicVersion
