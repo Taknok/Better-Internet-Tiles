@@ -1,28 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name" translatable="false">Better Internet Tiles</string>
+    <string name="wifi">Wi-Fi</string>
     <string name="mobile_data">移动数据</string>
     <string name="nfc">NFC</string>
-    <string name="turning_on">正在连接…</string>
-    <string name="require_unlock_title">需要解锁</string>
     <string name="on">已开启</string>
     <string name="off">已关闭</string>
+    <string name="turning_on">正在开启…</string>
+    <string name="require_unlock_title">需要解锁</string>
+    <string name="require_unlock_summary">锁屏时禁止使用磁贴操作</string>
     <string name="restart_app_title">重启应用</string>
+    <string name="restart_app_summary">如果出现问题，请尝试重启应用。</string>
     <string name="feedback_title">反馈意见/报告错误</string>
     <string name="github_title">GitHub 仓库</string>
-    <string name="xda_title">XDA 开发者主题</string>
+    <string name="xda_title">XDA 开发者论坛帖子</string>
     <string name="settings">设置</string>
-    <string name="shell_access_required">需要访问Shell</string>
+    <string name="about">关于</string>
+    <string name="shell_access_not_set_up">需要 Root 或 Shevery 才能切换此磁贴</string>
+    <string name="shell_access_required">需要 Shell 访问权限</string>
     <string name="hide_service_title">隐藏我！</string>
+    <string name="hide_service_description">此通知可确保磁贴与 Shevery 正常协同工作。你可以随意隐藏它。</string>
     <string name="toast_foreground_service_error">无法启动前台服务。请联系开发者。</string>
-    <string name="hide_service_description">这个通知能确保磁贴与Shevery的正常工作。可以随意隐藏它。</string>
     <string name="tile_added_error">无法添加磁贴</string>
+    <string name="tile_added">磁贴已添加</string>
+    <string name="tile_already_added">磁贴已添加</string>
+    <string name="internet">互联网</string>
     <string name="network_not_available">没有可用的网络</string>
     <string name="no_service">无服务</string>
     <string name="airplane_mode">飞行模式</string>
+    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">帮助翻译此应用！</string>
     <string name="language">语言</string>
-    <string name="wifi">Wi-Fi</string>
-    <string name="restart_app_summary">如果出现问题请尝试重启应用。</string>
-    <string name="about">关于</string>
-    <string name="internet">互联网</string>
+    <string name="available_tiles">可用磁贴</string>
+    <string name="shell_method">Shell 访问方式</string>
+    <string name="home">主页</string>
+    <string name="app_info">应用信息</string>
+    <string name="version">版本</string>
+    <string name="shizuku" translatable="false">Shevery</string>
+    <string name="shizuku_description">Shevery 允许普通应用在非 Root 设备上通过 ADB 使用提升权限直接调用系统 API。</string>
+    <string name="root" translatable="false">Root</string>
+    <string name="root_description">在已 Root 的设备上获取 Shell 级别访问权限的最简单方式。</string>
+    <string name="auto">自动</string>
+    <string name="ok">确定</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="use_default">使用默认设置</string>
+    <string name="bluetooth" translatable="false">Bluetooth</string>
+    <string name="donate">捐赠</string>
+    <string name="donate_summary">通过捐赠表达你的支持</string>
+
+    <string name="good_to_go">一切就绪！</string>
+    <string name="good_to_go_description">所需权限均已授予，快来看看下方可用的磁贴吧！</string>
+
+    <string name="missing_permissions">缺少权限</string>
+    <string name="missing_permissions_description">某些功能可能无法正常工作。展开以查看更多信息。</string>
+    <string name="shell_access">Shell 访问权限</string>
+    <string name="shell_access_description">启用或禁用某些系统功能需要 Shell 访问权限。你可以使用 Root 或 Shevery 来实现。</string>
+    <string name="read_phone_state">读取手机状态</string>
+    <string name="read_phone_state_description">需要授予“读取手机状态”权限才能读取移动数据连接信息。</string>
+    <string name="bluetooth_connect">蓝牙连接</string>
+    <string name="bluetooth_connect_description">需要授予“蓝牙连接”权限才能读取已连接的蓝牙设备名称。</string>
+    <plurals name="used_for_tiles">
+        <item quantity="one">用于 %1$s 个磁贴</item>
+        <item quantity="other">用于 %1$s 个磁贴</item>
+    </plurals>
+    <string name="allow_root_access">允许 Root 访问</string>
+    <string name="allow_root_access_description">请在 Root 管理应用（例如 Magisk Manager）中允许“Better Internet Tiles”应用获取 Root 权限。</string>
+    <string name="allow_shizuku_access">允许 Shevery 访问</string>
+    <string name="allow_shizuku_access_description">请确保“Better Internet Tiles”已获得 Shevery 的授权，并且 Shevery 进程正在运行。</string>
+    <string name="auto_start_shizuku_description">你知道吗？无需 Root 即可在设备启动时自动启动 Shevery！查看 $$这个 Reddit 帖子$$，了解如何进行设置。</string>
+    <string name="sim_not_available">SIM 卡不可用</string>
+    <string name="battery_level">电量</string>
+    <string name="connecting">正在连接…</string>
+    <string name="connected">已连接</string>
+    <string name="hide_wifi_name">隐藏 Wi-Fi 名称</string>
+    <string name="hide_wifi_name_description">此设置同时适用于 Wi-Fi 和互联网磁贴</string>
+    <string name="behaviour">行为</string>
+    <string name="look">外观</string>
+    <string name="write_secure_settings_title">写入安全设置</string>
+    <string name="write_secure_settings_summary">允许应用切换 NFC 等系统设置。使用 Shevery 方式时必须授予此权限。</string>
+    <string name="permission_granted">权限已授予</string>
+    <string name="permission_revoked">权限已撤销</string>
 </resources>
