@@ -1,44 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="nfc">NFC</string>
-    <string name="off">Uit</string>
+    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">Wi-Fi</string>
     <string name="mobile_data">Mobiele data</string>
+    <string name="nfc">NFC</string>
+    <string name="on">Aan</string>
+    <string name="off">Uit</string>
     <string name="turning_on">Aanzetten…</string>
-    <string name="require_unlock_title">Vereis schermontgrendeling</string>
-    <string name="require_unlock_summary">Zorg dat je telefoon eerst ontgrendeld moet worden voor de tiles te kunnen gebruiken.</string>
-    <string name="restart_app_title">Herstart app</string>
-    <string name="restart_app_summary">Als er iets fout lijkt, probeer de app te herstarten.</string>
-    <string name="feedback_title">Feedback/bug rapporteren</string>
-    <string name="github_title">GitHub repository</string>
-    <string name="xda_title">XDA Developers thread</string>
+    <string name="require_unlock_title">Schermontgrendeling vereisen</string>
+    <string name="require_unlock_summary">Voorkom dat tegels gebruikt kunnen worden wanneer je scherm vergrendeld is</string>
+    <string name="restart_app_title">App herstarten</string>
+    <string name="restart_app_summary">Probeer de app opnieuw te starten als er iets niet lijkt te werken.</string>
+    <string name="feedback_title">Feedback/een bug melden</string>
+    <string name="github_title">GitHub-repository</string>
+    <string name="xda_title">XDA Developers-discussie</string>
     <string name="settings">Instellingen</string>
     <string name="about">Over</string>
-    <string name="shell_access_required">Shell toegang vereist</string>
+    <string name="shell_access_not_set_up">Je hebt root of Shevery nodig om deze tegel te kunnen gebruiken</string>
+    <string name="shell_access_required">Shell-toegang vereist</string>
     <string name="hide_service_title">Verberg mij!</string>
-    <string name="hide_service_description">Deze melding zorgt dat de tiles correct werken wanneer Shevery wordt gebruikt. Voel je vrij om deze te verbergen.</string>
-    <string name="tile_added_error">Kon tile niet toevoegen</string>
-    <string name="toast_foreground_service_error">Kon voorgrond service niet starten. Contacteer aub de ontwikkelaar.</string>
+    <string name="hide_service_description">Deze melding zorgt ervoor dat de tegels correct werken wanneer Shevery wordt gebruikt. Je mag ze gerust verbergen.</string>
+    <string name="toast_foreground_service_error">"Kan de voorgronddienst niet starten. Neem contact op met de ontwikkelaar."</string>
+    <string name="tile_added_error">Kan de tegel niet toevoegen</string>
+    <string name="tile_added">Tegel toegevoegd</string>
+    <string name="tile_already_added">Tegel is al toegevoegd</string>
     <string name="internet">Internet</string>
     <string name="network_not_available">Netwerk niet beschikbaar</string>
-    <string name="no_service">Geen service</string>
-    <string name="on">Aan</string>
-    <string name="shell_access_not_set_up">Je hebt ofwel root of Shevery nodig om deze tegel te gebruiken</string>
+    <string name="no_service">Geen bereik</string>
     <string name="airplane_mode">Vliegtuigmodus</string>
-    <string name="help_translate">Help met het vertalen van deze app!</string>
+    <string name="weblate" translatable="false">Weblate</string>
+    <string name="help_translate">Help mee deze app te vertalen!</string>
     <string name="language">Taal</string>
-    <string name="tile_added">Tile toegevoegd</string>
-    <string name="tile_already_added">Tile reeds toegevoegd</string>
-    <string name="donate">Doneer</string>
-    <string name="donate_summary">Toon je steun via een vrijblijvende donatie</string>
-    <string name="battery_level">batterijniveau</string>
-    <string name="connecting">"Verbinden…"</string>
-    <string name="connected">Verbonden</string>
-    <string name="available_tiles">Beschikbare tiles</string>
-    <string name="home">Thuis</string>
+    <string name="available_tiles">Beschikbare tegels</string>
+    <string name="shell_method">Shell-methode</string>
+    <string name="home">Startpagina</string>
+    <string name="app_info">App-info</string>
     <string name="version">versie</string>
-    <string name="app_info">Appinfo</string>
+    <string name="shizuku" translatable="false">Shevery</string>
+    <string name="shizuku_description">Shevery laat gewone apps toe om via ADB rechtstreeks toegang te krijgen tot systeem-API\'s met verhoogde rechten, zonder dat je toestel geroot hoeft te zijn</string>
+    <string name="root" translatable="false">Root</string>
+    <string name="root_description">De eenvoudigste manier om toegang op shellniveau te verkrijgen wanneer je telefoon geroot is</string>
+    <string name="auto">Automatisch</string>
+    <string name="ok">OK</string>
     <string name="yes">Ja</string>
     <string name="no">Nee</string>
-    <string name="bluetooth_connect">Bluetooth verbinden</string>
+    <string name="use_default">Standaard gebruiken</string>
+    <string name="bluetooth" translatable="false">Bluetooth</string>
+    <string name="donate">Doneer</string>
+    <string name="donate_summary">Toon je steun met een vrijblijvende donatie</string>
+
+    <string name="good_to_go">Alles in orde!</string>
+    <string name="good_to_go_description">Alle vereiste machtigingen zijn verleend. Ontdek hieronder de beschikbare tegels!</string>
+
+    <string name="missing_permissions">Ontbrekende machtigingen</string>
+    <string name="missing_permissions_description">Sommige functies werken mogelijk niet zoals verwacht. Klap uit voor meer informatie.</string>
+    <string name="shell_access">Shell-toegang</string>
+    <string name="shell_access_description">Shell-toegang is nodig om bepaalde systeemfuncties in en uit te schakelen. Je kunt hiervoor root of Shevery gebruiken.</string>
+    <string name="read_phone_state">Telefoonstatus lezen</string>
+    <string name="read_phone_state_description">De machtiging \'telefoonstatus lezen\' is vereist om informatie over de mobiele dataverbinding te kunnen uitlezen.</string>
+    <string name="bluetooth_connect">Bluetooth-verbinding</string>
+    <string name="bluetooth_connect_description">De machtiging \'verbinden met Bluetooth-apparaten\' is vereist om de naam van het verbonden Bluetooth-apparaat te kunnen uitlezen.</string>
+    <plurals name="used_for_tiles">
+        <item quantity="one">Gebruikt voor %1$s tegel</item>
+        <item quantity="other">Gebruikt voor %1$s tegels</item>
+    </plurals>
+    <string name="allow_root_access">Root-toegang toestaan</string>
+    <string name="allow_root_access_description">Sta root-toegang toe voor de toepassing \'Better Internet Tiles\' in je rootbeheerapp (bijvoorbeeld Magisk Manager).</string>
+    <string name="allow_shizuku_access">Shevery-toegang toestaan</string>
+    <string name="allow_shizuku_access_description">Zorg ervoor dat de toepassing \'Better Internet Tiles\' toegang heeft tot Shevery en dat het Shevery-proces actief is.</string>
+    <string name="auto_start_shizuku_description">Wist je dat je Shevery automatisch kunt starten wanneer je toestel opstart, zonder root-toegang? Bekijk $$deze Reddit-discussie$$ voor meer informatie over hoe je dit instelt.</string>
+    <string name="sim_not_available">SIM-kaart niet beschikbaar</string>
+    <string name="battery_level">batterijniveau</string>
+    <string name="connecting">Verbinden…</string>
+    <string name="connected">Verbonden</string>
+    <string name="hide_wifi_name">Wi-Fi-naam verbergen</string>
+    <string name="hide_wifi_name_description">Deze instelling geldt voor zowel de Wi-Fi- als de Internet-tegel</string>
+    <string name="behaviour">Gedrag</string>
+    <string name="look">Uiterlijk</string>
+    <string name="write_secure_settings_title">Beveiligde instellingen wijzigen</string>
+    <string name="write_secure_settings_summary">Sta de app toe om systeeminstellingen zoals NFC te wijzigen. Vereist voor de Shevery-methode.</string>
+    <string name="permission_granted">Machtiging verleend</string>
+    <string name="permission_revoked">Machtiging ingetrokken</string>
 </resources>
