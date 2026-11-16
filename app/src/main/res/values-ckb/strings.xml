@@ -1,5 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">وای-فای</string>
     <string name="mobile_data">داتای مۆبایل</string>
+    <string name="nfc">NFC</string>
+    <string name="on">کارا</string>
+    <string name="off">ناکارا</string>
+    <string name="turning_on">خەریکی کاراکردنە…</string>
+    <string name="require_unlock_title">داوای کردنەوەی قوفڵ</string>
+    <string name="require_unlock_summary">ڕێگری لە کارکردنی کاشییەکان بکە لەسەر شاشەی قوفڵکراو</string>
+    <string name="restart_app_title">دەستپێکردنەوەی ئەپ</string>
+    <string name="restart_app_summary">ئەگەر شتێک بە دروستی کار ناکات، هەوڵی دەستپێکردنەوەی ئەپەکە بدە.</string>
+    <string name="feedback_title">بۆچوون / ڕاپۆرتکردنی کێشە</string>
+    <string name="github_title">کۆگای GitHub</string>
+    <string name="xda_title">بابەتی XDA Developers</string>
+    <string name="settings">ڕێکخستنەکان</string>
+    <string name="about">دەربارە</string>
+    <string name="shell_access_not_set_up">بۆ گۆڕینی ئەم کاشییە، یان دەسەڵاتی Root یان Shevery پێویستە</string>
+    <string name="shell_access_required">دەسەڵاتی Shell پێویستە</string>
+    <string name="hide_service_title">بشارەوەمەوە!</string>
+    <string name="hide_service_description">ئەم ئاگادارکردنەوەیە دڵنیایی دەدات کە کاشییەکان لەگەڵ Shevery بە دروستی کار دەکەن. دەتوانیت بە ئاسوودەیی بیشاریتەوە.</string>
+    <string name="toast_foreground_service_error">"نەتوانرا خزمەتگوزاری پێشەوە دەستپێبکرێت. تکایە پەیوەندی بە گەشەپێدەرەوە بکە."</string>
+    <string name="tile_added_error">نەتوانرا کاشییەکە زیاد بکرێت</string>
+    <string name="tile_added">کاشییەکە زیاد کرا</string>
+    <string name="tile_already_added">کاشییەکە پێشتر زیاد کراوە</string>
+    <string name="internet">ئینتەرنێت</string>
+    <string name="network_not_available">تۆڕ بەردەست نییە</string>
+    <string name="no_service">هیچ خزمەتگوزارییەک نییە</string>
+    <string name="airplane_mode">دۆخی فڕۆکە</string>
+    <string name="weblate" translatable="false">Weblate</string>
+    <string name="help_translate">یارمەتی وەرگێڕانی ئەم ئەپە بدە!</string>
+    <string name="language">زمان</string>
+    <string name="available_tiles">کاشییە بەردەستەکان</string>
+    <string name="shell_method">شێوازی Shell</string>
+    <string name="home">سەرەتا</string>
+    <string name="app_info">زانیاری ئەپ</string>
+    <string name="version">وەشان</string>
+    <string name="shizuku" translatable="false">Shevery</string>
+    <string name="shizuku_description">Shevery ڕێگە بە ئەپە ئاساییەکان دەدات بە بەکارهێنانی ADB لەسەر ئامێرە بێ Root ـەکان، بە دەسەڵاتی بەرزکراوەوە ڕاستەوخۆ API ـەکانی سیستەم بەکاربهێنن</string>
+    <string name="root" translatable="false">Root</string>
+    <string name="root_description">سادەترین ڕێگا بۆ بەدەستهێنانی دەسەڵاتی ئاستی Shell لەسەر مۆبایلی Root کراو</string>
+    <string name="auto">خۆکار</string>
+    <string name="ok">باشە</string>
+    <string name="yes">بەڵێ</string>
+    <string name="no">نەخێر</string>
+    <string name="use_default">بەکارهێنانی بنەڕەت</string>
+    <string name="bluetooth" translatable="false">Bluetooth</string>
+    <string name="donate">بەخشین</string>
+    <string name="donate_summary">پشتیوانی خۆت لە ڕێگەی بەخشینەوە پیشان بدە</string>
+
+    <string name="good_to_go">هەموو شتێک ئامادەیە!</string>
+    <string name="good_to_go_description">هەموو مۆڵەتە پێویستەکان دراون، کاشییە بەردەستەکان لە خوارەوە ببینە!</string>
+
+    <string name="missing_permissions">مۆڵەتەکان نەماون</string>
+    <string name="missing_permissions_description">هەندێک شت لەوانەیە وەک چاوەڕوانکراو کار نەکەن. بۆ زانیاری زیاتر فراوانی بکەرەوە.</string>
+    <string name="shell_access">دەسەڵاتی Shell</string>
+    <string name="shell_access_description">بۆ کاراکردن و ناچالاککردنی هەندێک تایبەتمەندی سیستەم، دەسەڵاتی Shell پێویستە. دەتوانیت Root یان Shevery بەکاربهێنیت.</string>
+    <string name="read_phone_state">خوێندنەوەی دۆخی تەلەفۆن</string>
+    <string name="read_phone_state_description">مۆڵەتی \'read phone state\' پێویستە بۆ خوێندنەوەی زانیاری پەیوەندی داتای مۆبایل.</string>
+    <string name="bluetooth_connect">پەیوەندی Bluetooth</string>
+    <string name="bluetooth_connect_description">مۆڵەتی \'bluetooth connect\' پێویستە بۆ خوێندنەوەی ناوی ئامێری Bluetooth ـی پەیوەستکراو.</string>
+    <plurals name="used_for_tiles">
+        <item quantity="one">بۆ %1$s کاشی بەکاردێت</item>
+        <item quantity="other">بۆ %1$s کاشی بەکاردێت</item>
+    </plurals>
+    <string name="allow_root_access">ڕێگەدان بە دەسەڵاتی Root</string>
+    <string name="allow_root_access_description">تکایە لە ئەپی بەڕێوەبردنی Root ـەکەت (بۆ نموونە Magisk Manager) ڕێگە بە ئەپی \'Better Internet Tiles\' بدە بۆ بەکارهێنانی دەسەڵاتی Root</string>
+    <string name="allow_shizuku_access">ڕێگەدان بە دەسەڵاتی Shevery</string>
+    <string name="allow_shizuku_access_description">تکایە دڵنیا ببەوە کە ئەپی \'Better Internet Tiles\' مۆڵەتی بەکارهێنانی Shevery ـی پێدراوە و پرۆسەی Shevery کاردەکات</string>
+    <string name="auto_start_shizuku_description">ئایا دەزانیت دەتوانیت Shevery بە شێوەیەکی خۆکار لە کاتی هەڵکردنەوەی ئامێرەکەتدا دەستپێبکەیت، بەبێ پێویستی بە Root؟ بۆ زانیاری زیاتر لەسەر چۆنیەتی ڕێکخستنی، ئەم بابەتەی Reddit ببینە: $$this reddit thread$$.</string>
+    <string name="sim_not_available">SIM بەردەست نییە</string>
+    <string name="battery_level">باتری</string>
+    <string name="connecting">خەریکی پەیوەندیکردن…</string>
+    <string name="connected">پەیوەست بوو</string>
+    <string name="hide_wifi_name">شاردنەوەی ناوی Wi-Fi</string>
+    <string name="hide_wifi_name_description">ئەم ڕێکخستنە بۆ هەردوو کاشی Wi-Fi و ئینتەرنێت جێبەجێ دەبێت</string>
+    <string name="behaviour">ڕەفتار</string>
+    <string name="look">ڕووکار</string>
+    <string name="write_secure_settings_title">نووسین لە ڕێکخستنە پارێزراوەکان</string>
+    <string name="write_secure_settings_summary">ڕێگە بە ئەپەکە بدە ڕێکخستنەکانی سیستەم وەک NFC بگۆڕێت. بۆ شێوازی Shevery پێویستە.</string>
+    <string name="permission_granted">مۆڵەت درا</string>
+    <string name="permission_revoked">مۆڵەت هەڵوەشێندرایەوە</string>
 </resources>
