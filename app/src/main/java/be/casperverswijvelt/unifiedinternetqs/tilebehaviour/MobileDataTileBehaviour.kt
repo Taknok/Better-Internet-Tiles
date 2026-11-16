@@ -90,8 +90,6 @@ class MobileDataTileBehaviour(
         get() = Settings.ACTION_NETWORK_OPERATOR_SETTINGS
 
     override fun onClick() {
-        log("onClick")
-
         if (!checkShellAccess()) return
 
         if (requiresUnlock) {
@@ -119,9 +117,5 @@ class MobileDataTileBehaviour(
             }
         }
         updateTile()
-    }
-
-    private fun log(text: String) {
-        Log.d(TAG, text)
     }
 }

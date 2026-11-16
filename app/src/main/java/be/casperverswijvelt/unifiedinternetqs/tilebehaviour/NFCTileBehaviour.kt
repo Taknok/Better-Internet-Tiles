@@ -76,8 +76,6 @@ class NFCTileBehaviour(
         get() = Settings.ACTION_NFC_SETTINGS
 
     override fun onClick() {
-        log("onClick")
-
         if (!checkShellAccess()) return
 
         if (requiresUnlock) {
@@ -116,9 +114,5 @@ class NFCTileBehaviour(
             }
         }
         updateTile()
-    }
-
-    private fun log(text: String) {
-        Log.d(TAG, text)
     }
 }

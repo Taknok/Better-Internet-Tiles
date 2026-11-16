@@ -131,8 +131,6 @@ class InternetTileBehaviour(
         }
 
     override fun onClick() {
-        log("onClick")
-
         if (!checkShellAccess()) return
 
         if (requiresUnlock) {
@@ -189,9 +187,5 @@ class InternetTileBehaviour(
             }
         }
         updateTile()
-    }
-
-    private fun log(text: String) {
-        Log.d(TAG, text)
     }
 }

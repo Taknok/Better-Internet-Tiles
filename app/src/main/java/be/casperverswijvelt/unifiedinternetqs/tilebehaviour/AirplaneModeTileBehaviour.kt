@@ -65,8 +65,6 @@ class AirplaneModeTileBehaviour(
         get() = Settings.ACTION_AIRPLANE_MODE_SETTINGS
 
     override fun onClick() {
-        log("onClick")
-
         if (!checkShellAccess()) return
 
         if (requiresUnlock) {
@@ -100,9 +98,5 @@ class AirplaneModeTileBehaviour(
             }
         }
         updateTile()
-    }
-
-    private fun log(text: String) {
-        Log.d(TAG, text)
     }
 }

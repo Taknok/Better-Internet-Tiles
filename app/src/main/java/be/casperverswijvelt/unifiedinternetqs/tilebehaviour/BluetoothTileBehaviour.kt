@@ -116,8 +116,6 @@ class BluetoothTileBehaviour(
         get() = Settings.ACTION_BLUETOOTH_SETTINGS
 
     override fun onClick() {
-        log("onClick")
-
         if (!checkShellAccess()) return
 
         if (requiresUnlock) {
@@ -145,9 +143,5 @@ class BluetoothTileBehaviour(
             }
         }
         updateTile()
-    }
-
-    private fun log(text: String) {
-        Log.d(TAG, text)
     }
 }
