@@ -7,7 +7,6 @@ import android.util.Log
 import be.casperverswijvelt.unifiedinternetqs.TileSyncService
 import be.casperverswijvelt.unifiedinternetqs.tilebehaviour.TileBehaviour
 import be.casperverswijvelt.unifiedinternetqs.tilebehaviour.TileState
-import be.casperverswijvelt.unifiedinternetqs.util.ExecutorServiceSingleton
 
 abstract class ReportingTileService: TileService() {
 

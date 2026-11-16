@@ -9,7 +9,6 @@ import android.graphics.drawable.Icon
 import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
-import android.util.Log
 import androidx.core.app.ActivityCompat
 import be.casperverswijvelt.unifiedinternetqs.R
 import be.casperverswijvelt.unifiedinternetqs.TileSyncService
@@ -24,10 +23,6 @@ class BluetoothTileBehaviour(
     showDialog: (AlertDialogData) -> Unit,
     unlockAndRun: (Runnable) -> Unit = { it.run() }
 ) : TileBehaviour(context, showDialog, unlockAndRun) {
-
-    companion object {
-        private const val TAG = "BluetoothTileBehaviour"
-    }
 
     override val type: TileType
         get() = TileType.Bluetooth
@@ -116,8 +111,6 @@ class BluetoothTileBehaviour(
         get() = Settings.ACTION_BLUETOOTH_SETTINGS
 
     override fun onClick() {
-        log("onClick")
-
         if (!checkShellAccess()) return
 
         if (requiresUnlock) {
@@ -134,20 +127,16 @@ class BluetoothTileBehaviour(
         if (bluetoothEnabled || TileSyncService.isTurningOnBluetooth) {
             TileSyncService.isTurningOnBluetooth = false
             TileSyncService.isTurningOffBluetooth = true
-            executeShellCommandAsync("svc bluetooth disable", context) {
+            executeShellCommandAsync(arrayOf("svc", "bluetooth", "disable"), context) {
                 updateTile()
             }
         } else {
             TileSyncService.isTurningOnBluetooth = true
             TileSyncService.isTurningOffBluetooth = false
-            executeShellCommandAsync("svc bluetooth enable", context) {
+            executeShellCommandAsync(arrayOf("svc", "bluetooth", "enable"), context) {
                 updateTile()
             }
         }
         updateTile()
-    }
-
-    private fun log(text: String) {
-        Log.d(TAG, text)
     }
 }

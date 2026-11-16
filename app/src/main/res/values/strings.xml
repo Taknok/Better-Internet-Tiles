@@ -6,7 +6,6 @@
     <string name="on">On</string>
     <string name="off">Off</string>
     <string name="turning_on">Turning on…</string>
-    <string name="not_connected">Not connected</string>
     <string name="require_unlock_title">Require unlock</string>
     <string name="require_unlock_summary">Prevent tile actions when on the lockscreen</string>
     <string name="restart_app_title">Restart app</string>
@@ -74,9 +73,6 @@
     <string name="connecting">Connecting…</string>
     <string name="connected">Connected</string>
     <string name="hide_wifi_name">Hide Wi-Fi name</string>
-    <string name="visible">Visible</string>
-    <string name="hidden">Hidden</string>
-    <string name="hidden_during_recording">Hidden during recording</string>
     <string name="hide_wifi_name_description">Setting applies to both Wi-Fi and Internet tiles</string>
     <string name="behaviour">Behaviour</string>
     <string name="look">Look</string>
@@ -84,5 +80,4 @@
     <string name="write_secure_settings_summary">Allow the app to toggle system settings like NFC. Required for Shevery method.</string>
     <string name="permission_granted">Permission granted</string>
     <string name="permission_revoked">Permission revoked</string>
-    <string name="write_secure_settings_required">Write Secure Settings permission is required for this tile to work.</string>
 </resources>

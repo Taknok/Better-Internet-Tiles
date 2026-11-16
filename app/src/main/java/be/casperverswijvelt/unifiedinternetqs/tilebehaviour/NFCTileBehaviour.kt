@@ -3,23 +3,17 @@ package be.casperverswijvelt.unifiedinternetqs.tilebehaviour
 import android.content.Context
 import android.graphics.drawable.Icon
 import android.nfc.NfcAdapter
-import android.nfc.NfcManager
 import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
-import android.util.Log
-import android.widget.Toast
 import be.casperverswijvelt.unifiedinternetqs.R
 import be.casperverswijvelt.unifiedinternetqs.TileSyncService
-import be.casperverswijvelt.unifiedinternetqs.data.ShellMethod
 import be.casperverswijvelt.unifiedinternetqs.tiles.NFCTileService
 import be.casperverswijvelt.unifiedinternetqs.util.AlertDialogData
 import be.casperverswijvelt.unifiedinternetqs.util.executeShellCommandAsync
 import be.casperverswijvelt.unifiedinternetqs.util.getNFCEnabled
 import be.casperverswijvelt.unifiedinternetqs.util.hasWriteSecureSettingsPermission
 import kotlinx.coroutines.Runnable
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
 
 
 class NFCTileBehaviour(
@@ -27,10 +21,6 @@ class NFCTileBehaviour(
     showDialog: (AlertDialogData) -> Unit,
     unlockAndRun: (Runnable) -> Unit = { it.run() }
 ): TileBehaviour(context, showDialog, unlockAndRun) {
-
-    companion object {
-        private const val TAG = "NFCTileBehaviour"
-    }
 
     override val type: TileType
         get() = TileType.NFC
@@ -76,8 +66,6 @@ class NFCTileBehaviour(
         get() = Settings.ACTION_NFC_SETTINGS
 
     override fun onClick() {
-        log("onClick")
-
         if (!checkShellAccess()) return
 
         if (requiresUnlock) {
@@ -100,7 +88,7 @@ class NFCTileBehaviour(
             if (hasPermission) {
                 NfcAdapter::class.java.getMethod("disable").invoke(adapter)
             } else {
-                executeShellCommandAsync("svc nfc disable", context) {
+                executeShellCommandAsync(arrayOf("svc", "nfc", "disable"), context) {
                     updateTile()
                 }
             }
@@ -110,15 +98,11 @@ class NFCTileBehaviour(
             if (hasPermission) {
                 NfcAdapter::class.java.getMethod("enable").invoke(adapter)
             } else {
-                executeShellCommandAsync("svc nfc enable", context) {
+                executeShellCommandAsync(arrayOf("svc", "nfc", "enable"), context) {
                     updateTile()
                 }
             }
         }
         updateTile()
-    }
-
-    private fun log(text: String) {
-        Log.d(TAG, text)
     }
 }

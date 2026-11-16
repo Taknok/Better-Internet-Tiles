@@ -6,7 +6,6 @@ import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import android.telephony.ServiceState
-import android.util.Log
 import be.casperverswijvelt.unifiedinternetqs.R
 import be.casperverswijvelt.unifiedinternetqs.TileSyncService
 import be.casperverswijvelt.unifiedinternetqs.listeners.CellularChangeListener
@@ -25,10 +24,6 @@ class MobileDataTileBehaviour(
     showDialog: (AlertDialogData) -> Unit,
     unlockAndRun: (Runnable) -> Unit = { it.run() }
 ): TileBehaviour(context, showDialog, unlockAndRun) {
-
-    companion object {
-        private const val TAG = "MobileDataTileBehaviour"
-    }
 
     override val type: TileType
         get() = TileType.MobileData
@@ -90,8 +85,6 @@ class MobileDataTileBehaviour(
         get() = Settings.ACTION_NETWORK_OPERATOR_SETTINGS
 
     override fun onClick() {
-        log("onClick")
-
         if (!checkShellAccess()) return
 
         if (requiresUnlock) {
@@ -108,20 +101,16 @@ class MobileDataTileBehaviour(
         if (dataEnabled || TileSyncService.isTurningOnData) {
             TileSyncService.isTurningOnData = false
             TileSyncService.isTurningOffData = true
-            executeShellCommandAsync("svc data disable", context) {
+            executeShellCommandAsync(arrayOf("svc", "data", "disable"), context) {
                 updateTile()
             }
         } else {
             TileSyncService.isTurningOnData = true
             TileSyncService.isTurningOffData = false
-            executeShellCommandAsync("svc data enable", context) {
+            executeShellCommandAsync(arrayOf("svc", "data", "enable"), context) {
                 updateTile()
             }
         }
         updateTile()
-    }
-
-    private fun log(text: String) {
-        Log.d(TAG, text)
     }
 }

@@ -1,3 +1,7 @@
+@file:Suppress("UnstableApiUsage", "UnstableApiUsage", "UnstableApiUsage", "UnstableApiUsage",
+    "UnstableApiUsage"
+)
+
 plugins {
     id("com.android.application")
     id("kotlin-parcelize")
@@ -35,6 +39,7 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
         getByName("debug") {
@@ -46,12 +51,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-    }
-
-    kotlin {
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
-        }
     }
 
     buildFeatures {
@@ -77,7 +76,7 @@ dependencies {
     implementation("androidx.compose.animation:animation:1.12.1")
     implementation("androidx.compose.ui:ui-tooling:1.12.1")
     implementation("androidx.compose.material3:material3:1.4.0")
-    implementation("androidx.navigation:navigation-compose:2.10.0")
+    implementation("androidx.navigation:navigation-compose:2.10.2")
     implementation("androidx.compose.material:material-icons-extended:1.7.8")
 
     // Preferences DataStore
@@ -87,8 +86,8 @@ dependencies {
     implementation("com.github.topjohnwu.libsu:core:5.0.3")
 
     // Shevery API
-    implementation("com.hamondev.shevery.api:api:14.6.2")
-    implementation("com.hamondev.shevery.api:provider:14.6.2")
+    implementation("com.hamondev.shevery.api:api:14.6.4")
+    implementation("com.hamondev.shevery.api:provider:14.6.4")
 
     // FreeDroidWarn
     //noinspection GradleDynamicVersion

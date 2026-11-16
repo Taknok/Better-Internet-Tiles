@@ -163,7 +163,7 @@ enum class ShellMethod(
     );
     companion object {
         infix fun getByValue(value: String): ShellMethod {
-            return ShellMethod.values().firstOrNull { it.method == value } ?: AUTO
+            return entries.firstOrNull { it.method == value } ?: AUTO
         }
     }
 }

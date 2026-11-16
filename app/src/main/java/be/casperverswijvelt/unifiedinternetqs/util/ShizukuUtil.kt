@@ -6,6 +6,7 @@ import android.util.Log
 import be.casperverswijvelt.tiles.shizuku.CommandResult
 import com.hamondev.shevery.api.SheveryApiConstants
 import com.hamondev.shevery.api.SheveryPrivilege
+import com.hamondev.shevery.api.SheveryPrivilege.OnPermissionResultListener
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -24,8 +25,8 @@ object ShizukuUtil {
 
     val shizukuAvailable: Boolean
         get() = try {
-            true
-        } catch (_: Exception) {
+            SheveryPrivilege.isGranted()
+        } catch (e: Exception) {
             false
         }
 
@@ -39,7 +40,7 @@ object ShizukuUtil {
 
     fun requestShizukuPermission(callback: (granted: Boolean) -> Unit) {
         try {
-            val listener = object : SheveryPrivilege.OnPermissionResultListener {
+            val listener = object : OnPermissionResultListener {
                 override fun onPermissionResult(requestCode: Int, grantResult: Int) {
                     SheveryPrivilege.removePermissionResultListener(this)
                     callback(grantResult == PackageManager.PERMISSION_GRANTED)
@@ -53,20 +54,25 @@ object ShizukuUtil {
         }
     }
 
-    suspend fun executeCommand(command: String, context: Context): CommandResult {
-        Log.d("ShizukuUtil", "executeCommand via Shevery newProcess: $command")
+    suspend fun executeCommand(command: Array<String>, context: Context): CommandResult {
+        Log.d("ShizukuUtil", "executeCommand via Shevery: ${command.contentToString()}")
         init(context)
         return withContext(Dispatchers.IO) {
             try {
+                if (!SheveryPrivilege.isGranted()) {
+                    return@withContext CommandResult(-1, emptyList(), listOf("No permission"))
+                }
                 if (!SheveryPrivilege.hasCapability(SheveryApiConstants.CAP_SHELL_EXEC)) {
                     return@withContext CommandResult(-1, emptyList(), listOf("Shevery CAP_SHELL_EXEC capability not available"))
                 }
-                val process = SheveryPrivilege.newProcess(arrayOf("sh", "-c", command), null, null)
-                val exitCode = process.waitFor()
-                val stdout = process.inputStream.bufferedReader().readText().lines()
-                val stderr = process.errorStream.bufferedReader().readText().lines()
-                Log.d("ShizukuUtil", "Shevery newProcess result: code=$exitCode, out=$stdout, err=$stderr")
-                CommandResult(exitCode, stdout, stderr)
+                Log.d("SheveryUtil", "command: ${command.contentToString()}")
+                val res = SheveryPrivilege.execFast(command)
+                val timedOut = res.timedOut
+                val exitCode = res.exitCode
+                val outputText = res.outputText
+                val stdout = outputText.lines()
+                Log.d("ShizukuUtil", "out: $timedOut - $exitCode - $outputText")
+                CommandResult(exitCode, stdout, emptyList())
             } catch (e: Exception) {
                 Log.e("ShizukuUtil", "Shevery remote process failed: ${e.message}", e)
                 CommandResult(-1, emptyList(), listOf("Remote error: ${e.message}"))

@@ -6,7 +6,6 @@ import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import android.telephony.ServiceState
-import android.util.Log
 import be.casperverswijvelt.unifiedinternetqs.R
 import be.casperverswijvelt.unifiedinternetqs.TileSyncService
 import be.casperverswijvelt.unifiedinternetqs.listeners.CellularChangeListener
@@ -29,10 +28,6 @@ class InternetTileBehaviour(
     showDialog: (AlertDialogData) -> Unit,
     unlockAndRun: (Runnable) -> Unit = { it.run() }
 ): TileBehaviour(context, showDialog, unlockAndRun) {
-
-    companion object {
-        private const val TAG = "InternetDataTileBehaviour"
-    }
 
     override val type: TileType
         get() = TileType.Internet
@@ -131,8 +126,6 @@ class InternetTileBehaviour(
         }
 
     override fun onClick() {
-        log("onClick")
-
         if (!checkShellAccess()) return
 
         if (requiresUnlock) {
@@ -144,7 +137,7 @@ class InternetTileBehaviour(
 
     private fun cycleInternet() {
 
-        // Cycle trough internet connection modes:
+        // Cycle through internet connection modes:
         //  If Wi-Fi is enabled -> disable Wi-Fi and enable mobile data
         //  If mobile data is enabled -> disable mobile data and enable Wi-Fi
         //  Else -> enable Wi-Fi
@@ -157,10 +150,10 @@ class InternetTileBehaviour(
 
         when {
             wifiEnabled -> {
-                executeShellCommandAsync("cmd wifi set-wifi-enabled disabled", context)
+                executeShellCommandAsync(arrayOf("svc", "wifi", "disable"), context)
 
                 TileSyncService.isTurningOnData = true
-                executeShellCommandAsync("svc data enable", context) {
+                executeShellCommandAsync(arrayOf("svc", "data", "enable"), context) {
                     if (it?.isSuccess != true) {
                         TileSyncService.isTurningOnData = false
                     }
@@ -168,10 +161,10 @@ class InternetTileBehaviour(
                 }
             }
             dataEnabled -> {
-                executeShellCommandAsync("svc data disable", context)
+                executeShellCommandAsync(arrayOf("svc", "data", "disable"), context)
 
                 TileSyncService.isTurningOnWifi = true
-                executeShellCommandAsync("cmd wifi set-wifi-enabled enabled", context) {
+                executeShellCommandAsync(arrayOf("svc", "wifi", "enable"), context) {
                     if (it?.isSuccess != true) {
                         TileSyncService.isTurningOnWifi = false
                     }
@@ -180,7 +173,7 @@ class InternetTileBehaviour(
             }
             else -> {
                 TileSyncService.isTurningOnWifi = true
-                executeShellCommandAsync("cmd wifi set-wifi-enabled enabled", context) {
+                executeShellCommandAsync(arrayOf("svc", "wifi", "enable"), context) {
                     if (it?.isSuccess != true) {
                         TileSyncService.isTurningOnWifi = false
                     }
@@ -189,9 +182,5 @@ class InternetTileBehaviour(
             }
         }
         updateTile()
-    }
-
-    private fun log(text: String) {
-        Log.d(TAG, text)
     }
 }

@@ -5,7 +5,6 @@ import android.graphics.drawable.Icon
 import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
-import android.util.Log
 import be.casperverswijvelt.unifiedinternetqs.R
 import be.casperverswijvelt.unifiedinternetqs.TileSyncService
 import be.casperverswijvelt.unifiedinternetqs.tiles.AirplaneModeTileService
@@ -19,10 +18,6 @@ class AirplaneModeTileBehaviour(
     showDialog: (AlertDialogData) -> Unit,
     unlockAndRun: (Runnable) -> Unit = { it.run() }
 ): TileBehaviour(context, showDialog, unlockAndRun) {
-
-    companion object {
-        private const val TAG = "APModeTileBehaviour"
-    }
 
     override val type: TileType
         get() = TileType.AirplaneMode
@@ -65,8 +60,6 @@ class AirplaneModeTileBehaviour(
         get() = Settings.ACTION_AIRPLANE_MODE_SETTINGS
 
     override fun onClick() {
-        log("onClick")
-
         if (!checkShellAccess()) return
 
         if (requiresUnlock) {
@@ -84,7 +77,7 @@ class AirplaneModeTileBehaviour(
             TileSyncService.isTurningOnAirplaneMode = false
             TileSyncService.isTurningOffAirplaneMode = true
             executeShellCommandAsync(
-                "cmd connectivity airplane-mode disable",
+                arrayOf("cmd", "connectivity", "airplane-mode", "disable"),
                 context
             ) {
                 updateTile()
@@ -93,16 +86,12 @@ class AirplaneModeTileBehaviour(
             TileSyncService.isTurningOnAirplaneMode = true
             TileSyncService.isTurningOffAirplaneMode = false
             executeShellCommandAsync(
-                "cmd connectivity airplane-mode enable",
+                arrayOf("cmd", "connectivity", "airplane-mode", "enable"),
                 context
             ) {
                 updateTile()
             }
         }
         updateTile()
-    }
-
-    private fun log(text: String) {
-        Log.d(TAG, text)
     }
 }
