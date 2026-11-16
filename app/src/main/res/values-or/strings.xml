@@ -1,13 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="off">ବନ୍ଦ ଅଛି</string>
+    <string name="app_name" translatable="false">Better Internet Tiles</string>
+    <string name="wifi">ୱାଇ-ଫାଇ</string>
+    <string name="mobile_data">ମୋବାଇଲ୍ ଡାଟା</string>
+    <string name="nfc">NFC</string>
     <string name="on">ଚାଲୁ ଅଛି</string>
-    <string name="about">ସମ୍ବନ୍ଧରେ</string>
+    <string name="off">ବନ୍ଦ ଅଛି</string>
+    <string name="turning_on">ଚାଲୁ ହେଉଛି…</string>
+    <string name="require_unlock_title">ଅନଲକ୍ କରିବା ଆବଶ୍ୟକ</string>
+    <string name="require_unlock_summary">ଲକ୍ ସ୍କ୍ରିନ୍‌ରେ ଥିବାବେଳେ ଟାଇଲ୍ କାର୍ଯ୍ୟଗୁଡ଼ିକୁ ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="restart_app_title">ଆପ୍ ପୁନଃ ଆରମ୍ଭ କରନ୍ତୁ</string>
+    <string name="restart_app_summary">କିଛି ଠିକ୍ ଭାବରେ କାମ ନକଲେ ଆପ୍‌କୁ ପୁନଃ ଆରମ୍ଭ କରି ଦେଖନ୍ତୁ।</string>
+    <string name="feedback_title">ମତାମତ / ତ୍ରୁଟି ରିପୋର୍ଟ କରନ୍ତୁ</string>
+    <string name="github_title">GitHub ରିପୋଜିଟୋରୀ</string>
+    <string name="xda_title">XDA Developers ଥ୍ରେଡ୍</string>
     <string name="settings">ସେଟିଂ</string>
+    <string name="about">ସମ୍ବନ୍ଧରେ</string>
+    <string name="shell_access_not_set_up">ଏହି ଟାଇଲ୍‌କୁ ଚାଲୁ କିମ୍ବା ବନ୍ଦ କରିବା ପାଇଁ Root କିମ୍ବା Shevery ଆବଶ୍ୟକ</string>
+    <string name="shell_access_required">Shell ଆକ୍ସେସ୍ ଆବଶ୍ୟକ</string>
+    <string name="hide_service_title">ମୋତେ ଲୁଚାନ୍ତୁ!</string>
+    <string name="hide_service_description">Shevery ସହିତ ଟାଇଲ୍‌ଗୁଡ଼ିକ ଠିକ୍ ଭାବରେ କାମ କରିବା ପାଇଁ ଏହି ବିଜ୍ଞପ୍ତି ଆବଶ୍ୟକ। ଆପଣ ଏହାକୁ ଲୁଚାଇ ପାରିବେ।</string>
+    <string name="toast_foreground_service_error">"Foreground service ଆରମ୍ଭ କରିହେଲା ନାହିଁ। ଦୟାକରି ଡେଭେଲପର୍‌ଙ୍କ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ।"</string>
+    <string name="tile_added_error">ଟାଇଲ୍ ଯୋଡ଼ି ହେଲା ନାହିଁ</string>
+    <string name="tile_added">ଟାଇଲ୍ ଯୋଡ଼ାଗଲା</string>
+    <string name="tile_already_added">ଟାଇଲ୍ ପୂର୍ବରୁ ଯୋଡ଼ାଯାଇଛି</string>
+    <string name="internet">ଇଣ୍ଟରନେଟ୍</string>
+    <string name="network_not_available">ନେଟୱର୍କ ଉପଲବ୍ଧ ନାହିଁ</string>
     <string name="no_service">କୌଣସି ସେବା ନାହିଁ</string>
+    <string name="airplane_mode">ବିମାନ ମୋଡ୍</string>
+    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">ଏହି ଆପ୍ ଅନୁବାଦ କରିବାରେ ସାହାଯ୍ୟ କରନ୍ତୁ!</string>
     <string name="language">ଭାଷା</string>
+    <string name="available_tiles">ଉପଲବ୍ଧ ଟାଇଲ୍‌ଗୁଡ଼ିକ</string>
+    <string name="shell_method">Shell ପଦ୍ଧତି</string>
     <string name="home">ଗୃହ</string>
-    <string name="version">ସଂସ୍କରଣ</string>
     <string name="app_info">ଆପ୍ ସୂଚନା</string>
+    <string name="version">ସଂସ୍କରଣ</string>
+    <string name="shizuku" translatable="false">Shevery</string>
+    <string name="shizuku_description">Shevery ଅଣ-Root ଡିଭାଇସ୍‌ଗୁଡ଼ିକରେ ADB ମାଧ୍ୟମରେ ସାଧାରଣ ଆପ୍‌ଗୁଡ଼ିକୁ ଅଧିକାରପ୍ରାପ୍ତ ସୁବିଧା ସହିତ ସିଧାସଳଖ ସିଷ୍ଟମ୍ API ବ୍ୟବହାର କରିବାକୁ ଅନୁମତି ଦିଏ</string>
+    <string name="root" translatable="false">Root</string>
+    <string name="root_description">ଆପଣଙ୍କ ଫୋନ୍ Root ହୋଇଥିଲେ Shell ସ୍ତରର ଆକ୍ସେସ୍ ପାଇବାର ସବୁଠାରୁ ସରଳ ଉପାୟ</string>
+    <string name="auto">ସ୍ୱୟଂଚାଳିତ</string>
+    <string name="ok">ଠିକ୍ ଅଛି</string>
+    <string name="yes">ହଁ</string>
+    <string name="no">ନା</string>
+    <string name="use_default">ଡିଫଲ୍ଟ ବ୍ୟବହାର କରନ୍ତୁ</string>
+    <string name="bluetooth" translatable="false">Bluetooth</string>
+    <string name="donate">ଦାନ କରନ୍ତୁ</string>
+    <string name="donate_summary">ଦାନ ମାଧ୍ୟମରେ ଆପଣଙ୍କ ସମର୍ଥନ ଜଣାନ୍ତୁ</string>
+
+    <string name="good_to_go">ସବୁ ପ୍ରସ୍ତୁତ!</string>
+    <string name="good_to_go_description">ସମସ୍ତ ଆବଶ୍ୟକୀୟ ଅନୁମତି ମିଳିଛି। ତଳେ ଉପଲବ୍ଧ ଟାଇଲ୍‌ଗୁଡ଼ିକ ଦେଖନ୍ତୁ!</string>
+
+    <string name="missing_permissions">ଆବଶ୍ୟକ ଅନୁମତିଗୁଡ଼ିକ ନାହିଁ</string>
+    <string name="missing_permissions_description">କିଛି ଜିନିଷ ଆଶା ଅନୁଯାୟୀ କାମ ନକରିପାରେ। ଅଧିକ ସୂଚନା ପାଇଁ ବିସ୍ତାର କରନ୍ତୁ।</string>
+    <string name="shell_access">Shell ଆକ୍ସେସ୍</string>
+    <string name="shell_access_description">କିଛି ସିଷ୍ଟମ୍ ବୈଶିଷ୍ଟ୍ୟ ଚାଲୁ କିମ୍ବା ବନ୍ଦ କରିବା ପାଇଁ Shell ଆକ୍ସେସ୍ ଆବଶ୍ୟକ। ଏଥିପାଇଁ ଆପଣ Root କିମ୍ବା Shevery ବ୍ୟବହାର କରିପାରିବେ।</string>
+    <string name="read_phone_state">ଫୋନ୍ ସ୍ଥିତି ପଢ଼ିବା</string>
+    <string name="read_phone_state_description">ମୋବାଇଲ୍ ଡାଟା ସଂଯୋଗ ସୂଚନା ପଢ଼ିବା ପାଇଁ \'read phone state\' ଅନୁମତି ଆବଶ୍ୟକ।</string>
+    <string name="bluetooth_connect">Bluetooth ସଂଯୋଗ</string>
+    <string name="bluetooth_connect_description">ସଂଯୁକ୍ତ Bluetooth ଡିଭାଇସ୍‌ର ନାମ ପଢ଼ିବା ପାଇଁ \'bluetooth connect\' ଅନୁମତି ଆବଶ୍ୟକ।</string>
+    <plurals name="used_for_tiles">
+        <item quantity="one">%1$s ଟାଇଲ୍ ପାଇଁ ବ୍ୟବହୃତ</item>
+        <item quantity="other">%1$s ଟାଇଲ୍‌ଗୁଡ଼ିକ ପାଇଁ ବ୍ୟବହୃତ</item>
+    </plurals>
+    <string name="allow_root_access">Root ଆକ୍ସେସ୍ ଅନୁମତି ଦିଅନ୍ତୁ</string>
+    <string name="allow_root_access_description">ଦୟାକରି ଆପଣଙ୍କ Root ପରିଚାଳନା ଆପ୍‌ରେ (ଯଥା Magisk Manager) \'Better Internet Tiles\' ଆପ୍‌କୁ Root ଆକ୍ସେସ୍ ଅନୁମତି ଦିଅନ୍ତୁ।</string>
+    <string name="allow_shizuku_access">Shevery ଆକ୍ସେସ୍ ଅନୁମତି ଦିଅନ୍ତୁ</string>
+    <string name="allow_shizuku_access_description">ଦୟାକରି ନିଶ୍ଚିତ କରନ୍ତୁ ଯେ \'Better Internet Tiles\' ଆପ୍‌କୁ Shevery ଆପ୍‌ରେ ଆକ୍ସେସ୍ ଅନୁମତି ମିଳିଛି ଏବଂ Shevery ପ୍ରୋସେସ୍ ଚାଲୁ ଅଛି।</string>
+    <string name="auto_start_shizuku_description">ଆପଣ ଜାଣନ୍ତି କି Root ବିନା ମଧ୍ୟ ଡିଭାଇସ୍ ବୁଟ୍ ହେବା ସମୟରେ Shevery କୁ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଆରମ୍ଭ କରିପାରିବେ? ଏହା କିପରି ସେଟ୍ ଅପ୍ କରିବେ ଜାଣିବା ପାଇଁ $$ଏହି Reddit ଥ୍ରେଡ୍$$ ଦେଖନ୍ତୁ।</string>
+    <string name="sim_not_available">SIM ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="battery_level">ବ୍ୟାଟେରୀ</string>
+    <string name="connecting">ସଂଯୋଗ ହେଉଛି…</string>
+    <string name="connected">ସଂଯୁକ୍ତ</string>
+    <string name="hide_wifi_name">Wi-Fi ନାମ ଲୁଚାନ୍ତୁ</string>
+    <string name="hide_wifi_name_description">ଏହି ସେଟିଂ Wi-Fi ଏବଂ Internet ଉଭୟ ଟାଇଲ୍‌ରେ ଲାଗୁ ହୁଏ</string>
+    <string name="behaviour">ଆଚରଣ</string>
+    <string name="look">ଦୃଶ୍ୟ</string>
+    <string name="write_secure_settings_title">Secure Settings ଲେଖିବା</string>
+    <string name="write_secure_settings_summary">NFC ପରି ସିଷ୍ଟମ୍ ସେଟିଂଗୁଡ଼ିକୁ ଚାଲୁ କିମ୍ବା ବନ୍ଦ କରିବାକୁ ଆପ୍‌କୁ ଅନୁମତି ଦିଅନ୍ତୁ। Shevery ପଦ୍ଧତି ପାଇଁ ଏହା ଆବଶ୍ୟକ।</string>
+    <string name="permission_granted">ଅନୁମତି ଦିଆଯାଇଛି</string>
+    <string name="permission_revoked">ଅନୁମତି ପ୍ରତ୍ୟାହାର କରାଯାଇଛି</string>
 </resources>
