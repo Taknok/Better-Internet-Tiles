@@ -74,7 +74,7 @@ object ShizukuUtil {
                 Log.d("ShizukuUtil", "out: $timedOut - $exitCode - $outputText")
                 CommandResult(exitCode, stdout, emptyList())
             } catch (e: Exception) {
-                Log.e("ShizukuUtil", "Shevery remote call failed: ${e.message}", e)
+                Log.e("ShizukuUtil", "Shevery remote process failed: ${e.message}", e)
                 CommandResult(-1, emptyList(), listOf("Remote error: ${e.message}"))
             }
         }
