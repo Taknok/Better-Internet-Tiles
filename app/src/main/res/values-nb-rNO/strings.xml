@@ -1,25 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">Wi-Fi</string>
-    <string name="turning_on">Skrur på…</string>
-    <string name="require_unlock_title">Krev opplåsing</string>
-    <string name="restart_app_title">Start programmet på ny</string>
-    <string name="github_title">GitHub-kodelager</string>
-    <string name="hide_service_title">Skjul meg.</string>
-    <string name="restart_app_summary">Er noe rart\? Prøv en omstart av programmet.</string>
-    <string name="shell_access_required">Skall-tilgang påkrevd</string>
-    <string name="hide_service_description">Denne merknaden forsikrer at flisene fungerer rett med Shevery. Du kan skjule den hvis du vil.</string>
-    <string name="toast_foreground_service_error">Kunne ikke starte forgrunnstjenesten. Kontakt utvikleren.</string>
     <string name="mobile_data">Mobildata</string>
-    <string name="tile_added_error">Kunne ikke legge til flis</string>
-    <string name="internet">Internett</string>
-    <string name="network_not_available">Mangler nettverkstilgang</string>
-    <string name="no_service">Mangler signal</string>
-    <string name="settings">Innstillinger</string>
     <string name="nfc">Nærfeltskommunikasjon</string>
     <string name="on">På</string>
     <string name="off">Av</string>
-    <string name="xda_title">XDA-utviklertråd</string>
-    <string name="about">Om</string>
+    <string name="turning_on">Skrur på…</string>
+    <string name="require_unlock_title">Krev opplåsing</string>
+    <string name="require_unlock_summary">Forhindre handlinger på flisene når skjermen er låst</string>
+    <string name="restart_app_title">Start programmet på nytt</string>
+    <string name="restart_app_summary">Er noe rart? Prøv en omstart av programmet.</string>
     <string name="feedback_title">Tilbakemelding/rapporter en feil</string>
+    <string name="github_title">GitHub-kodelager</string>
+    <string name="xda_title">XDA-utviklertråd</string>
+    <string name="settings">Innstillinger</string>
+    <string name="about">Om</string>
+    <string name="shell_access_not_set_up">Du trenger enten root eller Shevery for å slå denne flisen av og på</string>
+    <string name="shell_access_required">Skalltilgang påkrevd</string>
+    <string name="hide_service_title">Skjul meg!</string>
+    <string name="hide_service_description">Dette varselet sørger for at flisene fungerer som de skal med Shevery. Du kan gjerne skjule det.</string>
+    <string name="toast_foreground_service_error">Kunne ikke starte forgrunnstjenesten. Kontakt utvikleren.</string>
+    <string name="tile_added_error">Kunne ikke legge til flisen</string>
+    <string name="tile_added">Flis lagt til</string>
+    <string name="tile_already_added">Flisen er allerede lagt til</string>
+    <string name="internet">Internett</string>
+    <string name="network_not_available">Mangler nettverkstilgang</string>
+    <string name="no_service">Mangler signal</string>
+    <string name="airplane_mode">Flymodus</string>
+    <string name="weblate" translatable="false">Weblate</string>
+    <string name="help_translate">Hjelp til med å oversette appen!</string>
+    <string name="language">Språk</string>
+    <string name="available_tiles">Tilgjengelige fliser</string>
+    <string name="shell_method">Skallmetode</string>
+    <string name="home">Hjem</string>
+    <string name="app_info">Appinformasjon</string>
+    <string name="version">versjon</string>
+    <string name="shizuku" translatable="false">Shevery</string>
+    <string name="shizuku_description">Shevery lar vanlige apper bruke system-API-er direkte med utvidede rettigheter via ADB på enheter uten root</string>
+    <string name="root" translatable="false">Root</string>
+    <string name="root_description">Den enkleste måten å få tilgang på skallnivå når telefonen din har root-tilgang</string>
+    <string name="auto">Automatisk</string>
+    <string name="ok">OK</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nei</string>
+    <string name="use_default">Bruk standard</string>
+    <string name="bluetooth" translatable="false">Bluetooth</string>
+    <string name="donate">Doner</string>
+    <string name="donate_summary">Vis din støtte gjennom en donasjon</string>
+
+    <string name="good_to_go">Alt er klart!</string>
+    <string name="good_to_go_description">Alle nødvendige tillatelser er gitt. Ta en titt på de tilgjengelige flisene nedenfor!</string>
+
+    <string name="missing_permissions">Manglende tillatelser</string>
+    <string name="missing_permissions_description">Noen funksjoner fungerer kanskje ikke som forventet. Utvid for mer informasjon.</string>
+    <string name="shell_access">Skalltilgang</string>
+    <string name="shell_access_description">Skalltilgang er nødvendig for å aktivere eller deaktivere enkelte systemfunksjoner. Du kan bruke enten root eller Shevery til dette.</string>
+    <string name="read_phone_state">Les telefonstatus</string>
+    <string name="read_phone_state_description">Tillatelsen «Les telefonstatus» er nødvendig for å lese informasjon om mobildatatilkoblingen.</string>
+    <string name="bluetooth_connect">Koble til Bluetooth</string>
+    <string name="bluetooth_connect_description">Tillatelsen «Koble til Bluetooth» er nødvendig for å lese navnet på den tilkoblede Bluetooth-enheten.</string>
+    <plurals name="used_for_tiles">
+        <item quantity="one">Brukes til %1$s flis</item>
+        <item quantity="other">Brukes til %1$s fliser</item>
+    </plurals>
+    <string name="allow_root_access">Tillat root-tilgang</string>
+    <string name="allow_root_access_description">Gi appen «Better Internet Tiles» root-tilgang i root-administrasjonsappen din (f.eks. Magisk Manager).</string>
+    <string name="allow_shizuku_access">Tillat Shevery-tilgang</string>
+    <string name="allow_shizuku_access_description">Kontroller at «Better Internet Tiles» har fått tilgang i Shevery-appen, og at Shevery-prosessen kjører.</string>
+    <string name="auto_start_shizuku_description">Visste du at du kan starte Shevery automatisk når enheten starter opp, helt uten root? Se $$denne Reddit-tråden$$ for mer informasjon om hvordan du setter dette opp.</string>
+    <string name="sim_not_available">SIM-kort ikke tilgjengelig</string>
+    <string name="battery_level">batteri</string>
+    <string name="connecting">Kobler til…</string>
+    <string name="connected">Tilkoblet</string>
+    <string name="hide_wifi_name">Skjul Wi-Fi-navn</string>
+    <string name="hide_wifi_name_description">Innstillingen gjelder både Wi-Fi- og Internett-flisene</string>
+    <string name="behaviour">Oppførsel</string>
+    <string name="look">Utseende</string>
+    <string name="write_secure_settings_title">Skriv sikre innstillinger</string>
+    <string name="write_secure_settings_summary">Tillat appen å endre systeminnstillinger som NFC. Påkrevd for Shevery-metoden.</string>
+    <string name="permission_granted">Tillatelse gitt</string>
+    <string name="permission_revoked">Tillatelse tilbakekalt</string>
 </resources>
