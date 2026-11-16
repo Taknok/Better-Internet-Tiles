@@ -9,7 +9,6 @@ import android.graphics.drawable.Icon
 import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
-import android.util.Log
 import androidx.core.app.ActivityCompat
 import be.casperverswijvelt.unifiedinternetqs.R
 import be.casperverswijvelt.unifiedinternetqs.TileSyncService
@@ -24,10 +23,6 @@ class BluetoothTileBehaviour(
     showDialog: (AlertDialogData) -> Unit,
     unlockAndRun: (Runnable) -> Unit = { it.run() }
 ) : TileBehaviour(context, showDialog, unlockAndRun) {
-
-    companion object {
-        private const val TAG = "BluetoothTileBehaviour"
-    }
 
     override val type: TileType
         get() = TileType.Bluetooth

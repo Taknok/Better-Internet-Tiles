@@ -183,7 +183,7 @@ class TileSyncService: Service() {
                 .setContentIntent(pendingIntent)
                 .build()
         val mNotificationManager =
-            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         val channel = NotificationChannel(
             TileApplication.CHANNEL_ID,
             TileApplication.CHANNEL_NAME,
@@ -230,7 +230,7 @@ class TileSyncService: Service() {
                 addAction(ACT_BATTERY_LEVEL_CHANGED)
             }
         )
-        (getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager).adapter?.getProfileProxy(
+        (getSystemService(BLUETOOTH_SERVICE) as BluetoothManager).adapter?.getProfileProxy(
             applicationContext,
             object : BluetoothProfile.ServiceListener {
                 override fun onServiceConnected(profile: Int, bluetoothProfile: BluetoothProfile?) {

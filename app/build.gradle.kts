@@ -1,3 +1,7 @@
+@file:Suppress("UnstableApiUsage", "UnstableApiUsage", "UnstableApiUsage", "UnstableApiUsage",
+    "UnstableApiUsage"
+)
+
 plugins {
     id("com.android.application")
     id("kotlin-parcelize")

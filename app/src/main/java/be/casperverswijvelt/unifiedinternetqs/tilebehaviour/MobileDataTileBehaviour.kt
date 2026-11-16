@@ -6,7 +6,6 @@ import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import android.telephony.ServiceState
-import android.util.Log
 import be.casperverswijvelt.unifiedinternetqs.R
 import be.casperverswijvelt.unifiedinternetqs.TileSyncService
 import be.casperverswijvelt.unifiedinternetqs.listeners.CellularChangeListener
@@ -25,10 +24,6 @@ class MobileDataTileBehaviour(
     showDialog: (AlertDialogData) -> Unit,
     unlockAndRun: (Runnable) -> Unit = { it.run() }
 ): TileBehaviour(context, showDialog, unlockAndRun) {
-
-    companion object {
-        private const val TAG = "MobileDataTileBehaviour"
-    }
 
     override val type: TileType
         get() = TileType.MobileData

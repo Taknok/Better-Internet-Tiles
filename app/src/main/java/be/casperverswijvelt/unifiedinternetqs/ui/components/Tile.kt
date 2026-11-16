@@ -82,7 +82,6 @@ fun LiveTile(
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun Tile(
     modifier: Modifier = Modifier,

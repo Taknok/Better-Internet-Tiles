@@ -40,7 +40,7 @@ object ShizukuUtil {
 
     fun requestShizukuPermission(callback: (granted: Boolean) -> Unit) {
         try {
-            val listener = object : SheveryPrivilege.OnPermissionResultListener {
+            val listener = object : OnPermissionResultListener {
                 override fun onPermissionResult(requestCode: Int, grantResult: Int) {
                     SheveryPrivilege.removePermissionResultListener(this)
                     callback(grantResult == PackageManager.PERMISSION_GRANTED)
@@ -55,7 +55,7 @@ object ShizukuUtil {
     }
 
     suspend fun executeCommand(command: Array<String>, context: Context): CommandResult {
-        Log.d("ShizukuUtil", "executeCommand via Shevery: $command")
+        Log.d("ShizukuUtil", "executeCommand via Shevery: ${command.contentToString()}")
         init(context)
         return withContext(Dispatchers.IO) {
             try {
@@ -69,7 +69,7 @@ object ShizukuUtil {
                 val res = SheveryPrivilege.execFast(command)
                 val timedOut = res.timedOut
                 val exitCode = res.exitCode
-                val outputText = res.outputText ?: ""
+                val outputText = res.outputText
                 val stdout = outputText.lines()
                 Log.d("ShizukuUtil", "out: $timedOut - $exitCode - $outputText")
                 CommandResult(exitCode, stdout, emptyList())

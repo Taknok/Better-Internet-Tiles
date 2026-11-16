@@ -33,8 +33,8 @@ fun VerticalGrid(
                     horizontalArrangement = Arrangement.spacedBy(horizontalSpacing)
                 ) {
                     val weightModifier = Modifier.weight(1f / columns)
-                    it.forEach {
-                        Box(weightModifier) { it() }
+                    it.forEach { value ->
+                        Box(weightModifier) { value() }
                     }
                     repeat(columns - it.size) {
                         Spacer(weightModifier)

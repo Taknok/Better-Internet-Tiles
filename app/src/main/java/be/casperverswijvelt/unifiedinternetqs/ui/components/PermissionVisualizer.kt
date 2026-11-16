@@ -173,13 +173,13 @@ fun PermissionVisualizer (
                             bottomStart = rounding)
                         )
                 ) {
-                    permissionWarnings.forEach {
+                    permissionWarnings.forEach { warn ->
                         Spacer(modifier = Modifier.height(2.dp))
                         Surface(
                             modifier = Modifier.fillMaxWidth(),
                             color = errorBgColor.copy(alpha = .7f),
                             onClick = {
-                                when (it) {
+                                when (warn) {
                                     PermissionInfo.Shell -> {
                                         navController.navigate(NavRoute.SettingsShell.route)
                                     }
@@ -201,25 +201,25 @@ fun PermissionVisualizer (
                                 ) {
                                     Column {
                                         Text(
-                                            text = stringResource(it.tileResourceId),
+                                            text = stringResource(warn.tileResourceId),
                                             color = errorContentColor
                                         )
                                         Spacer(modifier = Modifier.height(4.dp))
                                         Text(
                                             modifier = Modifier.alpha(.7f),
-                                            text = stringResource(it.descriptionResourceId),
+                                            text = stringResource(warn.descriptionResourceId),
                                             fontSize = 14.sp,
                                             lineHeight = 18.sp,
                                             color = errorContentColor
                                         )
-                                        if (it.tiles.isNotEmpty()) {
+                                        if (warn.tiles.isNotEmpty()) {
                                             Spacer(modifier = Modifier.height(8.dp))
                                             Text(
                                                 modifier = Modifier.alpha(.7f),
                                                 text = pluralStringResource(
                                                     id = R.plurals.used_for_tiles,
-                                                    count = it.tiles.size,
-                                                    joinToString(it.tiles.map { stringResource(it) })
+                                                    count = warn.tiles.size,
+                                                    joinToString(warn.tiles.map { stringResource(it) })
                                                 ),
                                                 fontStyle = FontStyle.Italic,
                                                 fontSize = 12.sp,
