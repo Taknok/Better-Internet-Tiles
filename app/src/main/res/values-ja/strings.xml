@@ -5,7 +5,6 @@
     <string name="on">ON</string>
     <string name="off">OFF</string>
     <string name="turning_on">ON にしています…</string>
-    <string name="not_connected">接続していません</string>
     <string name="require_unlock_title">ロック解除を要求</string>
     <string name="about">アプリについて</string>
     <string name="shell_access_required">Shell アクセスが必要</string>
@@ -51,12 +50,9 @@
     <string name="donate_summary">寄付を通じてサポートしてください</string>
     <string name="auto_start_shizuku_description">デバイスの起動時に root 権限なしで Shevery を実行できることをご存知ですか？設定方法の詳細ついては、$$reddit のスレッド$$ をご覧ください。</string>
     <string name="allow_shizuku_access_description">「Better Internet Tiles」を Shevery アプリでアクセスを許可しています。Shevery のプロセスが実行中か確認してください</string>
-    <string name="visible">表示</string>
     <string name="look">ルック</string>
     <string name="connected">接続済み</string>
-    <string name="hidden">非表示</string>
     <string name="hide_wifi_name">Wi-Fi の名前を非表示</string>
-    <string name="hidden_during_recording">録音中は非表示</string>
     <string name="behaviour">動作</string>
     <string name="hide_wifi_name_description">設定は Wi-Fi タイルとインターネットタイルの両方に適用されます</string>
     <string name="bluetooth_connect">Bluetooth の接続</string>

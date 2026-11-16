@@ -15,9 +15,6 @@
     <string name="allow_shizuku_access">Shevery அணுகலை அனுமதிக்கவும்</string>
     <string name="sim_not_available">சிம் கிடைக்கவில்லை</string>
     <string name="hide_wifi_name">வைஃபை பெயரை மறைக்கவும்</string>
-    <string name="visible">தெரியும்</string>
-    <string name="hidden">மறைக்கப்பட்ட</string>
-    <string name="hidden_during_recording">பதிவு செய்யும் போது மறைக்கப்பட்டுள்ளது</string>
     <string name="hide_wifi_name_description">வைஃபை மற்றும் இணைய ஓடுகள் இரண்டிற்கும் அமைப்பு பொருந்தும்</string>
     <string name="restart_app_summary">ஏதேனும் தவறு ஏற்பட்டால் பயன்பாட்டை மறுதொடக்கம் செய்ய முயற்சிக்கவும்.</string>
     <string name="feedback_title">கருத்து/ஒரு பிழையைப் புகாரளிக்கவும்</string>
@@ -34,7 +31,6 @@
     <string name="on">ஆன்</string>
     <string name="off">அணை</string>
     <string name="turning_on">இயக்குதல்…</string>
-    <string name="not_connected">இணைக்கப்படவில்லை</string>
     <string name="require_unlock_title">திறத்தல் தேவை</string>
     <string name="require_unlock_summary">பூட்டு திரையில் இருக்கும்போது ஓடு செயல்களைத் தடுக்கவும்</string>
     <string name="restart_app_title">பயன்பாட்டை மறுதொடக்கம் செய்யுங்கள்</string>

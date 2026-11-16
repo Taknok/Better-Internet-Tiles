@@ -7,7 +7,6 @@
     <string name="off">Kapalı</string>
     <string name="mobile_data">Mobil veri</string>
     <string name="turning_on">Açılıyor…</string>
-    <string name="not_connected">Bağlı değil</string>
     <string name="github_title">GitHub deposu</string>
     <string name="feedback_title">Geri bildirim/hata bildirme</string>
     <string name="restart_app_summary">Bir sorun var gibi görünüyorsa uygulamayı yeniden başlatmayı deneyin.</string>
@@ -50,9 +49,6 @@
     <string name="connecting">Bağlanıyor…</string>
     <string name="connected">Bağlandı</string>
     <string name="hide_wifi_name">Wi-Fi ağ adını gizle</string>
-    <string name="visible">Görünür</string>
-    <string name="hidden">Gizli</string>
-    <string name="hidden_during_recording">Kayıt sırasında gizlendi</string>
     <string name="hide_wifi_name_description">Ayar hem Wi-Fi hem de İnternet kutucukları için geçerlidir</string>
     <plurals name="used_for_tiles">
         <item quantity="one">%1$s kutucuğu için kullanıldı</item>

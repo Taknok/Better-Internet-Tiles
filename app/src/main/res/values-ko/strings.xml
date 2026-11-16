@@ -2,7 +2,6 @@
 <resources>
     <string name="mobile_data">모바일 데이터</string>
     <string name="turning_on">켜는 중…</string>
-    <string name="not_connected">연결되지 않음</string>
     <string name="require_unlock_title">잠금 해제 요청하기</string>
     <string name="restart_app_title">앱 재시작</string>
     <string name="restart_app_summary">만약 뭔가 잘못되었다면 앱을 재시작 해보세요.</string>
@@ -67,9 +66,6 @@
     </plurals>
     <string name="connected">연결됨</string>
     <string name="hide_wifi_name">Wi-Fi 이름을 숨김</string>
-    <string name="visible">표시</string>
-    <string name="hidden">숨김</string>
-    <string name="hidden_during_recording">기록 중에 숨김</string>
     <string name="hide_wifi_name_description">설정은 Wi-Fi 및 인터넷 제목 모두에 적용됩니다</string>
     <string name="behaviour">행위</string>
     <string name="look">외관</string>

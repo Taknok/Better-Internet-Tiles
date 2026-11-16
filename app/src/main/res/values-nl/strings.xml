@@ -5,7 +5,6 @@
     <string name="wifi">Wi-Fi</string>
     <string name="mobile_data">Mobiele data</string>
     <string name="turning_on">Aanzetten…</string>
-    <string name="not_connected">Niet verbonden</string>
     <string name="require_unlock_title">Vereis schermontgrendeling</string>
     <string name="require_unlock_summary">Zorg dat je telefoon eerst ontgrendeld moet worden voor de tiles te kunnen gebruiken.</string>
     <string name="restart_app_title">Herstart app</string>

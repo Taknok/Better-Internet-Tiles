@@ -27,7 +27,6 @@
     <string name="good_to_go_description">Všechna potřebná oprávnění byla udělena, podívejte se na dostupné dlaždice níže!</string>
     <string name="missing_permissions">Chybějící oprávnění</string>
     <string name="wifi">Wi-Fi</string>
-    <string name="not_connected">Odpojeno</string>
     <string name="missing_permissions_description">Některé věci nemusí fungovat podle očekávání. Rozbalte pro více informací.</string>
     <string name="shell_access">Přístup k shellu</string>
     <string name="shell_access_description">Pro povolení nebo zakázání některých systémových funkcí je potřeba přístup k shellu. K tomu můžete použít buď root, nebo Shevery.</string>
@@ -51,9 +50,6 @@
     <string name="connecting">Připojování…</string>
     <string name="connected">Připojeno</string>
     <string name="hide_wifi_name">Skrýt jméno Wi-Fi</string>
-    <string name="visible">Viditelné</string>
-    <string name="hidden">Skryté</string>
-    <string name="hide_wifi_name_description">Nastavení se vztahuje na jak dlaždice Wi-Fi, tak Internet</string>
     <string name="behaviour">Chování</string>
     <string name="look">Vzhled</string>
     <string name="off">Vypnuto</string>
@@ -66,7 +62,6 @@
     <string name="available_tiles">Dostupné dlaždice</string>
     <string name="app_info">Informace o aplikaci</string>
     <string name="version">verze</string>
-    <string name="hidden_during_recording">Skryté během nahrávání</string>
     <string name="on">Zapnuto</string>
     <string name="require_unlock_title">Vyžadovat odemčení</string>
     <string name="require_unlock_summary">Zakázat akce dlaždic na zamykací obrazovce</string>

@@ -3,7 +3,6 @@
     <string name="nfc">NFC</string>
     <string name="wifi">WLAN</string>
     <string name="mobile_data">Mobile Daten</string>
-    <string name="not_connected">Nicht verbunden</string>
     <string name="require_unlock_title">Auf dem Sperrbildschirm deaktivieren</string>
     <string name="off">Aus</string>
     <string name="turning_on">Wird aktiviert…</string>
@@ -68,9 +67,6 @@
     <string name="good_to_go_description">Alle benötigen Bereichtigungen wurden erteilt. Schau dir unten die verfügbaren Kacheln an!</string>
     <string name="connected">Verbunden</string>
     <string name="hide_wifi_name">Versteckter Wi-Fi Name</string>
-    <string name="visible">Sichtbar</string>
-    <string name="hidden">Versteckt</string>
-    <string name="hidden_during_recording">Versteckt während Aufzeichnung</string>
     <string name="hide_wifi_name_description">Einstellung betrifft beide Wi-Fi und Internet Kacheln</string>
     <string name="behaviour">Verhalten</string>
     <string name="look">Aussehen</string>

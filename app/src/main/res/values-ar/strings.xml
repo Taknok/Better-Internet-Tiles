@@ -52,12 +52,8 @@
     <string name="look">المظهر</string>
     <string name="connected">متصل</string>
     <string name="hide_wifi_name">إخفاء اسم الـWiFi</string>
-    <string name="visible">مرئي</string>
-    <string name="hidden">مخفي</string>
-    <string name="hidden_during_recording">مخفي أثناء التسجيل</string>
     <string name="behaviour">السلوك</string>
     <string name="nfc">NFC</string>
-    <string name="not_connected">غير متصل</string>
     <string name="on">تشغيل</string>
     <string name="off">إيقاف</string>
     <string name="turning_on">جارٍ التشغيل…</string>

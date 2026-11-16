@@ -26,7 +26,6 @@
     <string name="root_description">A legegyszerűbb módja a shell szintű hozzáférés megszerzésének, ha a telefon rootolt</string>
     <string name="internet">Internet</string>
     <string name="app_info">Alkalmazásinfó</string>
-    <string name="not_connected">Nincs csatlakoztatva</string>
     <string name="yes">Igen</string>
     <string name="network_not_available">Hálózat nem elérhető</string>
     <string name="off">Ki</string>

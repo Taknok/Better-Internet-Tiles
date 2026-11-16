@@ -6,7 +6,6 @@
     <string name="nfc">NFC</string>
     <string name="off">Tắt</string>
     <string name="turning_on">Đang bật…</string>
-    <string name="not_connected">Không có kết nối</string>
     <string name="require_unlock_title">Yêu cầu mở khoá</string>
     <string name="restart_app_title">Khởi động lại ứng dụng</string>
     <string name="restart_app_summary">Hãy khởi động lại ứng dụng nếu gặp vấn đề.</string>

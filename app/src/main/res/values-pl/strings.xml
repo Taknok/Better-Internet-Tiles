@@ -5,7 +5,6 @@
     <string name="nfc">NFC</string>
     <string name="on">Włączone</string>
     <string name="turning_on">Włączanie…</string>
-    <string name="not_connected">Nie połączono</string>
     <string name="require_unlock_title">Wymagaj odblokowywania</string>
     <string name="restart_app_title">Zrestartuj aplikację</string>
     <string name="restart_app_summary">Spróbuj zrestartować aplikację jeśli coś wydaje się źle działać.</string>

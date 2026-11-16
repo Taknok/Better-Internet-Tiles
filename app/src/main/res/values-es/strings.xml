@@ -13,7 +13,6 @@
     <string name="mobile_data">Datos móviles</string>
     <string name="restart_app_summary">Intenta reiniciar la app en caso de que algo funcione mal.</string>
     <string name="feedback_title">Retroalimentación/reportar un bug</string>
-    <string name="not_connected">Desconectado</string>
     <string name="require_unlock_title">Requerir desbloqueo</string>
     <string name="xda_title">Hilo en XDA Developers</string>
     <string name="settings">Ajustes</string>
@@ -71,8 +70,5 @@
     <string name="hide_wifi_name_description">Configuración que se aplica tanto a los mosaicos de wifi como a Internet</string>
     <string name="behaviour">Comportamiento</string>
     <string name="look">Mirar</string>
-    <string name="hidden">Oculto</string>
     <string name="connected">Conectad@</string>
-    <string name="visible">Visible</string>
-    <string name="hidden_during_recording">Oculto durante la grabación</string>
 </resources>
