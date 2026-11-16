@@ -13,7 +13,7 @@
 
 This application aims to create a unified internet quick-settings tile, which is actually useful (I'm looking at you, Android 12). Next to this, **separate Wi-Fi and mobile data tiles are also available** if you just want to go back to the behaviour of Android 11 or lower.
 
-Tapping the new unified internet tile will simply toggle between Wi-Fi and mobile data, which is exactly what I want it to do most of the time. This reduces the amount of taps needed from 3 (tap tile, disable wifi, enable data) to just 1 quick tap. In situations where you still want more control, long pressing the tile will redirect you to the relevant settings page.
+Tapping the new unified internet tile will simply toggle between Wi-Fi and mobile data, which is exactly what I want it to do most of the time. This reduces the amount of taps needed from 3 (tap tile, disable Wi-Fi, enable data) to just 1 quick tap. In situations where you still want more control, long pressing the tile will redirect you to the relevant settings page.
 
 **This has been tested and confirmed working on Pixel devices running Android 12 and 13, but other devices will probably work too.**
 
@@ -29,18 +29,18 @@ Shell access is required to enable/disable Wi-Fi and mobile data, as well as for
 - Ability to configure access to the tiles while the phone is locked
 
 ## How to install
-- Download and install the app using either the [Google Play Store](https://play.google.com/store/apps/details?id=be.casperverswijvelt.unifiedinternetqs), the [F-Droid app store](https://f-droid.org/packages/be.casperverswijvelt.unifiedinternetqs), or by getting the 'app-release.apk' file from the the [latest release in the GitHub repository](https://github.com/CasperVerswijvelt/Unified-Internet-QS/releases/latest).
+- Download and install the app using either the [Google Play Store](https://play.google.com/store/apps/details?id=be.casperverswijvelt.unifiedinternetqs), the [F-Droid app store](https://f-droid.org/packages/be.casperverswijvelt.unifiedinternetqs), or by getting the 'app-release.apk' file from the [latest release in the GitHub repository](https://github.com/CasperVerswijvelt/Unified-Internet-QS/releases/latest).
 - Open the app, and click on the 'Request Shizuku access' or 'Request root access' button, depending on which method of Shell access you prefer.
 - Only if you are using Shizuku:
   - You must start the Shizuku server each time the device is booted. Follow the instructions in the Shizuku application.
   - There is a persistent notification to allow a foreground service to start, so Shizuku can detect the process without having to manually open the 'Better Internet Tiles' application. You can just hide this notification without any issue.
 - Edit your quicksettings layout, drag your desired tile to the top and remove the original internet tile.
 If you are on Android 13 or higher, you can also add them using the shortcut buttons within the app.
-- Enjoy easier switching between mobile data and WiFi with just a single tap!
+- Enjoy easier switching between mobile data and Wi-Fi with just a single tap!
 
 ## Contribute
 Feel free to check out the source code and create an issue or pull request if you want to see more features added.
-Less tech savvy but also want to contribute? Check out this project on [Weblate](https://hosted.weblate.org/guide/better-internet-tiles/translations/) to help out with translations!
+Less tech-savvy but also want to contribute? Check out this project on [Weblate](https://hosted.weblate.org/guide/better-internet-tiles/translations/) to help out with translations!
 
 <a href="https://hosted.weblate.org/engage/better-internet-tiles/">
 <img src="https://hosted.weblate.org/widgets/better-internet-tiles/-/translations/287x66-grey.png" alt="Translation status" />

@@ -142,7 +142,7 @@ class InternetTileBehaviour(
 
     private fun cycleInternet() {
 
-        // Cycle trough internet connection modes:
+        // Cycle through internet connection modes:
         //  If Wi-Fi is enabled -> disable Wi-Fi and enable mobile data
         //  If mobile data is enabled -> disable mobile data and enable Wi-Fi
         //  Else -> enable Wi-Fi
