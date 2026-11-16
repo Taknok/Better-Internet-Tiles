@@ -171,59 +171,6 @@ fun buttonBackgroundColor(): State<Color> {
 }
 
 @Composable
-fun ColorPalette() {
-    val colors = mapOf(
-        "primary" to MaterialTheme.colorScheme.primary,
-        "onPrimary" to MaterialTheme.colorScheme.onPrimary,
-        "primaryContainer" to MaterialTheme.colorScheme.primaryContainer,
-        "onPrimaryContainer" to MaterialTheme.colorScheme.onPrimaryContainer,
-        "inversePrimary" to MaterialTheme.colorScheme.inversePrimary,
-        "secondary" to MaterialTheme.colorScheme.secondary,
-        "onSecondary" to MaterialTheme.colorScheme.onSecondary,
-        "secondaryContainer" to MaterialTheme.colorScheme.secondaryContainer,
-        "onSecondaryContainer" to MaterialTheme.colorScheme.onSecondaryContainer,
-        "tertiary" to MaterialTheme.colorScheme.tertiary,
-        "onTertiary" to MaterialTheme.colorScheme.onTertiary,
-        "tertiaryContainer" to MaterialTheme.colorScheme.tertiaryContainer,
-        "onTertiaryContainer" to MaterialTheme.colorScheme.onTertiaryContainer,
-        "background" to MaterialTheme.colorScheme.background,
-        "onBackground" to MaterialTheme.colorScheme.onBackground,
-        "surface" to MaterialTheme.colorScheme.surface,
-        "onSurface" to MaterialTheme.colorScheme.onSurface,
-        "surfaceVariant" to MaterialTheme.colorScheme.surfaceVariant,
-        "onSurfaceVariant" to MaterialTheme.colorScheme.onSurfaceVariant,
-        "surfaceTint" to MaterialTheme.colorScheme.surfaceTint,
-        "inverseSurface" to MaterialTheme.colorScheme.inverseSurface,
-        "inverseOnSurface" to MaterialTheme.colorScheme.inverseOnSurface,
-        "error" to MaterialTheme.colorScheme.error,
-        "onError" to MaterialTheme.colorScheme.onError,
-        "errorContainer" to MaterialTheme.colorScheme.errorContainer,
-        "onErrorContainer" to MaterialTheme.colorScheme.onErrorContainer,
-        "outline" to MaterialTheme.colorScheme.outline,
-        "outlineVariant" to MaterialTheme.colorScheme.outlineVariant,
-        "scrim" to MaterialTheme.colorScheme.scrim,
-        "surfaceBright" to MaterialTheme.colorScheme.surfaceBright,
-        "surfaceDim" to MaterialTheme.colorScheme.surfaceDim,
-        "surfaceContainer" to MaterialTheme.colorScheme.surfaceContainer,
-        "surfaceContainerHigh" to MaterialTheme.colorScheme.surfaceContainerHigh,
-        "surfaceContainerHighest" to MaterialTheme.colorScheme.surfaceContainerHighest,
-        "surfaceContainerLow" to MaterialTheme.colorScheme.surfaceContainerLow,
-        "surfaceContainerLowest" to MaterialTheme.colorScheme.surfaceContainerLowest
-    )
-
-    colors.entries.forEach { (name, color) ->
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(30.dp)
-                .background(color)
-        ) {
-            Text(text = name, color = color.contrastColor())
-        }
-    }
-}
-
-@Composable
 fun AlertDialog(
     alertDialogData: AlertDialogData,
     onDismissRequest: () -> Unit
