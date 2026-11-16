@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">Wi-Fi</string>
     <string name="mobile_data">Mobildata</string>
     <string name="nfc">Nærfeltskommunikasjon</string>
@@ -28,7 +27,6 @@
     <string name="network_not_available">Mangler nettverkstilgang</string>
     <string name="no_service">Mangler signal</string>
     <string name="airplane_mode">Flymodus</string>
-    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">Hjelp til med å oversette appen!</string>
     <string name="language">Språk</string>
     <string name="available_tiles">Tilgjengelige fliser</string>
@@ -36,16 +34,13 @@
     <string name="home">Hjem</string>
     <string name="app_info">Appinformasjon</string>
     <string name="version">versjon</string>
-    <string name="shizuku" translatable="false">Shevery</string>
     <string name="shizuku_description">Shevery lar vanlige apper bruke system-API-er direkte med utvidede rettigheter via ADB på enheter uten root</string>
-    <string name="root" translatable="false">Root</string>
     <string name="root_description">Den enkleste måten å få tilgang på skallnivå når telefonen din har root-tilgang</string>
     <string name="auto">Automatisk</string>
     <string name="ok">OK</string>
     <string name="yes">Ja</string>
     <string name="no">Nei</string>
     <string name="use_default">Bruk standard</string>
-    <string name="bluetooth" translatable="false">Bluetooth</string>
     <string name="donate">Doner</string>
     <string name="donate_summary">Vis din støtte gjennom en donasjon</string>
 

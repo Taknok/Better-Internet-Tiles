@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">Wi-Fi</string>
     <string name="mobile_data">移动数据</string>
     <string name="nfc">NFC</string>
@@ -28,7 +27,6 @@
     <string name="network_not_available">没有可用的网络</string>
     <string name="no_service">无服务</string>
     <string name="airplane_mode">飞行模式</string>
-    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">帮助翻译此应用！</string>
     <string name="language">语言</string>
     <string name="available_tiles">可用磁贴</string>
@@ -36,16 +34,13 @@
     <string name="home">主页</string>
     <string name="app_info">应用信息</string>
     <string name="version">版本</string>
-    <string name="shizuku" translatable="false">Shevery</string>
     <string name="shizuku_description">Shevery 允许普通应用在非 Root 设备上通过 ADB 使用提升权限直接调用系统 API。</string>
-    <string name="root" translatable="false">Root</string>
     <string name="root_description">在已 Root 的设备上获取 Shell 级别访问权限的最简单方式。</string>
     <string name="auto">自动</string>
     <string name="ok">确定</string>
     <string name="yes">是</string>
     <string name="no">否</string>
     <string name="use_default">使用默认设置</string>
-    <string name="bluetooth" translatable="false">Bluetooth</string>
     <string name="donate">捐赠</string>
     <string name="donate_summary">通过捐赠表达你的支持</string>
 
@@ -61,7 +56,6 @@
     <string name="bluetooth_connect">蓝牙连接</string>
     <string name="bluetooth_connect_description">需要授予“蓝牙连接”权限才能读取已连接的蓝牙设备名称。</string>
     <plurals name="used_for_tiles">
-        <item quantity="one">用于 %1$s 个磁贴</item>
         <item quantity="other">用于 %1$s 个磁贴</item>
     </plurals>
     <string name="allow_root_access">允许 Root 访问</string>

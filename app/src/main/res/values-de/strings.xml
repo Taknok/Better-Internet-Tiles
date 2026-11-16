@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">Wifi</string>
     <string name="mobile_data">Mobiele gegevens</string>
     <string name="nfc">NFC</string>
@@ -28,7 +27,6 @@
     <string name="network_not_available">Netwerk niet beschikbaar</string>
     <string name="no_service">Geen service</string>
     <string name="airplane_mode">Vliegtuigmodus</string>
-    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">Help mee deze app te vertalen!</string>
     <string name="language">Taal</string>
     <string name="available_tiles">Beschikbare tegels</string>
@@ -36,16 +34,13 @@
     <string name="home">Startpagina</string>
     <string name="app_info">App-informatie</string>
     <string name="version">versie</string>
-    <string name="shizuku" translatable="false">Shevery</string>
     <string name="shizuku_description">Shevery stelt gewone apps in staat om rechtstreeks systeem-API\'s te gebruiken met verhoogde rechten via ADB op apparaten zonder roottoegang</string>
-    <string name="root" translatable="false">Root</string>
     <string name="root_description">De eenvoudigste manier om toegang op shell-niveau te verkrijgen als je telefoon geroot is</string>
     <string name="auto">Automatisch</string>
     <string name="ok">OK</string>
     <string name="yes">Ja</string>
     <string name="no">Nee</string>
     <string name="use_default">Standaard gebruiken</string>
-    <string name="bluetooth" translatable="false">Bluetooth</string>
     <string name="donate">Doneren</string>
     <string name="donate_summary">Steun de ontwikkeling met een donatie</string>
 

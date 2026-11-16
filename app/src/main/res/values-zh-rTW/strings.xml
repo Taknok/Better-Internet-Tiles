@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">Wi-Fi</string>
     <string name="mobile_data">行動數據</string>
     <string name="nfc">NFC</string>
@@ -28,7 +27,6 @@
     <string name="network_not_available">網路無法使用</string>
     <string name="no_service">沒有服務</string>
     <string name="airplane_mode">飛航模式</string>
-    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">協助翻譯這個應用程式！</string>
     <string name="language">語言</string>
     <string name="available_tiles">可用方塊</string>
@@ -36,16 +34,13 @@
     <string name="home">首頁</string>
     <string name="app_info">應用程式資訊</string>
     <string name="version">版本</string>
-    <string name="shizuku" translatable="false">Shevery</string>
     <string name="shizuku_description">Shevery 允許一般應用程式透過 ADB 提高權限，並在非 Root 裝置上直接使用系統 API</string>
-    <string name="root" translatable="false">Root</string>
     <string name="root_description">若您的裝置已取得 Root，這將是最快速取得殼層存取權限的方式</string>
     <string name="auto">自動</string>
     <string name="ok">確定</string>
     <string name="yes">是</string>
     <string name="no">否</string>
     <string name="use_default">預設</string>
-    <string name="bluetooth" translatable="false">Bluetooth</string>
     <string name="donate">捐贈</string>
     <string name="donate_summary">透過捐款表達您的支持</string>
 
@@ -61,7 +56,6 @@
     <string name="bluetooth_connect">藍牙連線</string>
     <string name="bluetooth_connect_description">需要「藍牙連線」權限以讀取已連線的藍牙裝置名稱。</string>
     <plurals name="used_for_tiles">
-        <item quantity="one">用於 %1$s 個方塊</item>
         <item quantity="other">用於 %1$s 個方塊</item>
     </plurals>
     <string name="allow_root_access">允許存取 Root</string>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">Wi-Fi</string>
     <string name="mobile_data">Datos móviles</string>
     <string name="nfc">NFC</string>
@@ -28,7 +27,6 @@
     <string name="network_not_available">Red no disponible</string>
     <string name="no_service">Sin servicio</string>
     <string name="airplane_mode">Modo avión</string>
-    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">¡Ayuda a traducir esta app!</string>
     <string name="language">Idioma</string>
     <string name="available_tiles">Mosaicos disponibles</string>
@@ -36,16 +34,13 @@
     <string name="home">Inicio</string>
     <string name="app_info">Información de la aplicación</string>
     <string name="version">versión</string>
-    <string name="shizuku" translatable="false">Shevery</string>
     <string name="shizuku_description">Shevery permite que las aplicaciones normales utilicen directamente las API del sistema con privilegios elevados mediante ADB en dispositivos no rooteados</string>
-    <string name="root" translatable="false">Root</string>
     <string name="root_description">La forma más sencilla de obtener acceso a nivel de shell cuando el teléfono está rooteado</string>
     <string name="auto">Automático</string>
     <string name="ok">Aceptar</string>
     <string name="yes">Sí</string>
     <string name="no">No</string>
     <string name="use_default">Usar el valor predeterminado</string>
-    <string name="bluetooth" translatable="false">Bluetooth</string>
     <string name="donate">Donar</string>
     <string name="donate_summary">Muestra tu apoyo mediante una donación</string>
 

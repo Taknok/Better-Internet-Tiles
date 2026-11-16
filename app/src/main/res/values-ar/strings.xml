@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">Wi-Fi</string>
     <string name="mobile_data">بيانات الهاتف</string>
     <string name="nfc">NFC</string>
@@ -28,7 +27,6 @@
     <string name="network_not_available">الشبكة غير متاحة</string>
     <string name="no_service">لا توجد خدمة</string>
     <string name="airplane_mode">وضع الطيران</string>
-    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">ساعد في ترجمة هذا التطبيق!</string>
     <string name="language">اللغة</string>
     <string name="available_tiles">البلاطات المتاحة</string>
@@ -36,16 +34,13 @@
     <string name="home">الرئيسية</string>
     <string name="app_info">معلومات التطبيق</string>
     <string name="version">الإصدار</string>
-    <string name="shizuku" translatable="false">Shevery</string>
     <string name="shizuku_description">يسمح Shevery للتطبيقات العادية باستخدام واجهات برمجة تطبيقات النظام مباشرةً بصلاحيات مرتفعة عبر ADB على الأجهزة التي لا تحتوي على روت.</string>
-    <string name="root" translatable="false">Root</string>
     <string name="root_description">أبسط طريقة للحصول على صلاحيات على مستوى Shell عندما يكون هاتفك مروّتًا.</string>
     <string name="auto">تلقائي</string>
     <string name="ok">حسنًا</string>
     <string name="yes">نعم</string>
     <string name="no">لا</string>
     <string name="use_default">استخدام الافتراضي</string>
-    <string name="bluetooth" translatable="false">Bluetooth</string>
     <string name="donate">تبرع</string>
     <string name="donate_summary">أظهر دعمك من خلال التبرع</string>
 

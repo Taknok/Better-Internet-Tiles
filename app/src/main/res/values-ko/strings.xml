@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">Wi-Fi</string>
     <string name="mobile_data">모바일 데이터</string>
     <string name="nfc">NFC</string>
@@ -28,7 +27,6 @@
     <string name="network_not_available">네트워크 사용 불가</string>
     <string name="no_service">서비스 없음</string>
     <string name="airplane_mode">비행기 모드</string>
-    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">이 앱의 번역을 도와주세요!</string>
     <string name="language">언어</string>
     <string name="available_tiles">사용 가능한 타일</string>
@@ -36,16 +34,13 @@
     <string name="home">홈</string>
     <string name="app_info">앱 정보</string>
     <string name="version">버전</string>
-    <string name="shizuku" translatable="false">Shevery</string>
     <string name="shizuku_description">Shevery는 루팅되지 않은 기기에서도 ADB를 통해 상승된 권한으로 일반 앱이 시스템 API를 직접 사용할 수 있도록 합니다</string>
-    <string name="root" translatable="false">Root</string>
     <string name="root_description">스마트폰이 루팅된 경우 Shell 수준의 액세스 권한을 얻는 가장 간단한 방법입니다</string>
     <string name="auto">자동</string>
     <string name="ok">확인</string>
     <string name="yes">네</string>
     <string name="no">아니요</string>
     <string name="use_default">기본값으로 사용</string>
-    <string name="bluetooth" translatable="false">Bluetooth</string>
     <string name="donate">기부</string>
     <string name="donate_summary">기부를 통해 응원하기</string>
 

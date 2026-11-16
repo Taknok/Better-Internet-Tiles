@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">Wi-Fi</string>
     <string name="mobile_data">Mobilní data</string>
     <string name="nfc">NFC</string>
@@ -28,7 +27,6 @@
     <string name="network_not_available">Síť není dostupná</string>
     <string name="no_service">Žádná služba</string>
     <string name="airplane_mode">Režim letadlo</string>
-    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">Pomozte s překladem aplikace!</string>
     <string name="language">Jazyk</string>
     <string name="available_tiles">Dostupné dlaždice</string>
@@ -36,16 +34,13 @@
     <string name="home">Domů</string>
     <string name="app_info">Informace o aplikaci</string>
     <string name="version">verze</string>
-    <string name="shizuku" translatable="false">Shevery</string>
     <string name="shizuku_description">Shevery umožňuje běžným aplikacím přímo používat systémová API se zvýšenými oprávněními pomocí ADB na zařízeních bez rootu</string>
-    <string name="root" translatable="false">Root</string>
     <string name="root_description">Nejjednodušší způsob, jak získat přístup na úrovni shellu, je mít na telefonu root</string>
     <string name="auto">Automaticky</string>
     <string name="ok">OK</string>
     <string name="yes">Ano</string>
     <string name="no">Ne</string>
     <string name="use_default">Použít výchozí</string>
-    <string name="bluetooth" translatable="false">Bluetooth</string>
     <string name="donate">Darovat</string>
     <string name="donate_summary">Ukažte svou podporu darem</string>
 

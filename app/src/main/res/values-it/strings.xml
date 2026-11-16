@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">Wi-Fi</string>
     <string name="mobile_data">Dati mobili</string>
     <string name="nfc">NFC</string>
@@ -28,7 +27,6 @@
     <string name="network_not_available">Rete non disponibile</string>
     <string name="no_service">Nessun servizio</string>
     <string name="airplane_mode">Modalità aereo</string>
-    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">Aiuta a tradurre questa app!</string>
     <string name="language">Lingua</string>
     <string name="available_tiles">Riquadri disponibili</string>
@@ -36,16 +34,13 @@
     <string name="home">Inizio</string>
     <string name="app_info">Informazioni app</string>
     <string name="version">versione</string>
-    <string name="shizuku" translatable="false">Shevery</string>
     <string name="shizuku_description">Shevery permette alle app normali di utilizzare direttamente le API di sistema con privilegi elevati tramite ADB sui dispositivi senza accesso root</string>
-    <string name="root" translatable="false">Root</string>
     <string name="root_description">Il metodo più semplice per ottenere l\'accesso alla shell su un telefono con accesso root</string>
     <string name="auto">Automatico</string>
     <string name="ok">OK</string>
     <string name="yes">Sì</string>
     <string name="no">No</string>
     <string name="use_default">Usa predefinito</string>
-    <string name="bluetooth" translatable="false">Bluetooth</string>
     <string name="donate">Fai una donazione</string>
     <string name="donate_summary">Mostra il tuo supporto con una donazione</string>
 
@@ -62,7 +57,7 @@
     <string name="bluetooth_connect_description">L\'autorizzazione \'Connessione Bluetooth\' è necessaria per leggere il nome del dispositivo Bluetooth collegato.</string>
     <plurals name="used_for_tiles">
         <item quantity="one">Utilizzato per %1$s riquadro</item>
-        <item quantity="other">Utilizzato per %1$s riquadri</item>
+        <item quantity="many">Utilizzato per %1$s riquadri</item>
     </plurals>
     <string name="allow_root_access">Consenti accesso root</string>
     <string name="allow_root_access_description">Concedi l\'accesso root all\'applicazione \'Better Internet Tiles\' nella tua app di gestione dei permessi root (ad es. Magisk Manager).</string>

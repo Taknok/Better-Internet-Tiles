@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">வைஃபை</string>
     <string name="mobile_data">மொபைல் தரவு</string>
     <string name="nfc">என்.எஃப்.சி</string>
@@ -28,7 +27,6 @@
     <string name="network_not_available">பிணையம் கிடைக்கவில்லை</string>
     <string name="no_service">சேவை இல்லை</string>
     <string name="airplane_mode">விமானப் பயன்முறை</string>
-    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">இந்தப் பயன்பாட்டை மொழிபெயர்க்க உதவுங்கள்!</string>
     <string name="language">மொழி</string>
     <string name="available_tiles">கிடைக்கும் ஓடுகள்</string>
@@ -36,16 +34,13 @@
     <string name="home">முகப்பு</string>
     <string name="app_info">பயன்பாட்டுத் தகவல்</string>
     <string name="version">பதிப்பு</string>
-    <string name="shizuku" translatable="false">Shevery</string>
     <string name="shizuku_description">ரூட் செய்யப்படாத சாதனங்களில் ADB மூலம் உயர்ந்த சலுகைகளைப் பயன்படுத்தி கணினி API-களை நேரடியாகப் பயன்படுத்த சாதாரண பயன்பாடுகளை Shevery அனுமதிக்கிறது</string>
-    <string name="root" translatable="false">Root</string>
     <string name="root_description">உங்கள் தொலைபேசி ரூட் செய்யப்பட்டிருக்கும்போது ஷெல்-நிலை அணுகலைப் பெறுவதற்கான எளிய வழி</string>
     <string name="auto">தானியங்கு</string>
     <string name="ok">சரி</string>
     <string name="yes">ஆம்</string>
     <string name="no">இல்லை</string>
     <string name="use_default">இயல்புநிலையைப் பயன்படுத்தவும்</string>
-    <string name="bluetooth" translatable="false">Bluetooth</string>
     <string name="donate">நன்கொடை</string>
     <string name="donate_summary">நன்கொடை அளிப்பதன் மூலம் உங்கள் ஆதரவைத் தெரிவியுங்கள்</string>
 

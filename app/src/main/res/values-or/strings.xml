@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">ୱାଇ-ଫାଇ</string>
     <string name="mobile_data">ମୋବାଇଲ୍ ଡାଟା</string>
     <string name="nfc">NFC</string>
@@ -28,7 +27,6 @@
     <string name="network_not_available">ନେଟୱର୍କ ଉପଲବ୍ଧ ନାହିଁ</string>
     <string name="no_service">କୌଣସି ସେବା ନାହିଁ</string>
     <string name="airplane_mode">ବିମାନ ମୋଡ୍</string>
-    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">ଏହି ଆପ୍ ଅନୁବାଦ କରିବାରେ ସାହାଯ୍ୟ କରନ୍ତୁ!</string>
     <string name="language">ଭାଷା</string>
     <string name="available_tiles">ଉପଲବ୍ଧ ଟାଇଲ୍‌ଗୁଡ଼ିକ</string>
@@ -36,16 +34,13 @@
     <string name="home">ଗୃହ</string>
     <string name="app_info">ଆପ୍ ସୂଚନା</string>
     <string name="version">ସଂସ୍କରଣ</string>
-    <string name="shizuku" translatable="false">Shevery</string>
     <string name="shizuku_description">Shevery ଅଣ-Root ଡିଭାଇସ୍‌ଗୁଡ଼ିକରେ ADB ମାଧ୍ୟମରେ ସାଧାରଣ ଆପ୍‌ଗୁଡ଼ିକୁ ଅଧିକାରପ୍ରାପ୍ତ ସୁବିଧା ସହିତ ସିଧାସଳଖ ସିଷ୍ଟମ୍ API ବ୍ୟବହାର କରିବାକୁ ଅନୁମତି ଦିଏ</string>
-    <string name="root" translatable="false">Root</string>
     <string name="root_description">ଆପଣଙ୍କ ଫୋନ୍ Root ହୋଇଥିଲେ Shell ସ୍ତରର ଆକ୍ସେସ୍ ପାଇବାର ସବୁଠାରୁ ସରଳ ଉପାୟ</string>
     <string name="auto">ସ୍ୱୟଂଚାଳିତ</string>
     <string name="ok">ଠିକ୍ ଅଛି</string>
     <string name="yes">ହଁ</string>
     <string name="no">ନା</string>
     <string name="use_default">ଡିଫଲ୍ଟ ବ୍ୟବହାର କରନ୍ତୁ</string>
-    <string name="bluetooth" translatable="false">Bluetooth</string>
     <string name="donate">ଦାନ କରନ୍ତୁ</string>
     <string name="donate_summary">ଦାନ ମାଧ୍ୟମରେ ଆପଣଙ୍କ ସମର୍ଥନ ଜଣାନ୍ତୁ</string>
 

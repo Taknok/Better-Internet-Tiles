@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">Wi-Fi</string>
     <string name="mobile_data">Dữ liệu di động</string>
     <string name="nfc">NFC</string>
@@ -28,7 +27,6 @@
     <string name="network_not_available">Mạng không khả dụng</string>
     <string name="no_service">Không có dịch vụ</string>
     <string name="airplane_mode">Chế độ Máy bay</string>
-    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">Hãy giúp chúng tôi dịch ứng dụng này!</string>
     <string name="language">Ngôn ngữ</string>
     <string name="available_tiles">Các ô khả dụng</string>
@@ -36,16 +34,13 @@
     <string name="home">Trang chủ</string>
     <string name="app_info">Thông tin ứng dụng</string>
     <string name="version">Phiên bản</string>
-    <string name="shizuku" translatable="false">Shevery</string>
     <string name="shizuku_description">Shevery cho phép các ứng dụng thông thường sử dụng trực tiếp API hệ thống với đặc quyền nâng cao thông qua ADB trên các thiết bị chưa được root.</string>
-    <string name="root" translatable="false">Root</string>
     <string name="root_description">Cách đơn giản nhất để có quyền truy cập cấp shell khi thiết bị của bạn đã được root.</string>
     <string name="auto">Tự động</string>
     <string name="ok">OK</string>
     <string name="yes">Có</string>
     <string name="no">Không</string>
     <string name="use_default">Mặc định</string>
-    <string name="bluetooth" translatable="false">Bluetooth</string>
     <string name="donate">Donate</string>
     <string name="donate_summary">Hỗ trợ chúng tôi bằng cách quyên góp.</string>
 
@@ -61,7 +56,6 @@
     <string name="bluetooth_connect">Kết nối bluetooth</string>
     <string name="bluetooth_connect_description">Cần có quyền \'Kết nối bluetooth\' để đọc tên thiết bị đã được kết nối bluetooth.</string>
     <plurals name="used_for_tiles">
-        <item quantity="one">Được sử dụng cho %1$s ô</item>
         <item quantity="other">Được sử dụng cho %1$s ô</item>
     </plurals>
     <string name="allow_root_access">Cho phép truy cập root</string>

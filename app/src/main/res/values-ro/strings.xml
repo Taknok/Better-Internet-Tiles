@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Better Internet Tiles</string>
     <string name="wifi">Wi-Fi</string>
     <string name="mobile_data">Date mobile</string>
     <string name="nfc">NFC</string>
@@ -28,7 +27,6 @@
     <string name="network_not_available">Rețea indisponibilă</string>
     <string name="no_service">Fără rețea</string>
     <string name="airplane_mode">Mod avion</string>
-    <string name="weblate" translatable="false">Weblate</string>
     <string name="help_translate">Ajută la traducerea aplicației!</string>
     <string name="language">Limbă</string>
     <string name="available_tiles">Dale disponibile</string>
@@ -36,16 +34,13 @@
     <string name="home">Acasă</string>
     <string name="app_info">Informații aplicație</string>
     <string name="version">versiunea</string>
-    <string name="shizuku" translatable="false">Shevery</string>
     <string name="shizuku_description">Shevery permite aplicațiilor să folosească API-urile de sistem cu permisiuni elevate, folosind ADB pe dispozitivele fără root</string>
-    <string name="root" translatable="false">Root</string>
     <string name="root_description">Cea mai ușoară metodă de a primi acces la nivel de shell când telefonul este root-at</string>
     <string name="auto">Automat</string>
     <string name="ok">Ok</string>
     <string name="yes">Da</string>
     <string name="no">Nu</string>
     <string name="use_default">Folosește valoarea implicită</string>
-    <string name="bluetooth" translatable="false">Bluetooth</string>
     <string name="donate">Donează</string>
     <string name="donate_summary">Arată-ți contribuția printr-o donație</string>
 
