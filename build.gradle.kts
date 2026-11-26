@@ -12,7 +12,7 @@ buildscript {
 }
 
 plugins {
-    id("com.android.application") version "9.5.1" apply false
+    id("com.android.application") version "9.5.3" apply false
 }
 
 tasks.register<Delete>("clean") {
